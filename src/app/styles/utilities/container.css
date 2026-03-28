@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    padding-inline: 1rem;
+    margin-inline: auto;
+
+    /* 640px */
+    @media (width >= 40em) {
+        max-width: 40em;
+    }
+
+    /* 768px */
+    @media (width >= 48em) {
+        max-width: 48em;
+        padding-inline: 0;
+    }
+
+    /* 1024px */
+    @media (width >= 64em) {
+        max-width: 64em;
+    }
+
+    /* 1280px */
+    @media (width >= 80em ) {
+        max-width: 80em;
+    }
+
+    /* 1440px */
+    @media (width >= 90em) {
+        max-width: 90em;
+    }
+}
