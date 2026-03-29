@@ -61,6 +61,6 @@
         width: 100%;
         height: 59.5rem;
         content: "";
-        background: url('/assets/background/haut-mobile.webp') center / cover;
+        background: url('/assets/background/haut-mobile.webp') center / cover no-repeat;
     }
 }
