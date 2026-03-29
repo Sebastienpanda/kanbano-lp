@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { Header } from './components/layout/header';
 
 @Component({
     selector: 'kanbano-lp-home',
-    imports: [],
+    imports: [
+        Header
+    ],
     templateUrl: './home.html',
 })
 export default class Home {
