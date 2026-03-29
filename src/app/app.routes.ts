@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
+import { Home } from './kanbano/home';
 
 export const routes: Routes = [
     {
         path: "",
-        loadComponent: () => import("./kanbano/home")
+        component: Home
     }
 ];
