@@ -4,3 +4,4 @@
 @import "./base/root.css";
 @import "./base/typographie.css";
 @import "./utilities/container.css";
+@import "./tokens/color.css";
