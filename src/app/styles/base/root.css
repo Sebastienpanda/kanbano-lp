@@ -3,6 +3,7 @@
     --font-mulish: 'Mulish';
 }
 
+
 body {
     background-color: var(--color-body);
     transition: background-color 350ms ease-in-out, color 350ms ease-in-out;
