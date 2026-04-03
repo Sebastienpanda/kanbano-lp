@@ -1,0 +1,19 @@
+.checked {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    width: 100%;
+    margin-top: 2.5rem;
+
+    .container-checked {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        min-width: 10.25rem;
+        max-width: 10.25rem;
+        font-family: var(--font-baloo), display, serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
