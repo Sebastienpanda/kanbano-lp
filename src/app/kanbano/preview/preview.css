@@ -1,0 +1,24 @@
+.preview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.125rem;
+
+    .preview-top {
+        position: absolute;
+        top: 0;
+    }
+
+    .preview-left {
+        position: absolute;
+        top: 128px;
+        left: 28px;
+    }
+
+    .preview-right {
+        position: absolute;
+        top: 84px;
+        right: 12px;
+    }
+}
