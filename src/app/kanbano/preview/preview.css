@@ -3,22 +3,62 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3.125rem;
+    margin-block: 3.125rem;
+
+    .preview-purple-bg {
+        position: absolute;
+        top: 160px;
+        width: 18.875rem;
+        height: 7.125rem;
+        background-color: #B2A3D7;
+        filter: blur(37px);
+    }
+
+    .preview-pink-bg {
+        position: absolute;
+        top: 256px;
+        left: 100px;
+        width: 4.125rem;
+        height: 4.125rem;
+        background-color: #BD0CA9;
+        filter: blur(37px);
+    }
+
+    .preview-green-bg {
+        position: absolute;
+        top: 230px;
+        right: 20px;
+        width: 4.5625rem;
+        height: 14.3125rem;
+        background-color: rgba(43, 229, 207, 0.40);
+        filter: blur(37px);
+    }
+
+    .preview-light-purple-bg {
+        position: absolute;
+        top: 230px;
+        right: 20px;
+        width: 4.5625rem;
+        height: 12.4375rem;
+        background-color: #B2A3D7;
+        filter: blur(37px);
+    }
 
     .preview-top {
-        position: absolute;
-        top: 0;
+        z-index: 2;
     }
 
     .preview-left {
         position: absolute;
         top: 128px;
         left: 28px;
+        z-index: 3;
     }
 
     .preview-right {
         position: absolute;
         top: 84px;
         right: 12px;
+        z-index: 3;
     }
 }
