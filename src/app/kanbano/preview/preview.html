@@ -5,20 +5,35 @@
     <div class="preview-light-purple-bg"></div>
     <div class="preview-top">
         <picture>
-            <source srcset="/assets/preview/Dashboard.webp" type="image/webp">
-            <img alt="" height="241" ngSrc="/assets/preview/Dashboard.png" width="316">
+            <source
+                sizes="(min-width: 768px) 675px, 316px"
+                srcset="/assets/preview/dashboard/dashboard.webp 316w, /assets/preview/dashboard/dashboard@2x.webp 675w"
+                type="image/webp">
+            <img alt="" sizes="(min-width: 768px) 675px, 316px"
+                 src="/assets/preview/dashboard/dashboard.png"
+                 srcset="/assets/preview/dashboard/dashboard.png 316w, /assets/preview/dashboard/dashboard@2x.png 675w">
         </picture>
     </div>
     <div class="preview-left">
         <picture>
-            <source srcset="/assets/preview/Task.webp" type="image/webp">
-            <img alt="" height="182" ngSrc="/assets/preview/Task.png" width="156">
+            <source
+                sizes="(min-width: 768px) 162px, 100px"
+                srcset="/assets/preview/task-details/task-details.webp 100w, /assets/preview/task-details/task-details@2x.webp 162w"
+                type="image/webp">
+            <img alt="" sizes="(min-width: 768px) 162px, 100px"
+                 src="/assets/preview/task-details/task-details.png"
+                 srcset="/assets/preview/task-details/task-details.png 100w, /assets/preview/task-details/task-details@2x.png 162w">
         </picture>
     </div>
     <div class="preview-right">
         <picture>
-            <source srcset="/assets/preview/Details.webp" type="image/webp">
-            <img alt="" height="329" ngSrc="/assets/preview/Details.png" width="155">
+            <source
+                sizes="(min-width: 768px) 162px, 100px"
+                srcset="/assets/preview/task-view/task-view.webp 100w, /assets/preview/task-view/task-view@2x.webp 162w"
+                type="image/webp">
+            <img alt="" sizes="(min-width: 768px) 162px, 100px"
+                 src="/assets/preview/task-view/task-view.png"
+                 srcset="/assets/preview/task-view/task-view.png 100w, /assets/preview/task-view/task-view@2x.png 162w">
         </picture>
     </div>
 </section>
