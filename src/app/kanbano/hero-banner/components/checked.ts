@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { CheckedIcon } from './icon/checked-icon';
+import { CheckedIcon } from '../icon/checked-icon';
 
 interface CheckedType {
     id: number;
