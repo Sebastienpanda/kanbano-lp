@@ -55,9 +55,9 @@ select:focus-visible,
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
     display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
 }
