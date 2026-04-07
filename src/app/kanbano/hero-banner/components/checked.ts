@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { CheckedIcon } from '../icon/checked-icon';
+import { CheckItem } from '../../components/utilities/check-item';
 
 interface CheckedType {
     id: number;
@@ -8,25 +8,14 @@ interface CheckedType {
 
 @Component({
     selector: 'kanbano-lp-checked',
-    imports: [
-        CheckedIcon
-    ],
+    imports: [CheckItem],
     templateUrl: './checked.html',
     styleUrl: './checked.css',
 })
 export class Checked {
     protected readonly checked = signal<CheckedType[]>([
-        {
-            id: 0,
-            text: "Accessibilité"
-        },
-        {
-            id: 1,
-            text: "Simplicité"
-        },
-        {
-            id: 2,
-            text: "Intuitivité"
-        }
-    ])
+        {id: 0, text: "Accessibilité"},
+        {id: 1, text: "Simplicité"},
+        {id: 2, text: "Intuitivité"}
+    ]);
 }

@@ -14,7 +14,7 @@
         padding: 1.25rem;
         overflow: hidden;
         background-color: var(--color-footer-purple);
-        border-radius: 1.875rem 1.875rem 0 0;
+        border-radius: 2rem 2rem 0 0;
     }
 
     .footer__top {
@@ -31,7 +31,7 @@
 
     .footer__heading-text {
         font-family: var(--font-mulish), sans-serif;
-        font-size: 2.8125rem;
+        font-size: 2.75rem;
         font-weight: 500;
         line-height: normal;
         color: var(--color-primary);
@@ -48,16 +48,16 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 1.875rem;
+        padding: 2rem;
         background-color: var(--color-data-purple);
-        border-radius: 0.625rem;
+        border-radius: 0.75rem;
     }
 
     .footer__newsletter-label {
         font-family: var(--font-baloo), display, serif;
         font-size: 1.25rem;
         font-weight: 600;
-        line-height: 1.5625rem;
+        line-height: 1.5rem;
         color: var(--color-white);
         text-align: center;
     }
@@ -69,15 +69,15 @@
 
     .footer__input {
         width: 100%;
-        padding: 0.625rem;
+        padding: 0.5rem;
         font-family: var(--font-mulish), sans-serif;
-        font-size: 1.0625rem;
+        font-size: 1rem;
         font-weight: 400;
         color: var(--color-primary);
         outline: none;
         background-color: var(--color-input-newsletters);
         border: none;
-        border-radius: 0.3125rem;
+        border-radius: 0.5rem;
 
         &::placeholder {
             color: var(--color-grey-newsletters);
@@ -93,8 +93,8 @@
     }
 
     .footer__logo {
-        width: 13.6875rem;
-        height: 2.8125rem;
+        width: 13.75rem;
+        height: 2.75rem;
         object-fit: contain;
     }
 
@@ -103,14 +103,14 @@
         flex-direction: column;
         gap: 1.25rem;
         align-items: center;
-        padding: 0.9375rem 0;
+        padding: 1rem 0;
         margin: 0;
         list-style: none;
     }
 
     .footer__nav-link {
         font-family: var(--font-baloo), display, serif;
-        font-size: 1.0625rem;
+        font-size: 1rem;
         font-weight: 500;
         color: var(--color-primary);
         text-decoration: none;
@@ -121,8 +121,8 @@
     }
 
     .footer__linkedin {
-        width: 1.875rem;
-        height: 1.875rem;
+        width: 2rem;
+        height: 2rem;
     }
 }
 

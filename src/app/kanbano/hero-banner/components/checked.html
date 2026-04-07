@@ -1,10 +1,7 @@
-<section class="checked">
+<ul class="checked">
     @for (check of checked(); track check.id) {
-        <div class="container-checked">
-            <kanbano-lp-checked-icon/>
-            <span>
-                {{ check.text }}
-            </span>
-        </div>
+        <li class="checked__item">
+            <kanbano-lp-check-item>{{ check.text }}</kanbano-lp-check-item>
+        </li>
     }
-</section>
+</ul>

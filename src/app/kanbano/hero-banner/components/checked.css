@@ -4,14 +4,16 @@
     gap: 1.25rem;
     align-items: center;
     width: 100%;
-    margin-top: 2.5rem;
+    padding: 0;
+    margin: 2.5rem 0 0;
+    list-style: none;
 
     @media (width >= 768px) {
         flex-direction: row;
         justify-content: center;
     }
 
-    .container-checked {
+    .checked__item {
         display: flex;
         gap: 1rem;
         align-items: center;
