@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-block: 3.125rem;
+    margin-top: 3.125rem;
 
     .preview-purple-bg {
         position: absolute;
@@ -46,19 +46,26 @@
 
     .preview-top {
         z-index: 2;
+        min-width: 19.75rem;
+        max-width: 19.75rem;
     }
 
     .preview-left {
         position: absolute;
-        top: 128px;
-        left: 28px;
+        top: 165px;
+        left: 65px;
         z-index: 3;
+        min-width: 6.25rem;
+        max-width: 6.25rem;
+        box-shadow: 0 4px 40px 0 rgba(43, 229, 207, 0.20);
     }
 
     .preview-right {
         position: absolute;
-        top: 84px;
-        right: 12px;
+        top: 121px;
+        right: 29px;
         z-index: 3;
+        min-width: 6.25rem;
+        max-width: 6.25rem;
     }
 }
