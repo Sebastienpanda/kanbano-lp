@@ -1,0 +1,144 @@
+.pricing {
+    padding: 2.5rem 1rem;
+    margin-block: 2.5rem;
+    background-color: #f1f8f7;
+    border-radius: 1.25rem;
+
+    .pricing__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pricing__icon {
+        width: 8.625rem;
+        height: 7.5rem;
+        object-fit: contain;
+    }
+
+    .pricing__title {
+        font-size: 2.813rem;
+        font-weight: 700;
+        color: var(--color-degrade-purple);
+    }
+
+    .pricing__subtitle {
+        font-size: 1.0625rem;
+        color: #2D1E53;
+    }
+
+    .pricing__bold {
+        font-weight: 700;
+    }
+
+    .pricing__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pricing__card {
+        padding: 40px 16px;
+        color: var(--color-white);
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .pricing__card--premium {
+        position: relative;
+        margin-top: 74px;
+        background: radial-gradient(53.82% 36.75% at 50% 5.22%, #820080 0%, #130043) 100%, #130043;
+        border: 4px solid #BD0CA9;
+        box-shadow: 0 0 20px 0 #D87FCE;
+    }
+
+    .pricing__tag {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        width: 300px;
+        padding: 0.3125rem 1.25rem;
+        font-family: var(--font-baloo), display, serif;
+        font-weight: 700;
+        background: #831892;
+        border-radius: 0.3125rem;
+        transform: translateX(-50%);
+    }
+
+    .pricing__card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pricing__plan-name {
+        font-family: var(--font-baloo), display, serif;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 30px;
+    }
+
+    .pricing__plan-price {
+        font-size: 35px;
+        font-weight: 700;
+        color: #2BE5CF;
+    }
+
+    .pricing__card-features {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-block: 40px;
+    }
+
+    .pricing__card-includes {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .pricing__feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+    }
+
+    .pricing__feature-item {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        span {
+            font-size: 17px;
+            line-height: 25px;
+        }
+    }
+
+    .pricing__card--pro {
+        background: #2D1E53;
+    }
+
+    .pricing__card--free {
+        background: #3D2A6B;
+    }
+
+    .pricing__custom {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 20px;
+        margin-top: 13px;
+        background: #2BE5CF;
+        border-radius: 0.625rem;
+    }
+
+    .pricing__custom-text {
+        font-family: var(--font-baloo), display, serif;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+    }
+}
