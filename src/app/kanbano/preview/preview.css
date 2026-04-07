@@ -67,5 +67,6 @@
         z-index: 3;
         min-width: 6.25rem;
         max-width: 6.25rem;
+        box-shadow: 0 4px 40px 0 rgba(43, 229, 207, 0.20);
     }
 }
