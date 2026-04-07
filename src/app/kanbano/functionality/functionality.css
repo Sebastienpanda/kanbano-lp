@@ -1,7 +1,7 @@
 .functionality {
     position: relative;
     padding-inline: 1rem;
-    margin-top: 130px;
+    margin-top: 230px;
     text-align: center;
 
     .functionality__title {
@@ -39,24 +39,15 @@
         font-weight: 700;
     }
 
-    .vector-green-top {
-        position: absolute;
-        top: 150px;
-        left: 0;
-    }
-
-    .vector-purple-top-2 {
-        position: absolute;
-        top: 180px;
-        right: 0;
-    }
-
     .functionality__block {
         position: relative;
 
         .functionality__example-top {
             position: relative;
             z-index: 2;
+            min-width: 20.313rem;
+            max-width: 20.313rem;
+            margin-inline: auto;
             margin-top: .75rem;
             overflow: hidden;
             border-radius: 0.3125rem;
@@ -68,12 +59,158 @@
             top: 194px;
             left: 40px;
             z-index: 3;
+            min-width: 16.5rem;
+            max-width: 16.5rem;
             box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
         }
 
         .functionality__example-bottom {
+            min-width: 17.813rem;
+            max-width: 17.813rem;
+            margin-inline: auto;
             margin-top: 242px;
             box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
         }
+    }
+
+    .functionality__tasks {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 2.5rem 1.875rem;
+        margin-top: 3rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.60);
+        border-radius: 0.625rem;
+        box-shadow: 0 4px 20px 0 rgba(0, 108, 95, 0.02);
+
+        .functionality__tasks__title {
+            font-family: var(--font-baloo), display, serif;
+            font-size: 1.563rem;
+            font-weight: 700;
+            color: var(--color-degrade-purple);
+        }
+
+        .functionality__tasks__content {
+            font-size: 1.0625rem;
+            color: #2D1E53;
+
+            strong {
+                font-weight: 800;
+            }
+        }
+    }
+
+    .functionality__tasks-block {
+        position: relative;
+        min-height: 450px;
+        margin-top: 1rem;
+
+        .functionality__tasks-main {
+            position: relative;
+            z-index: 2;
+            min-width: 20.625rem;
+            max-width: 20.625rem;
+            overflow: hidden;
+            border-radius: 0.3125rem;
+            box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+        }
+
+        .functionality__tasks-side-right {
+            position: absolute;
+            top: 233px;
+            right: 10px;
+            z-index: 3;
+            min-width: 12.563rem;
+            max-width: 12.563rem;
+            box-shadow: 0 4px 100px 0 rgba(0, 106, 155, 0.41);
+        }
+
+        .functionality__tasks-side-left {
+            position: absolute;
+            top: 255px;
+            left: 0;
+            z-index: 3;
+            min-width: 9.313rem;
+            max-width: 9.313rem;
+            box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+        }
+    }
+
+    .functionality__participants {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 2.5rem 1.875rem;
+        margin-top: 280px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.60);
+        border-radius: 0.625rem;
+
+        .functionality__participants__title {
+            font-family: var(--font-baloo), display, serif;
+            font-size: 1.563rem;
+            font-weight: 700;
+            color: var(--color-degrade-purple);
+        }
+
+        .functionality__participants__content {
+            font-size: 1.0625rem;
+            color: #2D1E53;
+
+            strong {
+                font-weight: 900;
+            }
+        }
+    }
+
+    .functionality__participants-block {
+        position: relative;
+        min-height: 420px;
+        margin-top: 1rem;
+
+        .functionality__participants-main {
+            position: relative;
+            z-index: 2;
+            min-width: 19.188rem;
+            max-width: 19.188rem;
+            margin-inline: auto;
+            box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+        }
+
+        .functionality__participants-invitation {
+            position: absolute;
+            top: 244px;
+            left: 50%;
+            z-index: 3;
+            min-width: 15.125rem;
+            max-width: 15.125rem;
+            box-shadow: 0 4px 100px 0 rgba(43, 229, 207, 0.4);
+            transform: translateX(-50%);
+        }
+
+        .functionality__participants-profil {
+            position: absolute;
+            bottom: -213px;
+            left: 50%;
+            z-index: 3;
+            min-width: 16.563rem;
+            max-width: 16.563rem;
+            box-shadow: 0 4px 100px 0 rgba(0, 106, 155, 0.4);
+            transform: translateX(-50%);
+        }
+    }
+
+    .functionality__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+        margin-top: 16rem;
+        margin-bottom: 2rem;
     }
 }
