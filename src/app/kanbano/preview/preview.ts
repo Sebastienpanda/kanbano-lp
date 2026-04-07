@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
     selector: 'kanbano-lp-preview',
-    imports: [
-        NgOptimizedImage
-    ],
+    imports: [],
     templateUrl: './preview.html',
     styleUrl: './preview.css',
 })
