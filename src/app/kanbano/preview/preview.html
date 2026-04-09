@@ -1,33 +1,41 @@
 <section class="preview">
-    <div class="preview-purple-bg"></div>
-    <div class="preview-pink-bg"></div>
-    <div class="preview-green-bg"></div>
-    <div class="preview-light-purple-bg"></div>
-    <picture class="preview-top">
-        <source
-            sizes="(min-width: 768px) 675px, 316px"
-            srcset="/assets/preview/dashboard/dashboard.webp 316w, /assets/preview/dashboard/dashboard@2x.webp 675w"
-            type="image/webp">
-        <img alt="" sizes="(min-width: 768px) 675px, 316px"
-             src="/assets/preview/dashboard/dashboard.png"
-             srcset="/assets/preview/dashboard/dashboard.png 316w, /assets/preview/dashboard/dashboard@2x.png 675w">
-    </picture>
-    <picture class="preview-left">
-        <source
-            sizes="(min-width: 768px) 162px, 100px"
-            srcset="/assets/preview/task-details/task-details.webp 100w, /assets/preview/task-details/task-details@2x.webp 162w"
-            type="image/webp">
-        <img alt="" sizes="(min-width: 768px) 162px, 100px"
-             src="/assets/preview/task-details/task-details.png"
-             srcset="/assets/preview/task-details/task-details.png 100w, /assets/preview/task-details/task-details@2x.png 162w">
-    </picture>
-    <picture class="preview-right">
-        <source
-            sizes="(min-width: 768px) 162px, 100px"
-            srcset="/assets/preview/task-view/task-view.webp 100w, /assets/preview/task-view/task-view@2x.webp 162w"
-            type="image/webp">
-        <img alt="" sizes="(min-width: 768px) 162px, 100px"
-             src="/assets/preview/task-view/task-view.png"
-             srcset="/assets/preview/task-view/task-view.png 100w, /assets/preview/task-view/task-view@2x.png 162w">
-    </picture>
+
+    @if (isDesktop()) {
+
+    } @else {
+        <kanbano-lp-purple-svg/>
+        <kanbano-lp-pink-svg/>
+        <kanbano-lp-green-svg/>
+        <kanbano-lp-purple-light-svg/>
+    }
+
+    <!--    <div class="test">-->
+    <!--        <picture class="preview-top">-->
+    <!--            <source-->
+    <!--                sizes="(min-width: 768px) 675px, 316px"-->
+    <!--                srcset="/assets/preview/dashboard/dashboard.webp 316w, /assets/preview/dashboard/dashboard@2x.webp 675w"-->
+    <!--                type="image/webp">-->
+    <!--            <img alt="" sizes="(min-width: 768px) 675px, 316px"-->
+    <!--                 src="/assets/preview/dashboard/dashboard.png"-->
+    <!--                 srcset="/assets/preview/dashboard/dashboard.png 316w, /assets/preview/dashboard/dashboard@2x.png 675w">-->
+    <!--        </picture>-->
+    <!--        <picture class="preview-left">-->
+    <!--            <source-->
+    <!--                sizes="(min-width: 768px) 162px, 100px"-->
+    <!--                srcset="/assets/preview/task-details/task-details.webp 100w, /assets/preview/task-details/task-details@2x.webp 162w"-->
+    <!--                type="image/webp">-->
+    <!--            <img alt="" sizes="(min-width: 768px) 162px, 100px"-->
+    <!--                 src="/assets/preview/task-details/task-details.png"-->
+    <!--                 srcset="/assets/preview/task-details/task-details.png 100w, /assets/preview/task-details/task-details@2x.png 162w">-->
+    <!--        </picture>-->
+    <!--        <picture class="preview-right">-->
+    <!--            <source-->
+    <!--                sizes="(min-width: 768px) 162px, 100px"-->
+    <!--                srcset="/assets/preview/task-view/task-view.webp 100w, /assets/preview/task-view/task-view@2x.webp 162w"-->
+    <!--                type="image/webp">-->
+    <!--            <img alt="" sizes="(min-width: 768px) 162px, 100px"-->
+    <!--                 src="/assets/preview/task-view/task-view.png"-->
+    <!--                 srcset="/assets/preview/task-view/task-view.png 100w, /assets/preview/task-view/task-view@2x.png 162w">-->
+    <!--        </picture>-->
+    <!--    </div>-->
 </section>

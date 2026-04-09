@@ -5,28 +5,40 @@
     justify-content: center;
     margin-top: 3rem;
 
-    .preview-purple-bg {
+    @media (width >= 768px) {
+        min-width: 500px;
+        max-width: 500px;
+        margin-inline: auto;
+    }
+
+    @media (width >= 1200px) {
+        min-width: 900px;
+        max-width: 900px;
+        height: 515px;
+    }
+
+    .purple-svg {
         position: absolute;
-        top: 160px;
+        top: 96px;
         width: 19rem;
         height: 7rem;
         background-color: var(--color-blur-purple);
         filter: blur(36px);
     }
 
-    .preview-pink-bg {
+    .pink-svg {
         position: absolute;
         top: 256px;
-        left: 100px;
+        left: 0;
         width: 4rem;
         height: 4rem;
         background-color: var(--color-blur-rose);
         filter: blur(36px);
     }
 
-    .preview-green-bg {
+    .green-svg {
         position: absolute;
-        top: 232px;
+        top: 138px;
         right: 20px;
         width: 4.5rem;
         height: 14.25rem;
@@ -34,9 +46,9 @@
         filter: blur(36px);
     }
 
-    .preview-light-purple-bg {
+    .purple-light-svg {
         position: absolute;
-        top: 232px;
+        top: 138px;
         right: 20px;
         width: 4.5rem;
         height: 12.5rem;
@@ -44,29 +56,68 @@
         filter: blur(36px);
     }
 
+    .test {
+        position: relative;
+        z-index: 4;
+    }
+
     .preview-top {
         z-index: 2;
         min-width: 19.75rem;
         max-width: 19.75rem;
+
+        @media (width >= 768px) {
+            min-width: 500px;
+            max-width: 500px;
+        }
+
+        @media (width >= 1200px) {
+            min-width: 675px;
+            max-width: 675px;
+        }
     }
 
     .preview-left {
         position: absolute;
         top: 164px;
-        left: 64px;
+        left: 32px;
         z-index: 3;
         min-width: 6.25rem;
         max-width: 6.25rem;
         box-shadow: 0 4px 40px 0 var(--color-blur-green-20);
+
+        @media (width >= 768px) {
+            top: 132px;
+            left: -88px;
+            min-width: 162px;
+            max-width: 162px;
+        }
+
+        @media (width >= 1200px) {
+            top: 148px;
+            left: -103px;
+        }
     }
 
     .preview-right {
         position: absolute;
         top: 120px;
-        right: 28px;
+        right: 0;
         z-index: 3;
         min-width: 6.25rem;
         max-width: 6.25rem;
         box-shadow: 0 4px 40px 0 var(--color-blur-green-20);
+
+        @media (width >= 768px) {
+            top: 50px;
+            right: -80px;
+            min-width: 162px;
+            max-width: 162px;
+        }
+
+        @media (width >= 1200px) {
+            top: 112px;
+            right: -75px;
+        }
     }
 }
