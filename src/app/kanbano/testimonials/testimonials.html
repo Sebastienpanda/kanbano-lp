@@ -1,0 +1,30 @@
+<section class="testimonials">
+    <kanbano-lp-section-header
+        icon="/assets/testimonials/testimonials-icon.png"
+        title="Témoignages"/>
+
+    <div class="testimonials__list">
+        @for (testimonial of testimonials(); track testimonial.id) {
+            <article class="testimonials__card">
+                <div class="testimonials__quote-block">
+                    <img alt="" class="testimonials__quote-icon" src="/assets/testimonials/quote.png">
+                    <p class="testimonials__text">{{ testimonial.text }}</p>
+                </div>
+                <div class="testimonials__author">
+                    <div class="testimonials__author-info">
+                        <p class="testimonials__author-name">{{ testimonial.authorName }}</p>
+                        <p class="testimonials__author-role">{{ testimonial.authorRole }}</p>
+                    </div>
+                    <img [alt]="testimonial.authorName" [src]="testimonial.avatarSrc" class="testimonials__avatar">
+                </div>
+                <img alt="5 étoiles" class="testimonials__stars" src="/assets/testimonials/stars.png">
+            </article>
+        }
+    </div>
+
+    <div aria-hidden="true" class="testimonials__dots">
+        <span class="testimonials__dot testimonials__dot--active"></span>
+        <span class="testimonials__dot"></span>
+        <span class="testimonials__dot"></span>
+    </div>
+</section>
