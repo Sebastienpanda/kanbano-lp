@@ -6,6 +6,9 @@ import { GreenSvg } from './svg/green-svg';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { GreenDesktopSvg } from './svg/green-desktop-svg';
+import { PurpleDesktopSvg } from './svg/purple-desktop-svg';
+import { PinkDesktopSvg } from './svg/pink-desktop-svg';
 
 @Component({
     selector: 'kanbano-lp-preview',
@@ -13,7 +16,10 @@ import { map } from 'rxjs';
         PurpleSvg,
         PurpleLightSvg,
         PinkSvg,
-        GreenSvg
+        GreenSvg,
+        GreenDesktopSvg,
+        PurpleDesktopSvg,
+        PinkDesktopSvg
     ],
     templateUrl: './preview.html',
     styleUrl: './preview.css',

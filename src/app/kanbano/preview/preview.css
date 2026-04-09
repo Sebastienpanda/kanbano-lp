@@ -56,6 +56,23 @@
         filter: blur(36px);
     }
 
+    .green-desktop-svg {
+        position: absolute;
+        top: 130px;
+        right: 0;
+    }
+
+    .purple-desktop-svg {
+        position: absolute;
+        top: 50%;
+    }
+
+    .pink-desktop-svg {
+        position: absolute;
+        top: 130px;
+        left: 0;
+    }
+
     .test {
         position: relative;
         z-index: 4;
