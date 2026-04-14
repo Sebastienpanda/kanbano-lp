@@ -11,10 +11,10 @@
     border-radius: 2.5rem;
 
     &.primary {
-        color: var(--color-white);
-        background: var(--color-primary);
+        color: var(--kanbano-white);
+        background: var(--kanbano-primary);
         border: 0.125rem solid transparent;
-        box-shadow: 0 2px 10px 0 var(--color-shadow-teal);
+        box-shadow: 0 2px 10px 0 var(--kanbano-shadow-teal);
 
         &::before {
             --fill: linear-gradient(#ffffff 0 0);
@@ -23,10 +23,10 @@
             content: "";
             background: linear-gradient(
                 303deg,
-                var(--color-degrade-rose) -19.56%,
-                var(--color-degrade-purple) 26.11%,
-                var(--color-degrade-blue) 71.79%,
-                var(--color-degrade-green) 118.84%
+                var(--kanbano-rose) -19.56%,
+                var(--kanbano-gradient-purple) 26.11%,
+                var(--kanbano-gradient-blue) 71.79%,
+                var(--kanbano-green) 118.84%
             ) border-box;
             border: inherit;
             border-radius: inherit;
@@ -35,9 +35,9 @@
     }
 
     &.secondary {
-        color: var(--color-primary);
-        background-color: var(--color-primary-green);
-        border: 2px solid var(--color-stroke-green);
-        box-shadow: 0 2px 10px 0 var(--color-shadow-teal);
+        color: var(--kanbano-primary);
+        background-color: var(--kanbano-green);
+        border: 2px solid var(--kanbano-stroke-green);
+        box-shadow: 0 2px 10px 0 var(--kanbano-shadow-teal);
     }
 }
