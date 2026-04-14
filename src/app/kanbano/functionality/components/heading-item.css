@@ -1,0 +1,43 @@
+.heading {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2.5rem 2rem;
+    background: var(--kanbano-glass);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px 0 var(--kanbano-shadow-card);
+
+    @media (width >= 768px) {
+        min-width: 428px;
+        max-width: 428px;
+        margin-inline: auto;
+    }
+
+    & .heading__title {
+        font-family: var(--font-baloo), display, serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--kanbano-gradient-purple);
+    }
+
+    & .heading__description {
+        font-size: 1rem;
+        color: var(--kanbano-purple-text);
+
+        & .heading__description--bold {
+            font-weight: 700;
+        }
+    }
+
+    &.heading--workspace {
+        @media (width >= 1024px) {
+            position: absolute;
+            left: 0;
+            text-align: left;
+        }
+    }
+}
+
+

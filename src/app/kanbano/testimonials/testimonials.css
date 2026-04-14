@@ -18,9 +18,9 @@
         justify-content: center;
         padding: 2.5rem 2rem;
         overflow: hidden;
-        background: var(--color-glass-purple);
+        background: var(--kanbano-glass);
         border-radius: 0.75rem;
-        box-shadow: 0 4px 20px 0 var(--color-shadow-card);
+        box-shadow: 0 4px 20px 0 var(--kanbano-shadow-card);
     }
 
     .testimonials__quote-block {
@@ -41,7 +41,7 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5rem;
-        color: var(--color-text-purple);
+        color: var(--kanbano-purple-text);
     }
 
     .testimonials__author {
@@ -63,7 +63,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5rem;
-        color: var(--color-primary);
+        color: var(--kanbano-primary);
     }
 
     .testimonials__author-role {
@@ -71,7 +71,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5rem;
-        color: var(--color-degrade-purple);
+        color: var(--kanbano-gradient-purple);
     }
 
     .testimonials__avatar {
@@ -99,11 +99,11 @@
     .testimonials__dot {
         width: 1rem;
         height: 1rem;
-        background-color: var(--color-bullet-no-active-purple);
+        background-color: var(--kanbano-bullet-inactive);
         border-radius: 50%;
     }
 
     .testimonials__dot--active {
-        background-color: var(--color-bullet-active-rose);
+        background-color: var(--kanbano-rose);
     }
 }

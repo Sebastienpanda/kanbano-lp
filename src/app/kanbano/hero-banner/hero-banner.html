@@ -1,7 +1,17 @@
 <section class="hero-banner">
-    <div class="hero-banner__heading">
-        <h1>Gestion de projet <span>simple, </span> <span>sûre et </span><span>accessible</span></h1>
-        <div class="hero-banner__content">
+    @if (isDesktop()) {
+        <img alt="" class="hero-banner__img" fill ngSrc="/assets/background/fond-desktop.png" priority>
+    } @else {
+        <img alt="" class="hero-banner__img" fill ngSrc="/assets/background/fond-mobile.png" priority>
+    }
+
+    <div class="hero-banner__content">
+        <h1 class="hero-banner__heading hero-banner__heading--h1">Gestion de projet <span
+            class="hero-banner__heading hero-banner__heading--span">simple, </span>
+            <span class="hero-banner__heading hero-banner__heading--span">sûre et </span>
+            <span class="hero-banner__heading hero-banner__heading--span">accessible</span>
+        </h1>
+        <div class="hero-banner__description">
             <p>Le Kanban nouvelle génération qui booste votre productivité.</p>
             <p>Collaboratif, intelligent, et tellement simple.</p>
         </div>

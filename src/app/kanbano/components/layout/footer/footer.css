@@ -13,7 +13,7 @@
         width: 100%;
         padding: 1.25rem;
         overflow: hidden;
-        background-color: var(--color-footer-purple);
+        background-color: var(--kanbano-bg-footer);
         border-radius: 2rem 2rem 0 0;
     }
 
@@ -34,7 +34,7 @@
         font-size: 2.75rem;
         font-weight: 500;
         line-height: normal;
-        color: var(--color-primary);
+        color: var(--kanbano-primary);
 
         strong {
             font-weight: 700;
@@ -49,7 +49,7 @@
         justify-content: center;
         width: 100%;
         padding: 2rem;
-        background-color: var(--color-data-purple);
+        background-color: var(--kanbano-purple-deep);
         border-radius: 0.75rem;
     }
 
@@ -58,7 +58,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5rem;
-        color: var(--color-white);
+        color: var(--kanbano-white);
         text-align: center;
     }
 
@@ -73,14 +73,14 @@
         font-family: var(--font-mulish), sans-serif;
         font-size: 1rem;
         font-weight: 400;
-        color: var(--color-primary);
+        color: var(--kanbano-primary);
         outline: none;
-        background-color: var(--color-input-newsletters);
+        background-color: var(--kanbano-newsletter-input-bg);
         border: none;
         border-radius: 0.5rem;
 
         &::placeholder {
-            color: var(--color-grey-newsletters);
+            color: var(--kanbano-newsletter-text);
         }
     }
 
@@ -112,7 +112,7 @@
         font-family: var(--font-baloo), display, serif;
         font-size: 1rem;
         font-weight: 500;
-        color: var(--color-primary);
+        color: var(--kanbano-primary);
         text-decoration: none;
 
         &:hover {
