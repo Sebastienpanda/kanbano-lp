@@ -14,7 +14,7 @@
         width: 100%;
         padding: 2.5rem;
         overflow: hidden;
-        background-color: var(--color-primary);
+        background-color: var(--kanbano-primary);
         border-radius: 0.75rem;
     }
 
@@ -36,14 +36,14 @@
         font-size: 2rem;
         font-weight: 700;
         line-height: 2.25rem;
-        color: var(--color-white);
+        color: var(--kanbano-white);
         text-align: center;
     }
 
     .data-protection__highlight {
         font-family: var(--font-baloo), display, serif;
         font-weight: 800;
-        color: var(--color-degrade-green);
+        color: var(--kanbano-green);
     }
 
     .data-protection__list {
@@ -69,7 +69,7 @@
             font-size: 1.25rem;
             font-weight: 600;
             line-height: 1.5rem;
-            color: var(--color-white);
+            color: var(--kanbano-white);
         }
     }
 
