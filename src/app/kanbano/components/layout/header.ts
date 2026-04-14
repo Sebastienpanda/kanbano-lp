@@ -5,15 +5,16 @@ import {
     DOCUMENT,
     inject,
     OnDestroy,
-    signal
-} from '@angular/core';
-import { Logo } from '../../shared/icons/logo';
+    signal,
+} from "@angular/core";
+
+import { Logo } from "../../shared/icons/logo";
 
 @Component({
-    selector: 'kanbano-lp-header',
+    selector: "kanbano-lp-header",
     imports: [Logo],
-    templateUrl: './header.html',
-    styleUrl: './header.css',
+    templateUrl: "./header.html",
+    styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header implements OnDestroy {
@@ -22,12 +23,12 @@ export class Header implements OnDestroy {
 
     constructor() {
         afterNextRender(() => {
-            this.document.defaultView?.addEventListener('scroll', this.onScroll, {passive: true});
+            this.document.defaultView?.addEventListener("scroll", this.onScroll, { passive: true });
         });
     }
 
     ngOnDestroy() {
-        this.document.defaultView?.removeEventListener('scroll', this.onScroll);
+        this.document.defaultView?.removeEventListener("scroll", this.onScroll);
     }
 
     private onScroll = () => {

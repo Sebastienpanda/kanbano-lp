@@ -1,8 +1,8 @@
 .functionality {
-    position: relative;
-    padding-inline: 1rem;
     margin-top: 232px;
     overflow: hidden;
+    padding-inline: 1rem;
+    position: relative;
     text-align: center;
 
     @media (width >= 1024px) {
@@ -23,8 +23,8 @@
     }
 
     .workspace {
-        position: relative;
         padding-top: 2.25rem;
+        position: relative;
 
         @media (width >= 1024px) {
             height: 671px;
@@ -33,15 +33,15 @@
         }
 
         & .workspace__example-top {
-            position: relative;
-            z-index: 2;
-            min-width: 20.25rem;
-            max-width: 20.25rem;
-            margin-inline: auto;
-            margin-top: .75rem;
-            overflow: hidden;
             border-radius: 0.5rem;
             box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
+            margin-inline: auto;
+            margin-top: 0.75rem;
+            max-width: 20.25rem;
+            min-width: 20.25rem;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
 
             @media (width >= 768px) {
                 min-width: 394px;
@@ -206,7 +206,6 @@
     }
 
     .functionality__top {
-
         @media (width >= 1200px) {
             position: relative;
             min-height: 671px;
@@ -215,7 +214,6 @@
         }
 
         .functionality__heading--workspace {
-
             @media (width >= 1200px) {
                 position: absolute;
                 top: 0;

@@ -24,16 +24,24 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: inherit;
     font-weight: inherit;
-    text-wrap: balance;
     overflow-wrap: break-word;
+    text-wrap: balance;
 }
 
-p, li, figcaption, blockquote {
-    text-wrap: pretty;
+p,
+li,
+figcaption,
+blockquote {
     overflow-wrap: break-word;
+    text-wrap: pretty;
 }
 
 a {
@@ -91,7 +99,8 @@ textarea {
     resize: vertical;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 

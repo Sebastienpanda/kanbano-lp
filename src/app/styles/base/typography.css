@@ -1,16 +1,23 @@
 :root {
-    --font-baloo: 'Baloo 2';
-    --font-mulish: 'Mulish';
+    --font-baloo: "Baloo 2";
+    --font-mulish: "Mulish";
 }
-
 
 body {
     background-color: var(--kanbano-bg);
-    transition: background-color 350ms ease-in-out, color 350ms ease-in-out;
+    transition:
+        background-color 350ms ease-in-out,
+        color 350ms ease-in-out;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-baloo) display, serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:
+        var(--font-baloo) display,
+        serif;
     font-weight: 700;
 }

@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-functionality-icon',
+    selector: "kanbano-lp-functionality-icon",
     imports: [],
-    templateUrl: './functionality-icon.html',
-    styleUrl: './functionality-icon.css',
+    templateUrl: "./functionality-icon.html",
+    styleUrl: "./functionality-icon.css",
 })
-export class FunctionalityIcon {
-
-}
+export class FunctionalityIcon {}

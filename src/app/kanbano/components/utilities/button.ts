@@ -1,13 +1,13 @@
-import { Component, input } from '@angular/core';
+import { Component, input } from "@angular/core";
 
-type ButtonVariant = "primary" | "secondary"
+type ButtonVariant = "primary" | "secondary";
 
 @Component({
-    selector: 'kanbano-lp-button',
+    selector: "kanbano-lp-button",
     imports: [],
-    templateUrl: './button.html',
-    styleUrl: './button.css',
+    templateUrl: "./button.html",
+    styleUrl: "./button.css",
 })
 export class Button {
-    readonly variant = input<ButtonVariant>('primary')
+    readonly variant = input<ButtonVariant>("primary");
 }

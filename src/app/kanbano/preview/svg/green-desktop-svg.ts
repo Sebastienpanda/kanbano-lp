@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-green-desktop-svg',
+    selector: "kanbano-lp-green-desktop-svg",
     imports: [],
-    templateUrl: './green-desktop-svg.html',
+    templateUrl: "./green-desktop-svg.html",
     host: {
-        class: "green-desktop-svg"
-    }
+        class: "green-desktop-svg",
+    },
 })
-export class GreenDesktopSvg {
-
-}
+export class GreenDesktopSvg {}
