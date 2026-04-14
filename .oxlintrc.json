@@ -121,7 +121,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "app",
+                        "prefix": "kanbano-lp",
                         "style": "camelCase"
                     }
                 ],
