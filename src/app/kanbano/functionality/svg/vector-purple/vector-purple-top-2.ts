@@ -4,14 +4,12 @@ import { toSignal } from "@angular/core/rxjs-interop";
 import { map } from "rxjs";
 
 @Component({
-    selector: "kanbano-lp-vector-green-top",
+    selector: "kanbano-lp-vector-purple-top-2",
     imports: [],
-    templateUrl: "./vector-green-top.html",
-    host: {
-        class: "vector-green-top",
-    },
+    templateUrl: "./vector-purple-top-2.html",
+    styleUrl: "./vector-purple-top-2.css",
 })
-export class VectorGreenTop {
+export class VectorPurpleTop2 {
     protected readonly breakpoint = inject(BreakpointObserver);
 
     isDesktop = toSignal(this.breakpoint.observe("(min-width: 1024px)").pipe(map((r) => r.matches)), {

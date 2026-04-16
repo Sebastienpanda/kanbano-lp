@@ -1,0 +1,13 @@
+:host {
+    position: absolute;
+    top: 198px;
+    right: 0;
+    width: 266px;
+    height: 581px;
+    filter: blur(79px);
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
