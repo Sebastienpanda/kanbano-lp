@@ -1,19 +1,19 @@
 :host {
     position: absolute;
-    top: 642px;
-    left: 0;
-    width: 226px;
-    height: 324px;
+    top: 141px;
+    left: 106px;
+    width: 423px;
+    height: 315px;
     filter: blur(79px);
-    transform: rotate(-5.092deg);
 
     @media (width >= 768px) {
-        top: 668px;
-        left: 211px;
+        top: 106px;
+        left: 262px;
     }
 
     @media (width >= 1024px) {
-        display: none;
+        top: 165px;
+        left: initial;
     }
 }
 

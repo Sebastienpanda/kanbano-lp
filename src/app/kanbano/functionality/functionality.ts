@@ -1,15 +1,14 @@
 import { Component } from "@angular/core";
 
 import { CtaActions } from "../components/utilities/cta-actions";
-import { HeadingItem } from "./components/heading-item";
+import { FunctionalityParticipants } from "./components/participants/functionality-participants";
+import { FunctionalityTask } from "./components/task/functionality-task";
+import { FunctionalityWorkspace } from "./components/workspace/functionality-workspace";
 import { FunctionalityIcon } from "./icons/functionality-icon";
-import { VectorBlueBottom } from "./svg/vector-blue-bottom";
-import { VectorGreenTop } from "./svg/vector-green-top";
-import { VectorPurpleTop2 } from "./svg/vector-purple-top-2";
 
 @Component({
     selector: "kanbano-lp-functionality",
-    imports: [FunctionalityIcon, CtaActions, HeadingItem, VectorGreenTop, VectorPurpleTop2, VectorBlueBottom],
+    imports: [FunctionalityIcon, CtaActions, FunctionalityWorkspace, FunctionalityTask, FunctionalityParticipants],
     templateUrl: "./functionality.html",
     styleUrl: "./functionality.css",
 })

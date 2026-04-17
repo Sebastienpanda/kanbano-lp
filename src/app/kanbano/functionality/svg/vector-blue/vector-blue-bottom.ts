@@ -1,7 +1,4 @@
-import { BreakpointObserver } from "@angular/cdk/layout";
-import { Component, inject } from "@angular/core";
-import { toSignal } from "@angular/core/rxjs-interop";
-import { map } from "rxjs";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "kanbano-lp-vector-blue-bottom",
@@ -9,10 +6,4 @@ import { map } from "rxjs";
     templateUrl: "./vector-blue-bottom.html",
     styleUrl: "./vector-blue-bottom.css",
 })
-export class VectorBlueBottom {
-    protected readonly breakpoint = inject(BreakpointObserver);
-
-    isDesktop = toSignal(this.breakpoint.observe("(min-width: 1024px)").pipe(map((r) => r.matches)), {
-        initialValue: false,
-    });
-}
+export class VectorBlueBottom {}

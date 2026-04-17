@@ -6,16 +6,25 @@
     height: 418px;
     filter: blur(79px);
 
-    @media (width >= 1024px) {
-        left: -110px;
+    @media (width >= 768px) {
+        left: 162px;
     }
 
-    @media (width >= 1200px) {
-        left: -150px;
+    @media (width >= 1024px) {
+        top: 50px;
+        left: 38px;
+        width: 390px;
+        height: 599px;
     }
 }
 
 svg {
     width: 100%;
     height: 100%;
+}
+
+:host(.hide-desktop) {
+    @media (width >= 1024px) {
+        display: none;
+    }
 }
