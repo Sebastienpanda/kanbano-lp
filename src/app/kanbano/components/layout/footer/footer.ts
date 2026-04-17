@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-footer',
+    selector: "kanbano-lp-footer",
     imports: [],
-    templateUrl: './footer.html',
-    styleUrl: './footer.css',
+    templateUrl: "./footer.html",
+    styleUrl: "./footer.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Footer {
-}
+export class Footer {}

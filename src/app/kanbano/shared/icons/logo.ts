@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-logo',
+    selector: "kanbano-lp-logo",
     imports: [],
-    templateUrl: './logo.html',
+    templateUrl: "./logo.html",
 })
-export class Logo {
-
-}
+export class Logo {}

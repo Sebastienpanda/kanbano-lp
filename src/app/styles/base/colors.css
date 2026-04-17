@@ -29,7 +29,7 @@
     --kanbano-stroke-green: oklch(0.9231 0.1159 185.25); /* 80FFF0 */
     --kanbano-white: oklch(1 0 0); /* FFFFFF */
     --kanbano-white-10: oklch(1 0 0 / 0.1);
-    --kanbano-white-80: oklch(1 0 none / .8); /* rgb(255 255 255 / .8) */
+    --kanbano-white-80: oklch(1 0 none / 0.8); /* rgb(255 255 255 / .8) */
     --kanbano-yellow: oklch(0.8181 0.1674 86.23); /* F3BA00 */
 }
 

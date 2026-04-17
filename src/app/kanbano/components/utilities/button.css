@@ -1,36 +1,39 @@
 .btn {
-    position: relative;
-    width: 100%;
-    min-width: 15.5rem;
-    max-width: 15.5rem;
-    padding: 0.5rem 1.25rem;
+    border: 0.125rem solid transparent;
+    border-radius: 2.5rem;
     font-family: var(--font-baloo), display, serif;
     font-size: 1rem;
     font-weight: 700;
-    border: 0.125rem solid transparent;
-    border-radius: 2.5rem;
+    max-width: 15.5rem;
+    min-width: 15.5rem;
+    padding: 0.5rem 1.25rem;
+    position: relative;
+    width: 100%;
 
     &.primary {
-        color: var(--kanbano-white);
         background: var(--kanbano-primary);
         border: 0.125rem solid transparent;
         box-shadow: 0 2px 10px 0 var(--kanbano-shadow-teal);
+        color: var(--kanbano-white);
 
         &::before {
             --fill: linear-gradient(#ffffff 0 0);
-            position: absolute;
-            inset: -0.125rem;
-            content: "";
             background: linear-gradient(
-                303deg,
-                var(--kanbano-rose) -19.56%,
-                var(--kanbano-gradient-purple) 26.11%,
-                var(--kanbano-gradient-blue) 71.79%,
-                var(--kanbano-green) 118.84%
-            ) border-box;
+                    303deg,
+                    var(--kanbano-rose) -19.56%,
+                    var(--kanbano-gradient-purple) 26.11%,
+                    var(--kanbano-gradient-blue) 71.79%,
+                    var(--kanbano-green) 118.84%
+                )
+                border-box;
             border: inherit;
             border-radius: inherit;
-            mask: var(--fill) exclude, var(--fill) padding-box;
+            content: "";
+            inset: -0.125rem;
+            mask:
+                var(--fill) exclude,
+                var(--fill) padding-box;
+            position: absolute;
         }
     }
 

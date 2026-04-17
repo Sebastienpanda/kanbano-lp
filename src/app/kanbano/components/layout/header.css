@@ -1,10 +1,13 @@
 .header {
+    height: 4rem;
     position: fixed;
     top: 0;
-    z-index: 1000;
+    transition:
+        background 0.3s ease,
+        backdrop-filter 0.3s ease,
+        border-color 0.3s ease;
     width: 100%;
-    height: 4rem;
-    transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+    z-index: 1000;
 
     &.scrolled {
         background: var(--kanbano-glass);
@@ -14,38 +17,39 @@
     }
 
     .header__inner {
-        display: flex;
         align-items: center;
+        display: flex;
         justify-content: space-between;
         padding: 0.75rem 1rem;
 
         .header__toggle {
+            height: 100%;
+            max-height: 2.25rem;
+            max-width: 2rem;
+            min-height: 2.25rem;
+            min-width: 2rem;
             position: relative;
             width: 100%;
-            min-width: 2rem;
-            max-width: 2rem;
-            height: 100%;
-            min-height: 2.25rem;
-            max-height: 2.25rem;
 
             .header__toggle-icon {
-                position: relative;
+                background-color: var(--kanbano-white);
                 display: block;
                 height: 100%;
-                min-height: 0.125rem;
                 max-height: 0.125rem;
-                background-color: var(--kanbano-white);
+                min-height: 0.125rem;
+                position: relative;
 
-                &::before, &::after {
-                    position: absolute;
-                    top: 0;
+                &::before,
+                &::after {
+                    background-color: var(--kanbano-white);
+                    content: "";
                     left: 0;
-                    min-width: 2rem;
+                    max-height: 0.125rem;
                     max-width: 2rem;
                     min-height: 0.125rem;
-                    max-height: 0.125rem;
-                    content: "";
-                    background-color: var(--kanbano-white);
+                    min-width: 2rem;
+                    position: absolute;
+                    top: 0;
                 }
 
                 &::before {

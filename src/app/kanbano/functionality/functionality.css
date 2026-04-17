@@ -1,6 +1,4 @@
 .functionality {
-    position: relative;
-    padding-inline: 1rem;
     margin-top: 232px;
     overflow: hidden;
     text-align: center;
@@ -20,117 +18,6 @@
         font-size: 2.75rem;
         font-weight: 700;
         color: var(--kanbano-gradient-purple);
-    }
-
-    .workspace {
-        position: relative;
-        padding-top: 2.25rem;
-
-        @media (width >= 1024px) {
-            height: 671px;
-            min-height: 671px;
-            max-height: 671px;
-        }
-
-        & .workspace__example-top {
-            position: relative;
-            z-index: 2;
-            min-width: 20.25rem;
-            max-width: 20.25rem;
-            margin-inline: auto;
-            margin-top: .75rem;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-
-            @media (width >= 768px) {
-                min-width: 394px;
-                max-width: 394px;
-            }
-
-            @media (width >= 1024px) {
-                top: 186px;
-                left: 82px;
-                margin-inline: 0;
-                margin-top: 0;
-            }
-        }
-
-        & .workspace__example-middle {
-            position: absolute;
-            top: 441px;
-            left: 40px;
-            z-index: 3;
-            min-width: 16.5rem;
-            max-width: 16.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-
-            @media (width >= 768px) {
-                top: 480px;
-                left: 228px;
-            }
-
-            @media (width >= 1024px) {
-                top: 440px;
-                left: 322px;
-            }
-        }
-
-        & .workspace__example-bottom {
-            min-width: 17.75rem;
-            max-width: 17.75rem;
-            margin-inline: auto;
-            margin-top: 240px;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-
-            @media (width >= 1024px) {
-                position: absolute;
-                top: 150px;
-                right: 114px;
-                margin-inline: 0;
-                margin-top: 0;
-            }
-
-            @media (width >= 1200px) {
-                right: 175px;
-            }
-        }
-    }
-
-    .functionality__tasks-block {
-        position: relative;
-        min-height: 448px;
-        margin-top: 1rem;
-
-        .functionality__tasks-main {
-            position: relative;
-            z-index: 2;
-            min-width: 20.5rem;
-            max-width: 20.5rem;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-        }
-
-        .functionality__tasks-side-right {
-            position: absolute;
-            top: 232px;
-            right: 8px;
-            z-index: 3;
-            min-width: 12.5rem;
-            max-width: 12.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-blue);
-        }
-
-        .functionality__tasks-side-left {
-            position: absolute;
-            top: 256px;
-            left: 0;
-            z-index: 3;
-            min-width: 9.25rem;
-            max-width: 9.25rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-        }
     }
 
     .functionality__participants-block {
@@ -179,34 +66,7 @@
         margin-bottom: 2rem;
     }
 
-    .vector-green-top {
-        position: absolute;
-        top: 200px;
-        left: 0;
-
-        @media (width >= 1024px) {
-            left: -110px;
-        }
-
-        @media (width >= 1200px) {
-            left: -150px;
-        }
-    }
-
-    .vector-purple-top-2 {
-        position: absolute;
-        top: 300px;
-        right: 0;
-    }
-
-    .vector-blue-bottom {
-        position: absolute;
-        top: 824px;
-        left: -112px;
-    }
-
     .functionality__top {
-
         @media (width >= 1200px) {
             position: relative;
             min-height: 671px;
@@ -215,7 +75,6 @@
         }
 
         .functionality__heading--workspace {
-
             @media (width >= 1200px) {
                 position: absolute;
                 top: 0;

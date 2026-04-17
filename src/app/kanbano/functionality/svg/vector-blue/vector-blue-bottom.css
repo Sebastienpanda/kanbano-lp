@@ -1,0 +1,23 @@
+:host {
+    position: absolute;
+    top: 642px;
+    left: 0;
+    width: 226px;
+    height: 324px;
+    filter: blur(79px);
+    transform: rotate(-5.092deg);
+
+    @media (width >= 768px) {
+        top: 668px;
+        left: 211px;
+    }
+
+    @media (width >= 1024px) {
+        display: none;
+    }
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}

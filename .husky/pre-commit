@@ -1,1 +1,2 @@
-ng lint --fix
+pnpm run lint:fix
+pnpm run fmt

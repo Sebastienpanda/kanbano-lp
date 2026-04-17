@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-section-header',
+    selector: "kanbano-lp-section-header",
     imports: [],
-    templateUrl: './section-header.html',
-    styleUrl: './section-header.css',
+    templateUrl: "./section-header.html",
+    styleUrl: "./section-header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionHeader {

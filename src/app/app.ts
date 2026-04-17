@@ -1,12 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
-    selector: 'kanbano-lp-root',
-    imports: [
-        RouterOutlet
-    ],
-    templateUrl: './app.html',
+    selector: "kanbano-lp-root",
+    imports: [RouterOutlet],
+    templateUrl: "./app.html",
 })
-export class App {
-}
+export class App {}

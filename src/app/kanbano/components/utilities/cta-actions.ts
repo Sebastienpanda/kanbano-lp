@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Button } from './button';
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+
+import { Button } from "./button";
 
 @Component({
-    selector: 'kanbano-lp-cta-actions',
+    selector: "kanbano-lp-cta-actions",
     imports: [Button],
-    templateUrl: './cta-actions.html',
-    styleUrl: './cta-actions.css',
+    templateUrl: "./cta-actions.html",
+    styleUrl: "./cta-actions.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CtaActions {
-}
+export class CtaActions {}
