@@ -94,6 +94,10 @@
             @media (width >= 1024px) {
                 right: 28px;
             }
+
+            @media (width >= 1200px) {
+                right: 160px;
+            }
         }
     }
 }
