@@ -5,5 +5,6 @@ import { Component } from "@angular/core";
     imports: [],
     templateUrl: "./vector-blue-bottom.html",
     styleUrl: "./vector-blue-bottom.css",
+    host: { "aria-hidden": "true" },
 })
 export class VectorBlueBottom {}

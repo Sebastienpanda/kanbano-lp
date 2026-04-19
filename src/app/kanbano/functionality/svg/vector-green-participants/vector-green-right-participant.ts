@@ -8,6 +8,7 @@ import { map } from "rxjs";
     imports: [],
     templateUrl: "./vector-green-right-participant.html",
     styleUrl: "./vector-green-right-participant.css",
+    host: { "aria-hidden": "true" },
 })
 export class VectorGreenRightParticipant {
     protected readonly breakpoint = inject(BreakpointObserver);

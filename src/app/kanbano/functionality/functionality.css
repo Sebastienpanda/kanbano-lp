@@ -1,5 +1,4 @@
 .functionality {
-    margin-top: 232px;
     overflow: hidden;
     text-align: center;
 
@@ -20,61 +19,57 @@
         color: var(--kanbano-gradient-purple);
     }
 
-    .functionality__participants-block {
+    & .functionality__participants-block {
         position: relative;
         min-height: 420px;
         margin-top: 1rem;
 
-        .functionality__participants-main {
+        & .functionality__participants-main {
             position: relative;
-            z-index: 2;
-            min-width: 19.25rem;
-            max-width: 19.25rem;
+            z-index: var(--kanbano-z-overlay);
+            width: 19.25rem;
             margin-inline: auto;
             box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
         }
 
-        .functionality__participants-invitation {
+        & .functionality__participants-invitation {
             position: absolute;
             top: 244px;
             left: 50%;
-            z-index: 3;
-            min-width: 15.25rem;
-            max-width: 15.25rem;
+            z-index: calc(var(--kanbano-z-overlay) + 1);
+            width: 15.25rem;
             box-shadow: 0 4px 100px 0 var(--kanbano-green-40);
             transform: translateX(-50%);
         }
 
-        .functionality__participants-profil {
+        & .functionality__participants-profil {
             position: absolute;
             bottom: -212px;
             left: 50%;
-            z-index: 3;
-            min-width: 16.5rem;
-            max-width: 16.5rem;
+            z-index: calc(var(--kanbano-z-overlay) + 1);
+            width: 16.5rem;
             box-shadow: 0 4px 100px 0 var(--kanbano-shadow-blue);
             transform: translateX(-50%);
         }
     }
 
-    .functionality__heading--participants {
+    & .functionality__heading--participants {
         margin-top: 248px;
     }
 
-    .functionality__actions {
+    & .functionality__actions {
         margin-top: 16rem;
         margin-bottom: 2rem;
     }
 
-    .functionality__top {
+    & .functionality__top {
         @media (width >= 1200px) {
             position: relative;
-            min-height: 671px;
-            max-height: 671px;
+            height: 671px;
             padding-inline: 100px;
         }
 
-        .functionality__heading--workspace {
+        & .functionality__heading--workspace {
             @media (width >= 1200px) {
                 position: absolute;
                 top: 0;

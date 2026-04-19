@@ -8,7 +8,7 @@ import { map } from "rxjs";
     imports: [],
     templateUrl: "./vector-green-top.html",
     styleUrl: "./vector-green-top.css",
-    host: { "[class.hide-desktop]": "hideOnDesktop()" },
+    host: { "aria-hidden": "true", "[class.hide-desktop]": "hideOnDesktop()" },
 })
 export class VectorGreenTop {
     hideOnDesktop = input<boolean>(false);

@@ -12,44 +12,8 @@
     />
 
     <div class="example-task">
-        <picture class="example-task-top">
-            <source
-                sizes="(min-width: 768px) 382px, 330px"
-                srcset="
-                    /assets/functionality/task/task_view.webp    330w,
-                    /assets/functionality/task/task_view@2x.webp 382w
-                "
-                type="image/webp"
-            />
-            <img
-                alt=""
-                sizes="(min-width: 768px) 382px, 330px"
-                src="/assets/functionality/task/task_view.png"
-                srcset="/assets/functionality/task/task_view.png 330w, /assets/functionality/task/task_view@2x.png 382w"
-            />
-        </picture>
-        <picture class="example-task-right">
-            <source srcset="/assets/functionality/task/task_create.webp" type="image/webp" />
-            <img alt="" src="/assets/functionality/task/task_create.png" />
-        </picture>
-        <picture class="example-task-left">
-            <source
-                sizes="(min-width: 768px) 149px, 192px"
-                srcset="
-                    /assets/functionality/task/task_columns_view.webp    149w,
-                    /assets/functionality/task/task_columns_view@2x.webp 192w
-                "
-                type="image/webp"
-            />
-            <img
-                alt=""
-                sizes="(min-width: 768px) 149px, 192px"
-                src="/assets/functionality/task/task_columns_view.png"
-                srcset="
-                    /assets/functionality/task/task_columns_view.png    149w,
-                    /assets/functionality/task/task_columns_view@2x.png 192w
-                "
-            />
-        </picture>
+        <kanbano-lp-task-view-svg class="example-task-top" />
+        <kanbano-lp-task-create-svg class="example-task-right" />
+        <kanbano-lp-task-columns-view-svg class="example-task-left" />
     </div>
 </section>
