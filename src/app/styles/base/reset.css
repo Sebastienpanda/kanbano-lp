@@ -32,16 +32,16 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
-    overflow-wrap: break-word;
     text-wrap: balance;
+    overflow-wrap: break-word;
 }
 
 p,
 li,
 figcaption,
 blockquote {
-    overflow-wrap: break-word;
     text-wrap: pretty;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -113,7 +113,7 @@ code,
 kbd,
 samp,
 pre {
-    font-family: var(--font-mulish), sans-serif;
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }
 
 pre {
