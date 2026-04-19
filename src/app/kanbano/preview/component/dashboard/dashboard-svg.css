@@ -1,0 +1,10 @@
+:host {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    width: 100%;
+}
+
+svg {
+    width: 100%;
+}

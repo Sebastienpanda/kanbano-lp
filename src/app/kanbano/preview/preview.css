@@ -6,173 +6,97 @@
     margin-top: -8rem;
 
     @media (width >= 48em) {
-        min-width: 500px;
-        max-width: 500px;
-        margin-inline: auto;
         margin-top: -6rem;
     }
 
-    @media (width >= 75em) {
-        min-width: 900px;
-        max-width: 900px;
-        height: 515px;
-        margin-top: -12rem;
+    @media (width >= 64em) {
+        margin-top: -8rem;
     }
 
-    & .preview__purple {
-        position: absolute;
-        top: 96px;
-        width: 302px;
-        min-width: 302px;
-        max-width: 302px;
-        height: 114px;
-        min-height: 114px;
-        max-height: 114px;
-        background-color: var(--kanbano-purple-muted);
-        filter: blur(37px);
-
-        @media (width >= 75em) {
-            top: 272px;
-            width: 646px;
-            min-width: 646px;
-            max-width: 646px;
-            height: 244px;
-            min-height: 244px;
-            max-height: 244px;
-        }
-    }
-
-    & .preview__pink {
-        position: absolute;
-        top: 208px;
-        left: 98px;
-        width: 66px;
-        min-width: 66px;
-        max-width: 66px;
-        height: 66px;
-        min-height: 66px;
-        max-height: 66px;
-        background-color: var(--kanbano-rose);
-        filter: blur(37px);
-
-        @media (width >= 75em) {
-            top: 157px;
-            left: 41px;
-            width: 244px;
-            min-width: 244px;
-            max-width: 244px;
-            height: 244px;
-            min-height: 244px;
-            max-height: 244px;
-        }
-    }
-
-    & .preview__green {
-        position: absolute;
-        top: 138px;
-        right: 20px;
-        width: 73px;
-        min-width: 73px;
-        max-width: 73px;
-        height: 229px;
-        min-height: 229px;
-        max-height: 229px;
-        background-color: var(--kanbano-green-40);
-        filter: blur(37px);
-
-        @media (width >= 75em) {
-            width: 155px;
-            min-width: 155px;
-            max-width: 155px;
-            height: 483px;
-            min-height: 483px;
-            max-height: 483px;
-        }
-    }
-
-    & .preview__purple-right {
-        position: absolute;
-        top: 138px;
-        right: 20px;
-        width: 73px;
-        min-width: 73px;
-        max-width: 73px;
-        height: 199px;
-        min-height: 199px;
-        max-height: 199px;
-        background-color: var(--kanbano-purple-muted);
-        filter: blur(37px);
-
-        @media (width >= 75em) {
-            display: none;
-        }
-    }
-
-    & .preview__images {
+    .container-svg {
         position: relative;
-        z-index: 4;
+        width: 350px;
+        height: 468px;
 
-        & .preview__images-top {
-            z-index: 2;
-            min-width: 316px;
-            max-width: 316px;
+        @media (width >= 48em) {
+            width: 500px;
+            height: 758px;
+        }
 
-            @media (width >= 48em) {
-                min-width: 500px;
-                max-width: 500px;
-            }
+        @media (width >= 64em) {
+            width: 900px;
+            height: 626px;
+        }
 
-            @media (width >= 75em) {
-                min-width: 675px;
-                max-width: 675px;
+        & .preview__purple {
+            position: absolute;
+            top: 152px;
+            left: 50%;
+            width: 302px;
+            height: 114px;
+            background-color: var(--kanbano-purple-muted);
+            filter: blur(37px);
+            transform: translateX(-50%);
+
+            @media (width >= 64em) {
+                top: 308px;
+                width: 646px;
+                height: 244px;
             }
         }
 
-        & .preview__images-left {
+        & .preview__pink {
             position: absolute;
-            top: 164px;
-            left: 32px;
-            z-index: 3;
-            min-width: 100px;
-            max-width: 100px;
-            box-shadow: 0 4px 40px 0 var(--kanbano-green-20);
+            top: 208px;
+            left: 60px;
+            width: 66px;
+            height: 66px;
+            background-color: var(--kanbano-rose);
+            filter: blur(37px);
 
             @media (width >= 48em) {
-                top: 132px;
-                left: -88px;
-                min-width: 162px;
-                max-width: 162px;
-            }
-
-            @media (width >= 75em) {
-                top: 148px;
-                left: -103px;
-            }
-        }
-
-        & .preview__images-right {
-            position: absolute;
-            top: 120px;
-            right: 0;
-            z-index: 3;
-            min-width: 100px;
-            max-width: 100px;
-            box-shadow: 0 4px 40px 0 var(--kanbano-green-20);
-
-            @media (width >= 48em) {
-                top: 50px;
-                right: -80px;
-                min-width: 162px;
-                max-width: 162px;
+                top: 157px;
+                left: 18px;
+                width: 244px;
+                height: 244px;
             }
 
             @media (width >= 64em) {
-                right: -108px;
+                top: 212px;
+                left: 50px;
+            }
+        }
+
+        & .preview__green {
+            position: absolute;
+            top: 160px;
+            right: 10px;
+            width: 73px;
+            height: 229px;
+            background-color: var(--kanbano-green-40);
+            filter: blur(37px);
+
+            @media (width >= 48em) {
+                width: 155px;
+                height: 483px;
             }
 
-            @media (width >= 75em) {
-                top: 52px;
-                right: -75px;
+            @media (width >= 64em) {
+                right: 0;
+            }
+        }
+
+        & .preview__purple-right {
+            position: absolute;
+            top: 152px;
+            right: 20px;
+            width: 73px;
+            height: 199px;
+            background-color: var(--kanbano-purple-muted);
+            filter: blur(37px);
+
+            @media (width >= 48em) {
+                display: none;
             }
         }
     }

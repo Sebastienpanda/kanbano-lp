@@ -1,0 +1,19 @@
+:host {
+    position: absolute;
+    top: 132px;
+    right: 0;
+    z-index: 6;
+    display: block;
+
+    @media (width >= 48em) {
+        top: 190px;
+    }
+
+    @media (width >= 64em) {
+        top: 68px;
+    }
+}
+
+svg {
+    width: 100%;
+}
