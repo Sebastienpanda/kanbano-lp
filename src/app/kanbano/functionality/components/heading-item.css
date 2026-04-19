@@ -27,7 +27,7 @@
     }
 
     & .heading__description {
-        font-size: 1rem;
+        font-size: 1.125rem;
         color: var(--kanbano-purple-text);
 
         & .heading__description--bold {
