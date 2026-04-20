@@ -3,17 +3,21 @@
     bottom: 50px;
     z-index: 6;
     display: block;
-    width: 100%;
+    width: 264px;
+    margin-inline: auto;
     filter: drop-shadow(0 4px 100px rgba(155, 43, 229, 0.41));
 
     @media (width >= 48em) {
-        right: 32px;
+        right: 0;
         bottom: 58px;
+        left: 206px;
+        margin-inline: 0;
     }
 
     @media (width >= 64em) {
         top: 172px;
         bottom: 0;
+        left: 353px;
     }
 }
 
