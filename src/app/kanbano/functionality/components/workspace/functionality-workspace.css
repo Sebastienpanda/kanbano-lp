@@ -3,6 +3,10 @@
     padding-inline: 1rem;
     padding-top: 2.25rem;
 
+    @media (width >= 64em) {
+        height: 786px;
+    }
+
     & .container-workspace {
         position: relative;
     }
