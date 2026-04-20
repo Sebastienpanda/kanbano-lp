@@ -17,6 +17,10 @@
         left: 381px;
         margin-top: 0;
     }
+
+    @media (width >= 75em) {
+        left: 456px;
+    }
 }
 
 svg {

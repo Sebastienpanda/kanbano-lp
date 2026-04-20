@@ -16,6 +16,10 @@
         bottom: 0;
         left: 600px;
     }
+
+    @media (width >= 75em) {
+        left: 690px;
+    }
 }
 
 svg {
