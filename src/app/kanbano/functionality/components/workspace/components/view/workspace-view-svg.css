@@ -1,10 +1,17 @@
 :host {
+    position: relative;
+    bottom: 42px;
+    z-index: 7;
     display: block;
-    width: 100%;
+    width: 285px;
+    filter: drop-shadow(0 4px 100px rgba(155, 43, 229, 0.41));
+
+    @media (width >= 64em) {
+        bottom: 412px;
+        left: 638px;
+    }
 }
 
 svg {
-    display: block;
     width: 100%;
-    height: auto;
 }
