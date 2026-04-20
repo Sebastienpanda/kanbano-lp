@@ -4,9 +4,11 @@
     left: 38px;
     z-index: 6;
     display: block;
+    width: 100px;
 
     @media (width >= 48em) {
         top: 316px;
+        width: 160px;
     }
 
     @media (width >= 64em) {

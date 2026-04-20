@@ -1,8 +1,17 @@
 :host {
     position: relative;
     z-index: 4;
-    display: inline-block;
-    width: 100%;
+    display: block;
+    width: 350px;
+    margin-inline: auto;
+
+    @media (width >= 48em) {
+        width: 500px;
+    }
+
+    @media (width >= 64em) {
+        width: 676px;
+    }
 }
 
 svg {
