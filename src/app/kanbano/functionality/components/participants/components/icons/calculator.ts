@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'kanbano-lp-calculator-icon',
+    selector: "kanbano-lp-calculator-icon",
     imports: [],
-    templateUrl: './calculator.html',
-    styleUrl: './calculator.css',
+    templateUrl: "./calculator.html",
+    styleUrl: "./calculator.css",
 })
 export class Calculator {
-
 }
