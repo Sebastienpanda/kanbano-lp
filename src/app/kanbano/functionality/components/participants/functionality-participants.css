@@ -14,5 +14,13 @@
 
     & .container-participant {
         position: relative;
+
+        @media (width >= 48em) {
+            padding-top: 0.75rem;
+        }
+
+        @media (width >= 64em) {
+            padding-top: 0;
+        }
     }
 }

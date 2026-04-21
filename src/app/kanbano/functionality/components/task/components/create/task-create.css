@@ -12,12 +12,12 @@
     }
 
     @media (width >= 64em) {
-        top: 99px;
+        top: 108px;
         bottom: 0;
         left: 600px;
     }
 
     @media (width >= 75em) {
-        left: 690px;
+        left: 550px;
     }
 }

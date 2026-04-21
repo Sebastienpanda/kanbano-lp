@@ -1,0 +1,8 @@
+:host {
+    display: none;
+
+    @media (width >= 64em) {
+        position: absolute;
+        display: block;
+    }
+}

@@ -8,7 +8,7 @@ import {
     signal,
 } from "@angular/core";
 
-import { Logo } from "../../shared/icons/logo";
+import { Logo } from "@shared/icons/logo";
 
 @Component({
     selector: "kanbano-lp-header",
