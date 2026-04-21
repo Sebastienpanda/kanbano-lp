@@ -1,63 +1,12 @@
 <section class="preview">
-    <div class="preview__purple"></div>
-    <div class="preview__pink"></div>
-    <div class="preview__green"></div>
-    <div class="preview__purple-right"></div>
+    <div class="container-preview">
+        <div aria-hidden="true" class="preview__purple"></div>
+        <div aria-hidden="true" class="preview__pink"></div>
+        <div aria-hidden="true" class="preview__green"></div>
+        <div aria-hidden="true" class="preview__purple-right"></div>
 
-    <div class="preview__images">
-        <picture class="preview__images-top">
-            <source
-                sizes="(min-width: 768px) 675px, 316px"
-                srcset="/assets/preview/dashboard/dashboard.webp 316w, /assets/preview/dashboard/dashboard@2x.webp 675w"
-                type="image/webp"
-            />
-            <img
-                alt=""
-                decoding="sync"
-                fetchpriority="high"
-                loading="eager"
-                sizes="(min-width: 768px) 675px, 316px"
-                src="/assets/preview/dashboard/dashboard.png"
-                srcset="/assets/preview/dashboard/dashboard.png 316w, /assets/preview/dashboard/dashboard@2x.png 675w"
-            />
-        </picture>
-        <picture class="preview__images-left">
-            <source
-                sizes="(min-width: 768px) 162px, 100px"
-                srcset="
-                    /assets/preview/task-details/task-details.webp    100w,
-                    /assets/preview/task-details/task-details@2x.webp 162w
-                "
-                type="image/webp"
-            />
-            <img
-                alt=""
-                decoding="sync"
-                fetchpriority="high"
-                loading="eager"
-                sizes="(min-width: 768px) 162px, 100px"
-                src="/assets/preview/task-details/task-details.png"
-                srcset="
-                    /assets/preview/task-details/task-details.png    100w,
-                    /assets/preview/task-details/task-details@2x.png 162w
-                "
-            />
-        </picture>
-        <picture class="preview__images-right">
-            <source
-                sizes="(min-width: 768px) 162px, 100px"
-                srcset="/assets/preview/task-view/task-view.webp 100w, /assets/preview/task-view/task-view@2x.webp 162w"
-                type="image/webp"
-            />
-            <img
-                alt=""
-                decoding="sync"
-                fetchpriority="high"
-                loading="eager"
-                sizes="(min-width: 768px) 162px, 100px"
-                src="/assets/preview/task-view/task-view.png"
-                srcset="/assets/preview/task-view/task-view.png 100w, /assets/preview/task-view/task-view@2x.png 162w"
-            />
-        </picture>
+        <kanbano-lp-dashboard />
+        <kanbano-lp-task-view />
+        <kanbano-lp-task-detail />
     </div>
 </section>

@@ -1,8 +1,8 @@
 .pricing {
+    padding: 2.5rem 1rem;
+    margin-block: 2.5rem;
     background-color: var(--kanbano-bg-footer);
     border-radius: 1.25rem;
-    margin-block: 2.5rem;
-    padding: 2.5rem 1rem;
 
     .pricing__subtitle {
         font-size: 1rem;
@@ -27,6 +27,8 @@
     }
 
     .pricing__card--premium {
+        position: relative;
+        margin-top: 72px;
         background:
             radial-gradient(
                     53.82% 36.75% at 50% 5.22%,
@@ -37,8 +39,6 @@
             var(--kanbano-gradient-radial-bottom);
         border: 4px solid var(--kanbano-rose);
         box-shadow: 0 0 20px 0 var(--kanbano-shadow-pink);
-        margin-top: 72px;
-        position: relative;
     }
 
     .pricing__tag {

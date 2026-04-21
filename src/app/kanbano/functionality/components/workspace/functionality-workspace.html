@@ -3,40 +3,15 @@
     <kanbano-lp-vector-purple-top-2 />
     <kanbano-lp-vector-blue-bottom />
 
-    <kanbano-lp-functionality-heading
-        bold="votre projet dès le début."
-        description="Fonctionnalité principale de Kanbano qui vous permet de créer facilement"
-        name="workspace"
-        title="Création de workspaces"
-    />
-
-    <div class="example">
-        <picture class="example-top">
-            <source
-                sizes="(min-width: 768px) 394px, 325px"
-                srcset="
-                    /assets/functionality/workspace/workspace_empty.webp    325w,
-                    /assets/functionality/workspace/workspace_empty@2x.webp 394w
-                "
-                type="image/webp"
-            />
-            <img
-                alt=""
-                sizes="(min-width: 768px) 394px, 325px"
-                src="/assets/functionality/workspace/workspace_empty.png"
-                srcset="
-                    /assets/functionality/workspace/workspace_empty.png    325w,
-                    /assets/functionality/workspace/workspace_empty@2x.png 394w
-                "
-            />
-        </picture>
-        <picture class="example-middle">
-            <source srcset="/assets/functionality/workspace/workspace_create.webp" type="image/webp" />
-            <img alt="" src="/assets/functionality/workspace/workspace_create.png" />
-        </picture>
-        <picture class="example-bottom">
-            <source srcset="/assets/functionality/workspace/workspace_view.webp" type="image/webp" />
-            <img alt="" src="/assets/functionality/workspace/workspace_view.png" />
-        </picture>
+    <div class="container-workspace">
+        <kanbano-lp-functionality-heading
+            bold="votre projet dès le début."
+            description="Fonctionnalité principale de Kanbano qui vous permet de créer facilement"
+            name="workspace"
+            title="Création de workspaces"
+        />
+        <kanbano-lp-workspace-empty />
+        <kanbano-lp-workspace-create />
+        <kanbano-lp-workspace-view />
     </div>
 </section>

@@ -1,0 +1,23 @@
+:host {
+    position: relative;
+    bottom: 49px;
+    left: 135px;
+    z-index: 4;
+    display: block;
+    width: 202px;
+    box-shadow: 0 4px 100px rgba(155, 43, 229, 0.41);
+
+    @media (width >= 48em) {
+        left: 358px;
+    }
+
+    @media (width >= 64em) {
+        top: 99px;
+        bottom: 0;
+        left: 600px;
+    }
+
+    @media (width >= 75em) {
+        left: 690px;
+    }
+}

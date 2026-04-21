@@ -1,20 +1,22 @@
 :root {
-    /* Espacements de base */
-
+    /* Niveaux z-index */
     --kanbano-spacing-1024: 64rem; /* 1024px */
     --kanbano-spacing-1100: 68.75rem; /* 1100px */
     --kanbano-spacing-12: 0.75rem; /* 12px */
     --kanbano-spacing-1200: 75rem; /* 1200px */
+
+    /* Espacements de base */
+
     --kanbano-spacing-1260: 78.75rem; /* 1260px */
     --kanbano-spacing-1440: 90rem; /* 1440px */
     --kanbano-spacing-16: 1rem; /* 16px */
     --kanbano-spacing-20: 1.25rem; /* 20px */
-
-    /* Largeurs / breakpoints */
     --kanbano-spacing-2200: 137.5rem; /* 2200px */
     --kanbano-spacing-24: 1.5rem; /* 24px */
     --kanbano-spacing-28: 1.75rem; /* 28px */
     --kanbano-spacing-32: 2rem; /* 32px */
+
+    /* Largeurs / breakpoints */
     --kanbano-spacing-3200: 200rem; /* 3200px */
     --kanbano-spacing-4: 0.25rem; /* 4px */
     --kanbano-spacing-632: 39.5rem; /* 632px */
@@ -25,4 +27,8 @@
     --kanbano-spacing-800: 50rem; /* 800px */
     --kanbano-spacing-864: 54rem; /* 864px */
     --kanbano-spacing-900: 56.25rem; /* 900px */
+    --kanbano-z-dropdown: 100;
+    --kanbano-z-header: 1000;
+    --kanbano-z-modal: 9000;
+    --kanbano-z-overlay: 10;
 }

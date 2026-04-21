@@ -1,0 +1,27 @@
+:host {
+    position: relative;
+    top: 34px;
+    z-index: 6;
+    display: block;
+    width: 242px;
+    margin-inline: auto;
+    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+
+    @media (width >= 48em) {
+        position: absolute;
+        top: initial;
+        right: 32px;
+        bottom: 220px;
+        margin-inline: 0;
+    }
+
+    @media (width >= 64em) {
+        top: 170px;
+        right: 157px;
+        bottom: initial;
+    }
+
+    @media (width >= 75em) {
+        right: 124px;
+    }
+}

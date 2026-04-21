@@ -1,0 +1,24 @@
+:host {
+    position: relative;
+    left: 6px;
+    z-index: 4;
+    display: block;
+    width: 330px;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+
+    @media (width >= 48em) {
+        left: 176px;
+        width: 382px;
+    }
+
+    @media (width >= 64em) {
+        top: 212px;
+        left: 381px;
+        margin-top: 0;
+    }
+
+    @media (width >= 75em) {
+        left: 456px;
+    }
+}

@@ -9,14 +9,14 @@
     border-radius: 0.75rem;
     box-shadow: 0 4px 20px 0 var(--kanbano-shadow-card);
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
         min-width: 428px;
         max-width: 428px;
         margin-inline: auto;
     }
 
-    @media (width >= 1024px) {
-        padding: 2.5rem 3.125rem 4.375rem 3.125rem;
+    @media (width >= 64em) {
+        padding: 2.5rem 3.125rem 4.375rem;
     }
 
     & .heading__title {
@@ -27,7 +27,7 @@
     }
 
     & .heading__description {
-        font-size: 1rem;
+        font-size: 1.125rem;
         color: var(--kanbano-purple-text);
 
         & .heading__description--bold {
@@ -36,7 +36,7 @@
     }
 
     &.heading--workspace {
-        @media (width >= 1024px) {
+        @media (width >= 64em) {
             position: absolute;
             left: 0;
             text-align: left;
@@ -44,10 +44,17 @@
     }
 
     &.heading--task {
-        @media (width >= 1024px) {
+        @media (width >= 64em) {
             position: absolute;
             right: 104px;
             text-align: right;
+        }
+    }
+
+    &.heading--participant {
+        @media (width >= 64em) {
+            min-width: 482px;
+            max-width: 482px;
         }
     }
 }

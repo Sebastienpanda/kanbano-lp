@@ -1,102 +1,19 @@
 .task {
     position: relative;
-    min-width: 375px;
-    max-width: 375px;
+    display: block;
+    height: 842px;
     padding-inline: 1rem;
-    padding-top: 4rem;
 
-    @media (width >= 768px) {
-        min-width: 768px;
-        max-width: 768px;
+    @media (width >= 64em) {
+        height: 632px;
     }
 
-    @media (width >= 1024px) {
-        min-width: 1000px;
-        max-width: 1000px;
-        height: 688px;
-        min-height: 688px;
-        max-height: 688px;
-    }
-
-    @media (width >= 1200px) {
-        min-width: 1100px;
-        max-width: 1100px;
-        padding-inline: 0;
-    }
-
-    & .example-task {
+    & .container-task {
         position: relative;
+        height: 842px;
 
-        & .example-task-top {
-            position: relative;
-            z-index: 2;
-            min-width: 20.5rem;
-            max-width: 20.5rem;
-            margin-inline: auto;
-            margin-top: 0.75rem;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-
-            @media (width >= 768px) {
-                top: 2px;
-                min-width: 382px;
-                max-width: 382px;
-            }
-
-            @media (width >= 1024px) {
-                top: 168px;
-                left: 80px;
-                margin-top: 0;
-            }
-        }
-
-        & .example-task-right {
-            position: absolute;
-            top: 232px;
-            right: 8px;
-            z-index: 3;
-            min-width: 12.5rem;
-            max-width: 12.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-blue);
-
-            @media (width >= 768px) {
-                top: 189px;
-                right: 129px;
-                min-width: 192px;
-                max-width: 192px;
-            }
-
-            @media (width >= 1024px) {
-                top: 350px;
-                right: 180px;
-            }
-        }
-
-        & .example-task-left {
-            position: relative;
-            top: 8px;
-            left: 0;
-            z-index: 3;
-            min-width: 9.25rem;
-            max-width: 9.25rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-
-            @media (width >= 768px) {
-                top: 24px;
-                left: 176px;
-                min-width: 192px;
-                max-width: 192px;
-            }
-
-            @media (width >= 1024px) {
-                top: -277px;
-                left: 108px;
-            }
-
-            @media (width >= 1200px) {
-                left: 168px;
-            }
+        @media (width >= 64em) {
+            height: 632px;
         }
     }
 }

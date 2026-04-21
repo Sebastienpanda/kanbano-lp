@@ -1,85 +1,14 @@
 .functionality {
-    margin-top: 232px;
     overflow: hidden;
     text-align: center;
 
-    @media (width >= 1024px) {
+    @media (width >= 64em) {
         overflow: initial;
     }
 
-    @media (width >= 1200px) {
-        min-width: 1100px;
-        max-width: 1100px;
+    @media (width >= 75em) {
+        min-width: 978px;
+        max-width: 978px;
         margin-inline: auto;
-    }
-
-    & .functionality__title {
-        margin-top: 1.25rem;
-        font-size: 2.75rem;
-        font-weight: 700;
-        color: var(--kanbano-gradient-purple);
-    }
-
-    .functionality__participants-block {
-        position: relative;
-        min-height: 420px;
-        margin-top: 1rem;
-
-        .functionality__participants-main {
-            position: relative;
-            z-index: 2;
-            min-width: 19.25rem;
-            max-width: 19.25rem;
-            margin-inline: auto;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
-        }
-
-        .functionality__participants-invitation {
-            position: absolute;
-            top: 244px;
-            left: 50%;
-            z-index: 3;
-            min-width: 15.25rem;
-            max-width: 15.25rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-green-40);
-            transform: translateX(-50%);
-        }
-
-        .functionality__participants-profil {
-            position: absolute;
-            bottom: -212px;
-            left: 50%;
-            z-index: 3;
-            min-width: 16.5rem;
-            max-width: 16.5rem;
-            box-shadow: 0 4px 100px 0 var(--kanbano-shadow-blue);
-            transform: translateX(-50%);
-        }
-    }
-
-    .functionality__heading--participants {
-        margin-top: 248px;
-    }
-
-    .functionality__actions {
-        margin-top: 16rem;
-        margin-bottom: 2rem;
-    }
-
-    .functionality__top {
-        @media (width >= 1200px) {
-            position: relative;
-            min-height: 671px;
-            max-height: 671px;
-            padding-inline: 100px;
-        }
-
-        .functionality__heading--workspace {
-            @media (width >= 1200px) {
-                position: absolute;
-                top: 0;
-                left: 102px;
-            }
-        }
     }
 }

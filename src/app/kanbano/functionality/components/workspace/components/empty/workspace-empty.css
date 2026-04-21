@@ -1,0 +1,22 @@
+:host {
+    position: relative;
+    z-index: 4;
+    display: block;
+    width: 325px;
+    margin-inline: auto;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+    filter: drop-shadow(0 4px 100px rgba(155, 43, 229, 0.41));
+
+    @media (width >= 48em) {
+        width: 386px;
+    }
+
+    @media (width >= 64em) {
+        top: 218px;
+        right: 0;
+        left: 102px;
+        margin-inline: 0;
+        margin-top: 0;
+    }
+}
