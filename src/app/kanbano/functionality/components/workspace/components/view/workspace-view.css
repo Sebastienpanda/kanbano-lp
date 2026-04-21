@@ -5,7 +5,7 @@
     z-index: 7;
     display: block;
     width: 285px;
-    filter: drop-shadow(0 4px 100px rgba(155, 43, 229, 0.41));
+    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
 
     @media (width >= 48em) {
         left: 200px;
@@ -15,8 +15,4 @@
         bottom: 412px;
         left: 638px;
     }
-}
-
-svg {
-    width: 100%;
 }
