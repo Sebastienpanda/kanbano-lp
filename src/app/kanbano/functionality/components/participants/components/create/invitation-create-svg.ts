@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-    selector: "kanbano-lp-invitation-create-svg",
+    selector: "kanbano-lp-create",
     imports: [],
     templateUrl: "./invitation-create-svg.html",
     styleUrl: "./invitation-create-svg.css",

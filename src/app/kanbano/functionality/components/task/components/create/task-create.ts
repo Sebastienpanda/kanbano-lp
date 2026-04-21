@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
-    selector: "kanbano-lp-task-create-svg",
+    selector: "kanbano-lp-task-create",
     imports: [],
-    templateUrl: "./task-create-svg.html",
-    styleUrl: "./task-create-svg.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: "./task-create.html",
+    styleUrl: "./task-create.css",
 })
-export class TaskCreateSvg {}
+export class TaskCreate {
+}
