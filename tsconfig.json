@@ -3,6 +3,18 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@shared/*": [
+                "src/app/kanbano/shared/*"
+            ],
+            "@components/*": [
+                "src/app/kanbano/components/*"
+            ],
+            "@kanbano/*": [
+                "src/app/kanbano/*"
+            ]
+        },
         "strict": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,

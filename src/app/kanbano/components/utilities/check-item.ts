@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
-import { CheckedIcon } from "../../hero-banner/icon/checked-icon";
+import { CheckedIcon } from "@kanbano/hero-banner/icon/checked-icon";
 
 @Component({
     selector: "kanbano-lp-check-item",

@@ -1,6 +1,6 @@
 import { Component, signal } from "@angular/core";
 
-import { CheckItem } from "../../components/utilities/check-item";
+import { CheckItem } from "@components/utilities/check-item";
 
 interface CheckedType {
     id: number;

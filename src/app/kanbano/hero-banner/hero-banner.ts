@@ -4,7 +4,7 @@ import { Component, inject } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { map } from "rxjs";
 
-import { CtaActions } from "../components/utilities/cta-actions";
+import { CtaActions } from "@components/utilities/cta-actions";
 import { Checked } from "./components/checked";
 
 @Component({
