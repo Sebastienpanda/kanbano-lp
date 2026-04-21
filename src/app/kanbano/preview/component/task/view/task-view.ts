@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "kanbano-lp-task-view-svg",
+    selector: "kanbano-lp-task-view",
     imports: [],
-    templateUrl: "./task-view-svg.html",
-    styleUrl: "./task-view-svg.css",
+    templateUrl: "./task-view.html",
+    styleUrl: "./task-view.css",
 })
-export class TaskViewSvg {}
+export class TaskView {
+}

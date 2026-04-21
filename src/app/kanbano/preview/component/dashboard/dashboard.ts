@@ -1,24 +1,10 @@
-import { BreakpointObserver } from "@angular/cdk/layout";
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { toSignal } from "@angular/core/rxjs-interop";
-import { map } from "rxjs";
+import { Component } from "@angular/core";
 
 @Component({
-    selector: "kanbano-lp-dashboard-svg",
+    selector: "kanbano-lp-dashboard",
     imports: [],
-    templateUrl: "./dashboard-svg.html",
-    styleUrl: "./dashboard-svg.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: "./dashboard.html",
+    styleUrl: "./dashboard.css",
 })
-export class DashboardSvg {
-    protected readonly breakpoint = inject(BreakpointObserver);
-
-    isDesktop = toSignal(this.breakpoint.observe("(min-width: 1024px)").pipe(map((r) => r.matches)), {
-        initialValue: false,
-    });
-
-    isTablet = toSignal(
-        this.breakpoint.observe("(min-width: 768px) and (max-width: 1023px)").pipe(map((r) => r.matches)),
-        { initialValue: false },
-    );
+export class Dashboard {
 }
