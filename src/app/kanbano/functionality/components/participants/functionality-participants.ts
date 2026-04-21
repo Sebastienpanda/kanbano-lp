@@ -3,8 +3,9 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { VectorGreenRightParticipant } from "../../svg/vector-green-participants/vector-green-right-participant";
 import { VectorPurpleLeftParticipant } from "../../svg/vector-purple-participants/vector-purple-left-participant";
 import { HeadingItem } from "../heading-item";
-import { OrganisationProfilSvg } from "./components/organisation-profil-svg/organisation-profil-svg";
-import { OrganisationViewSvg } from "./components/organisation-view-svg/organisation-view-svg";
+import { InvitationCreate } from "./components/create/invitation-create";
+import { OrganisationList } from "./components/list/organisation-list";
+import { OrganisationView } from "./components/view/organisation-view";
 
 @Component({
     selector: "kanbano-lp-functionality-participants",
@@ -12,8 +13,9 @@ import { OrganisationViewSvg } from "./components/organisation-view-svg/organisa
         HeadingItem,
         VectorGreenRightParticipant,
         VectorPurpleLeftParticipant,
-        OrganisationViewSvg,
-        OrganisationProfilSvg,
+        OrganisationList,
+        OrganisationView,
+        InvitationCreate,
     ],
     templateUrl: "./functionality-participants.html",
     styleUrl: "./functionality-participants.css",

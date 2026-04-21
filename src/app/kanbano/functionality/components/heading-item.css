@@ -50,4 +50,11 @@
             text-align: right;
         }
     }
+
+    &.heading--participant {
+        @media (width >= 64em) {
+            min-width: 482px;
+            max-width: 482px;
+        }
+    }
 }

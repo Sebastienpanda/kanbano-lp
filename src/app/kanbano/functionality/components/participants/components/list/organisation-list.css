@@ -1,0 +1,19 @@
+:host {
+    position: relative;
+    z-index: 6;
+    display: block;
+    width: 308px;
+    padding-top: 0.75rem;
+    margin-inline: auto;
+
+    @media (width >= 48em) {
+        left: 32px;
+        width: 562px;
+        margin-inline: 0;
+    }
+
+    @media (width >= 64em) {
+        bottom: 52px;
+        left: 0;
+    }
+}
