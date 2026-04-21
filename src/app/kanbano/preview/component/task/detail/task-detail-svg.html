@@ -1,47 +1,32 @@
-@if (isTablet()) {
-<svg
-    fill="none"
-    height="531"
-    viewBox="0 0 160 531"
-    width="160"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <rect fill="url(#pattern0_749_80)" height="531" rx="8" width="160" />
-    <defs>
-        <pattern height="1" id="pattern0_749_80" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.00266667 0 0 0.000832004 0 0.000402055)" xlink:href="#image0_749_80" />
-        </pattern>
-        <image
-            height="2101"
-            href="/assets/svg-images/preview-task-detail.png"
-            id="image0_749_80"
-            preserveAspectRatio="none"
-            width="375"
-        />
-    </defs>
-</svg>
-} @else {
-<svg
-    fill="none"
-    height="332"
-    viewBox="0 0 100 332"
-    width="100"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <rect fill="url(#pattern0_749_74)" height="332" rx="8" width="100" />
-    <defs>
-        <pattern height="1" id="pattern0_749_74" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.00266667 0 0 0.000832004 0 0.000402055)" xlink:href="#image0_749_74" />
-        </pattern>
-        <image
-            height="2101"
-            href="/assets/svg-images/preview-task-detail.png"
-            id="image0_749_74"
-            preserveAspectRatio="none"
-            width="375"
-        />
-    </defs>
-</svg>
-}
+<!--suppress AngularNgOptimizedImage -->
+<picture>
+    <source
+        sizes="(min-width: 768px) 162px, 108px"
+        srcset="
+            /assets/preview/workspace/workspace-108/workspace-108.avif 108w,
+            /assets/preview/workspace/workspace-162/workspace-162.avif 162w
+        "
+        type="image/avif"
+    />
+    <source
+        sizes="(min-width: 768px) 162px, 108px"
+        srcset="
+            /assets/preview/workspace/workspace-108/workspace-108.webp 108w,
+            /assets/preview/workspace/workspace-162/workspace-162.webp 162w
+        "
+        type="image/webp"
+    />
+    <img
+        alt=""
+        fetchpriority="high"
+        height="356"
+        loading="eager"
+        sizes="(min-width: 768px) 162px, 108px"
+        src="/assets/preview/workspace/workspace-108/workspace-108.png"
+        srcset="
+            /assets/preview/workspace/workspace-108/workspace-108.png 108w,
+            /assets/preview/workspace/workspace-162/workspace-162.png 162w
+        "
+        width="108"
+    />
+</picture>

@@ -1,73 +1,38 @@
-@if (isDesktop()) {
-<svg
-    fill="none"
-    height="515"
-    id="toto"
-    viewBox="0 0 676 515"
-    width="676"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <path d="M0 0H676V515H0V0Z" fill="url(#pattern0_741_70)" />
-    <defs>
-        <pattern height="1" id="pattern0_741_70" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.000694444 0 0 0.000911543 0 -0.000892665)" xlink:href="#image0_741_70" />
-        </pattern>
-        <image
-            height="1099"
-            href="/assets/svg-images/preview-dashboard.png"
-            id="image0_741_70"
-            preserveAspectRatio="none"
-            width="1440"
-        />
-    </defs>
-</svg>
-} @else if (isTablet()) {
-<svg
-    fill="none"
-    height="381"
-    id="toto"
-    viewBox="0 0 500 381"
-    width="500"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <path d="M0 0H500V381H0V0Z" fill="url(#pattern0_741_68)" />
-    <defs>
-        <pattern height="1" id="pattern0_741_68" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.000694444 0 0 0.000911344 0 -0.000783756)" xlink:href="#image0_741_68" />
-        </pattern>
-        <image
-            height="1099"
-            href="/assets/svg-images/preview-dashboard.png"
-            id="image0_741_68"
-            preserveAspectRatio="none"
-            width="1440"
-        />
-    </defs>
-</svg>
-} @else {
-<svg
-    fill="none"
-    height="267"
-    id="toto"
-    viewBox="0 0 350 267"
-    width="350"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <path d="M0 0H350V267H0V0Z" fill="url(#pattern0_741_72)" />
-    <defs>
-        <pattern height="1" id="pattern0_741_72" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="scale(0.000694444 0.00091032)" xlink:href="#image0_741_72" />
-        </pattern>
-        <image
-            height="1099"
-            href="/assets/svg-images/preview-dashboard.png"
-            id="image0_741_72"
-            preserveAspectRatio="none"
-            width="1440"
-        />
-    </defs>
-</svg>
-}
+<!--suppress AngularNgOptimizedImage -->
+<picture>
+    <source
+        sizes="(min-width: 1024px) 1024px, (min-width: 768px) 768px, (min-width: 343px) 343px, 318px"
+        srcset="
+            /assets/preview/dashboard/desktop-318/desktop-318.avif  318w,
+            /assets/preview/dashboard/desktop-343/desktop-343.avif  343w,
+            /assets/preview/dashboard/desktop-500/desktop-500.avif  768w,
+            /assets/preview/dashboard/desktop-680/desktop-680.avif 1024w
+        "
+        type="image/avif"
+    />
+    <source
+        sizes="(min-width: 1024px) 1024px, (min-width: 768px) 768px, (min-width: 343px) 343px, 318px"
+        srcset="
+            /assets/preview/dashboard/desktop-318/desktop-318.webp  318w,
+            /assets/preview/dashboard/desktop-343/desktop-343.webp  343w,
+            /assets/preview/dashboard/desktop-500/desktop-500.webp  768w,
+            /assets/preview/dashboard/desktop-680/desktop-680.webp 1024w
+        "
+        type="image/webp"
+    />
+    <img
+        alt=""
+        fetchpriority="high"
+        height="243"
+        loading="eager"
+        sizes="(min-width: 1024px) 1024px, (min-width: 768px) 768px, (min-width: 343px) 343px, 318px"
+        src="/assets/preview/dashboard/desktop-318/desktop-318.png"
+        srcset="
+            /assets/preview/dashboard/desktop-318/desktop-318.png  318w,
+            /assets/preview/dashboard/desktop-343/desktop-343.png  343w,
+            /assets/preview/dashboard/desktop-500/desktop-500.png  768w,
+            /assets/preview/dashboard/desktop-680/desktop-680.png 1024w
+        "
+        width="318"
+    />
+</picture>

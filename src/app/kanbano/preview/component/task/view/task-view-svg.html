@@ -1,47 +1,23 @@
-@if (isTablet()) {
-<svg
-    fill="none"
-    height="218"
-    viewBox="0 0 160 218"
-    width="160"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <rect fill="url(#pattern0_749_78)" height="218" rx="8" width="160" />
-    <defs>
-        <pattern height="1" id="pattern0_749_78" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.00333333 0 0 0.00244648 0 -0.00397554)" xlink:href="#image0_749_78" />
-        </pattern>
-        <image
-            height="412"
-            href="/assets/svg-images/preview-task-view.png"
-            id="image0_749_78"
-            preserveAspectRatio="none"
-            width="300"
-        />
-    </defs>
-</svg>
-} @else {
-<svg
-    fill="none"
-    height="136"
-    viewBox="0 0 100 136"
-    width="100"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
->
-    <rect fill="url(#pattern0_749_76)" height="136" rx="8" width="100" />
-    <defs>
-        <pattern height="1" id="pattern0_749_76" patternContentUnits="objectBoundingBox" width="1">
-            <use transform="matrix(0.00333333 0 0 0.00245098 0 -0.00490196)" xlink:href="#image0_749_76" />
-        </pattern>
-        <image
-            height="412"
-            href="/assets/svg-images/preview-task-view.png"
-            id="image0_749_76"
-            preserveAspectRatio="none"
-            width="300"
-        />
-    </defs>
-</svg>
-}
+<!--suppress AngularNgOptimizedImage -->
+<picture>
+    <source
+        sizes="(min-width: 768px) 162px, 108px"
+        srcset="/assets/preview/task/view-108/view-108.avif 108w, /assets/preview/task/view-162/view-162.avif 162w"
+        type="image/avif"
+    />
+    <source
+        sizes="(min-width: 768px) 162px, 108px"
+        srcset="/assets/preview/task/view-108/view-108.webp 108w, /assets/preview/task/view-162/view-162.webp 162w"
+        type="image/webp"
+    />
+    <img
+        alt=""
+        fetchpriority="high"
+        height="148"
+        loading="eager"
+        sizes="(min-width: 768px) 162px, 108px"
+        src="/assets/preview/task/view-108/view-108.png"
+        srcset="/assets/preview/task/view-108/view-108.png 108w, /assets/preview/task/view-162/view-162.png 162w"
+        width="108"
+    />
+</picture>

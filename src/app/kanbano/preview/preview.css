@@ -1,11 +1,10 @@
 .preview {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-inline: 1rem;
     margin-top: -8rem;
 
     @media (width >= 48em) {
+        padding-inline: 0;
         margin-top: -6rem;
     }
 
@@ -19,12 +18,12 @@
 
     .container-svg {
         position: relative;
-        width: 350px;
         height: 468px;
 
         @media (width >= 48em) {
             width: 500px;
             height: 758px;
+            margin-inline: auto;
         }
 
         @media (width >= 64em) {
