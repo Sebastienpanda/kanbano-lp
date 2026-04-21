@@ -11,12 +11,13 @@
 
     @media (width >= 64em) {
         bottom: 508px;
-        left: 150px;
+        left: 126px;
         width: 192px;
         box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
     }
 
     @media (width >= 75em) {
-        left: 190px;
+        bottom: 476px;
+        left: 80px;
     }
 }

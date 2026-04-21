@@ -6,6 +6,9 @@ import { VectorPurpleTop2 } from "../../svg/vector-purple/vector-purple-top-2";
 import { HeadingItem } from "../heading-item";
 import { WorkspaceCreate } from "./components/create/workspace-create";
 import { WorkspaceEmpty } from "./components/empty/workspace-empty";
+import { Laptop } from "./components/icons/laptop";
+import { Loupe } from "./components/icons/loupe";
+import { Paper } from "./components/icons/paper";
 import { WorkspaceView } from "./components/view/workspace-view";
 
 @Component({
@@ -18,6 +21,9 @@ import { WorkspaceView } from "./components/view/workspace-view";
         WorkspaceEmpty,
         WorkspaceCreate,
         WorkspaceView,
+        Loupe,
+        Laptop,
+        Paper,
     ],
     templateUrl: "./functionality-workspace.html",
     styleUrl: "./functionality-workspace.css",
