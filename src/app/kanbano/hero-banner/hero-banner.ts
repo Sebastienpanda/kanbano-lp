@@ -2,9 +2,9 @@ import { BreakpointObserver } from "@angular/cdk/layout";
 import { NgOptimizedImage } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
+import { CtaActions } from "@components/utilities/cta-actions";
 import { map } from "rxjs";
 
-import { CtaActions } from "@components/utilities/cta-actions";
 import { Checked } from "./components/checked";
 
 @Component({

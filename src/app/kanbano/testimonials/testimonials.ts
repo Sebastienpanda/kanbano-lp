@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
-
 import { SectionHeader } from "@components/layout/section-header";
 
 interface Testimonial {

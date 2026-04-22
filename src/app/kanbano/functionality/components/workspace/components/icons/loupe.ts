@@ -6,5 +6,4 @@ import { Component } from "@angular/core";
     templateUrl: "./loupe.html",
     styleUrl: "./loupe.css",
 })
-export class Loupe {
-}
+export class Loupe {}

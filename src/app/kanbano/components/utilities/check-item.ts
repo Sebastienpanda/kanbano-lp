@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-
 import { CheckedIcon } from "@kanbano/hero-banner/icon/checked-icon";
 
 @Component({
