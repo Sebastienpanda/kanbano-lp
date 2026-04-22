@@ -1,6 +1,5 @@
 :host {
     position: relative;
-    z-index: 6;
     display: block;
     width: 308px;
     padding-top: 0.75rem;
@@ -16,4 +15,9 @@
         bottom: 52px;
         left: 0;
     }
+}
+
+picture {
+    position: relative;
+    z-index: 6;
 }

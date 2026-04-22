@@ -4,10 +4,6 @@
     padding-top: 5.25rem;
     margin-inline: auto;
 
-    @media (width >= 48em) {
-        height: 700px;
-    }
-
     @media (width >= 75em) {
         padding-inline: 0;
     }

@@ -1,0 +1,10 @@
+:host {
+    position: absolute;
+    right: 48px;
+    bottom: -65px;
+    z-index: 7;
+
+    @media (width >= 48em) {
+        display: none;
+    }
+}
