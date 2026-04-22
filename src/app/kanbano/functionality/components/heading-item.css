@@ -23,7 +23,7 @@
         font-family: var(--font-baloo), display, serif;
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--kanbano-gradient-purple);
+        color: var(--kanbano-text-workspace);
     }
 
     & .heading__description {
