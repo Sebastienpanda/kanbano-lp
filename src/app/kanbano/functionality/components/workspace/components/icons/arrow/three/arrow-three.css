@@ -1,9 +1,10 @@
 :host {
     position: absolute;
-    top: -22px;
-    left: 120px;
+    bottom: -74px;
+    left: 100px;
+    z-index: 6;
 
-    @media (width <= 64em) {
+    @media (width >= 64em) {
         display: none;
     }
 }

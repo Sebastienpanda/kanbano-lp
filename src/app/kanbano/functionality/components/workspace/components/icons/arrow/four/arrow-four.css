@@ -3,8 +3,9 @@
 
     @media (width >= 64em) {
         position: absolute;
-        bottom: 202px;
-        left: 248px;
+        bottom: -14px;
+        left: 510px;
+        z-index: 6;
         display: block;
     }
 }

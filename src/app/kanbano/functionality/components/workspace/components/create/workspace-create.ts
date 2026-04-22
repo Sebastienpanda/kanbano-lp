@@ -1,11 +1,9 @@
 import { Component } from "@angular/core";
-import { ArrowFour } from "@kanbano/functionality/components/workspace/components/icons/arrow/four/arrow-four";
-import { ArrowOne } from "@kanbano/functionality/components/workspace/components/icons/arrow/one/arrow-one";
-import { ArrowTwo } from "@kanbano/functionality/components/workspace/components/icons/arrow/two/arrow-two";
+import { ArrowThree } from "@kanbano/functionality/components/workspace/components/icons/arrow/three/arrow-three";
 
 @Component({
     selector: "kanbano-lp-workspace-create",
-    imports: [ArrowOne, ArrowTwo, ArrowFour],
+    imports: [ArrowThree],
     templateUrl: "./workspace-create.html",
     styleUrl: "./workspace-create.css",
 })

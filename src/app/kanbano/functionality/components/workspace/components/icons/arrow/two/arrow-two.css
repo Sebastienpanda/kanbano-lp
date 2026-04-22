@@ -1,18 +1,17 @@
 :host {
     position: absolute;
-    right: 0;
-    bottom: 218px;
+    right: 16px;
+    bottom: 6px;
+    z-index: 6;
 
     @media (width >= 48em) {
-        right: initial;
-        bottom: 239px;
-        left: 233px;
+        right: 52px;
+        bottom: 36px;
     }
 
     @media (width >= 64em) {
-        right: 74px;
-        bottom: 260px;
-        left: initial;
+        right: -56px;
+        bottom: 54px;
         rotate: -42deg;
     }
 }
