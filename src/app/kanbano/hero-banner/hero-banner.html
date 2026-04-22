@@ -1,9 +1,10 @@
 <section class="hero-banner">
-    @if (isDesktop()) {
-    <img alt="" class="hero-banner__img" fill ngSrc="/assets/background/fond-desktop.png" priority />
-    } @else {
-    <img alt="" class="hero-banner__img" fill ngSrc="/assets/background/fond-mobile.png" priority />
-    }
+    <div class="hero-banner__img-wrapper" aria-hidden="true">
+        <picture>
+            <source media="(min-width: 75em)" srcset="/fond-desktop.svg" />
+            <img alt="" class="hero-banner__img" fetchpriority="high" loading="eager" src="/fond-mobile.svg" />
+        </picture>
+    </div>
 
     <div class="hero-banner__content">
         <h1 class="hero-banner__heading hero-banner__heading--h1">
