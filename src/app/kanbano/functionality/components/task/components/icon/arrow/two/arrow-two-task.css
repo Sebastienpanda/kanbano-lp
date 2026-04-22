@@ -1,0 +1,16 @@
+:host {
+    position: absolute;
+    right: 50px;
+    bottom: -8px;
+    z-index: 6;
+
+    @media (width >= 48em) {
+        right: 70px;
+    }
+
+    @media (width >= 64em) {
+        right: 54px;
+        bottom: 72px;
+        rotate: -15deg;
+    }
+}

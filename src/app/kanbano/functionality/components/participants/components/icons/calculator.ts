@@ -6,5 +6,4 @@ import { Component } from "@angular/core";
     templateUrl: "./calculator.html",
     styleUrl: "./calculator.css",
 })
-export class Calculator {
-}
+export class Calculator {}

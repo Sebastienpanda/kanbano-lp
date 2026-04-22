@@ -7,7 +7,6 @@ import {
     OnDestroy,
     signal,
 } from "@angular/core";
-
 import { Logo } from "@shared/icons/logo";
 
 @Component({
