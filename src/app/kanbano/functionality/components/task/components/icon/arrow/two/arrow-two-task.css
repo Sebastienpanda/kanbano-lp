@@ -1,15 +1,16 @@
 :host {
     position: absolute;
-    bottom: 202px;
+    right: 50px;
+    bottom: -8px;
+    z-index: 6;
 
     @media (width >= 48em) {
         right: 70px;
-        bottom: 208px;
     }
 
     @media (width >= 64em) {
-        right: 88px;
-        bottom: 220px;
+        right: 54px;
+        bottom: 72px;
         rotate: -15deg;
     }
 }

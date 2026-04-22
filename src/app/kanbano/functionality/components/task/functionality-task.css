@@ -1,7 +1,7 @@
 .task {
     position: relative;
     display: block;
-    height: 842px;
+    height: 962px;
     padding-inline: 1rem;
 
     @media (width >= 64em) {
@@ -10,7 +10,7 @@
 
     & .container-task {
         position: relative;
-        height: 842px;
+        height: 962px;
 
         @media (width >= 64em) {
             height: 632px;

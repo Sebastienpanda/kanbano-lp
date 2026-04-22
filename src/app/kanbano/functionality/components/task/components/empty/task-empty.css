@@ -1,7 +1,6 @@
 :host {
     position: relative;
     left: 6px;
-    z-index: 4;
     display: block;
     width: 330px;
     margin-top: 0.75rem;
@@ -21,4 +20,9 @@
     @media (width >= 75em) {
         left: 332px;
     }
+}
+
+picture {
+    position: relative;
+    z-index: 4;
 }

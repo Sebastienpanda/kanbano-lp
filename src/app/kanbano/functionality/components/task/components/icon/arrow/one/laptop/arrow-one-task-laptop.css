@@ -3,8 +3,8 @@
 
     @media (width >= 64em) {
         position: absolute;
-        right: 208px;
-        bottom: 18px;
+        right: 177px;
+        bottom: -120px;
         display: block;
     }
 }
