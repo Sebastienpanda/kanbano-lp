@@ -6,9 +6,9 @@ import { VectorPurpleTop2 } from "@kanbano/functionality/svg/vector-purple/vecto
 import { HeadingItem } from "../heading-item";
 import { WorkspaceCreate } from "./components/create/workspace-create";
 import { WorkspaceEmpty } from "./components/empty/workspace-empty";
-import { Laptop } from "./components/icons/laptop";
-import { Loupe } from "./components/icons/loupe";
-import { Paper } from "./components/icons/paper";
+import { Laptop } from "./components/icons/laptop/laptop";
+import { Loupe } from "./components/icons/loupe/loupe";
+import { Paper } from "./components/icons/paper/paper";
 import { WorkspaceView } from "./components/view/workspace-view";
 
 @Component({
