@@ -40,6 +40,7 @@
     --kanbano-bg-price: oklch(0.2458 0.1278 285.18); /* 200959 */
     --kanbano-bullet-inactive: oklch(0.8725 0.0352 187.6); /* BCDDD9 */
     --kanbano-glass: oklch(1 0 0 / 60%); /* rgba(255 255 255 / .6) */
+    --kanbano-nav-glass: oklch(0.1907 0.1127 283.3 / 80%);
     --kanbano-gradient-radial: oklch(0.4243 0.1942 329.17); /* 820080 */
     --kanbano-gradient-radial-bottom: oklch(0.1907 0.1127 283.3); /* 130043 */
     --kanbano-newsletter-input-bg: oklch(1 0 0); /* FFFFFF */
@@ -53,6 +54,7 @@
     --kanbano-bg-price: oklch(0.9736 0.0075 186.89); /* F1F8F7 */
     --kanbano-bullet-inactive: oklch(0.4777 0.1064 295.13); /* 624F92 */
     --kanbano-glass: oklch(0.2855 0.0924 292.62 / 60%); /* rgba(45 30 83 / .6) */
+    --kanbano-nav-glass: oklch(0.2855 0.0924 292.62 / 60%);
     --kanbano-gradient-radial: oklch(0.4695 0.2208 323.86); /* 91009E */
     --kanbano-gradient-radial-bottom: oklch(0.3276 0.1502 287.9); /* 361B7B */
     --kanbano-newsletter-input-bg: oklch(0.922 0.0247 298.59); /* E7E2F4 */

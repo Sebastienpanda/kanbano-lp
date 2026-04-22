@@ -13,7 +13,7 @@
     height: var(--kanbano-spacing-1100);
     min-height: var(--kanbano-spacing-1100);
     padding-inline: 1rem;
-    padding-top: 6.25rem;
+    padding-top: calc(6.25rem - 86px);
     color: var(--kanbano-white);
     view-timeline: --hero-view block;
 

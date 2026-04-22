@@ -1,36 +1,52 @@
-import {
-    afterNextRender,
-    ChangeDetectionStrategy,
-    Component,
-    DOCUMENT,
-    inject,
-    OnDestroy,
-    signal,
-} from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Logo } from "@shared/icons/logo";
+
+export interface NavItem {
+    link: string;
+    name: string;
+}
 
 @Component({
     selector: "kanbano-lp-header",
-    imports: [Logo],
+    imports: [Logo, RouterLink, MobileNav],
     templateUrl: "./header.html",
     styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Header implements OnDestroy {
-    scrolled = signal(false);
-    private document = inject(DOCUMENT);
+export class Header {
+    protected readonly nav = signal<NavItem[]>([
+        {
+            link: "fonctionnalités",
+            name: "Fonctionnalités",
+        },
+        {
+            link: "prix",
+            name: "Prix",
+        },
+        {
+            link: "témoignages",
+            name: "Témoignages",
+        },
+        {
+            link: "protection",
+            name: "Protection des données",
+        },
+    ]);
+
+    protected readonly isMenuOpen = signal<boolean>(false);
+
+    private readonly document = inject(DOCUMENT);
 
     constructor() {
-        afterNextRender(() => {
-            this.document.defaultView?.addEventListener("scroll", this.onScroll, { passive: true });
+        effect(() => {
+            this.document.body.style.overflow = this.isMenuOpen() ? "hidden" : "";
         });
     }
 
-    ngOnDestroy() {
-        this.document.defaultView?.removeEventListener("scroll", this.onScroll);
+    toggleMenu(): void {
+        this.isMenuOpen.update((v) => !v);
     }
-
-    private onScroll = () => {
-        this.scrolled.set((this.document.defaultView?.scrollY ?? 0) > 10);
-    };
 }
