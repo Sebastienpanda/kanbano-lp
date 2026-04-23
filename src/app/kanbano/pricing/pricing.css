@@ -4,13 +4,12 @@
     background-color: var(--kanbano-bg-footer);
     border-radius: 1.25rem;
 
-    .pricing__subtitle {
-        font-size: 1rem;
+    .subtitle {
         color: var(--kanbano-purple-text);
-    }
 
-    .pricing__bold {
-        font-weight: 700;
+        .bold {
+            font-weight: 700;
+        }
     }
 
     .pricing__cards {
