@@ -1,0 +1,14 @@
+<nav [class.activeNav]="isActive()" aria-label="Navigation principale" class="nav">
+    <div>
+        <kanbano-lp-logo />
+    </div>
+    <ul class="lists">
+        @for (item of nav(); track item.link) {
+        <li class="item">
+            <a (click)="linkClicked.emit()" [fragment]="item.link" [routerLink]="['/']" class="link">
+                {{ item.name }}
+            </a>
+        </li>
+        }
+    </ul>
+</nav>

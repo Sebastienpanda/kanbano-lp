@@ -1,0 +1,39 @@
+.nav {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    padding: 1rem;
+    color: var(--kanbano-white);
+    background: var(--kanbano-nav-glass);
+    border-bottom: 1px solid oklch(1 0 0 / 10%);
+    opacity: 0;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transform: translateY(-100%);
+    transition:
+        transform 350ms ease-in-out,
+        opacity 350ms ease-in-out;
+
+    &.activeNav {
+        z-index: 50;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .lists {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+
+        .item {
+            font-size: 1.063rem;
+            transition: color 350ms ease-in-out;
+
+            &:hover {
+                color: var(--kanbano-white);
+            }
+        }
+    }
+}

@@ -1,65 +1,130 @@
-.header {
-    position: fixed;
+:host {
+    position: sticky;
     top: 0;
-    z-index: var(--kanbano-z-header);
+    z-index: 100;
+    display: block;
     width: 100%;
-    height: 4rem;
-    transition:
-        background 0.3s ease,
-        backdrop-filter 0.3s ease,
-        border-color 0.3s ease;
+    transition: top 350ms ease-in-out 0.2s;
+}
 
-    &.scrolled {
-        background: var(--kanbano-glass);
-        border-bottom: 1px solid var(--kanbano-white-10);
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
+:host(.scrolled) {
+    top: 16px;
+
+    .header {
+        outline-color: rgba(255, 255, 255, 0.2); /* ← bordure visible */
+
+        &::after {
+            transform: translateX(0);
+        }
+    }
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 3.75rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: var(--lp-header-height);
+    padding-inline: 1.5rem;
+    overflow: hidden;
+    outline: 4px solid transparent; /* ← toujours présent mais invisible */
+    outline-offset: 0;
+    border-radius: 2.5rem;
+    transition: outline-color 500ms ease-in-out 0.1s;
+
+    &::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 2.5rem;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        transform: translateX(110%);
+        transition: transform 500ms ease-in-out;
     }
 
-    .header__inner {
+    .logo {
+        flex-shrink: 0;
+
+        @media (width >= 64em) {
+            flex: 1;
+        }
+    }
+
+    .menu {
+        position: relative;
+        z-index: 51;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0.75rem 1rem;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
 
-        .header__toggle {
+        @media (min-width: 75em) {
+            display: none;
+        }
+
+        .burger {
             position: relative;
-            width: 100%;
-            min-width: 2rem;
-            max-width: 2rem;
-            height: 100%;
-            min-height: 2.25rem;
-            max-height: 2.25rem;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--kanbano-white);
+            transition:
+                background-color 350ms ease-in-out,
+                transform 350ms ease-in-out;
 
-            .header__toggle-icon {
-                position: relative;
-                display: block;
-                height: 100%;
-                min-height: 0.125rem;
-                max-height: 0.125rem;
+            &::before,
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 3px;
+                content: "";
                 background-color: var(--kanbano-white);
+                transition: transform 350ms ease-in-out;
+            }
 
-                &::before,
-                &::after {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    min-width: 2rem;
-                    max-width: 2rem;
-                    min-height: 0.125rem;
-                    max-height: 0.125rem;
-                    content: "";
-                    background-color: var(--kanbano-white);
-                }
+            &::before {
+                transform: translateY(-10px);
+            }
+
+            &::after {
+                transform: translateY(10px);
+            }
+        }
+
+        &.active {
+            .burger {
+                background-color: transparent;
+                transform: translateX(-6px);
 
                 &::before {
-                    transform: translateY(-8px);
+                    transform: rotate(45deg);
                 }
 
                 &::after {
-                    transform: translateY(8px);
+                    transform: rotate(-45deg);
                 }
             }
+        }
+    }
+
+    .host {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        @media (width >= 75em) {
+            display: none;
         }
     }
 }

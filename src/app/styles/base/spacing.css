@@ -31,4 +31,11 @@
     --kanbano-z-header: 1000;
     --kanbano-z-modal: 9000;
     --kanbano-z-overlay: 10;
+    --lp-header-height: 6rem;
+}
+
+@media (width >= 75em) {
+    :root {
+        --lp-header-height: 5rem;
+    }
 }

@@ -1,14 +1,23 @@
-<header [class.scrolled]="scrolled()" class="header">
-    <div class="header__inner">
-        <kanbano-lp-logo />
+<header>
+    <div class="container header">
+        <a class="logo" routerLink="/">
+            <kanbano-lp-logo />
+        </a>
+
         <button
-            aria-controls="nav-menu"
-            aria-expanded="false"
-            aria-label="Ouvrir le menu de navigation"
-            class="header__toggle"
-            type="button"
+            class="menu"
+            [class.active]="isMenuOpen()"
+            [attr.aria-expanded]="isMenuOpen()"
+            aria-label="Menu de navigation"
+            (click)="toggleMenu()"
         >
-            <span aria-hidden="true" class="header__toggle-icon"></span>
+            <span class="burger"></span>
         </button>
+
+        @if (isDesktop()) {
+        <kanbano-lp-nav-desktop [nav]="nav()" />
+        } @else {
+        <kanbano-lp-mobile-nav (linkClicked)="isMenuOpen.set(false)" [isActive]="isMenuOpen()" [nav]="nav()" />
+        }
     </div>
 </header>
