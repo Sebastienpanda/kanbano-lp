@@ -6,7 +6,7 @@ import { RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Logo } from "@shared/icons/logo";
-import { map } from "rxjs";
+import { fromEvent, map, of, startWith } from "rxjs";
 
 export interface NavItem {
     link: string;
@@ -19,6 +19,9 @@ export interface NavItem {
     templateUrl: "./header.html",
     styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        "[class.scrolled]": "isScrolled()",
+    },
 })
 export class Header {
     protected readonly nav = signal<NavItem[]>([
@@ -43,6 +46,17 @@ export class Header {
     protected readonly isMenuOpen = signal<boolean>(false);
 
     private readonly document = inject(DOCUMENT);
+    private readonly window = this.document.defaultView;
+
+    readonly isScrolled = toSignal(
+        this.window
+            ? fromEvent(this.window, "scroll").pipe(
+                  map(() => (this.window?.scrollY ?? 0) > 10),
+                  startWith(false),
+              )
+            : of(false),
+        { initialValue: false },
+    );
 
     constructor() {
         effect(() => {

@@ -12,6 +12,7 @@
         content: "";
         border: 4px solid rgba(255, 255, 255, 0.2);
         border-radius: 2.5rem;
+        transition: opacity 350ms ease-in-out;
     }
 
     .lists {
@@ -22,6 +23,10 @@
         white-space: nowrap;
         background: rgba(255, 255, 255, 0.8);
         border-radius: 2.5rem;
+        transition:
+            background 350ms ease-in-out,
+            padding 350ms ease-in-out,
+            border-radius 350ms ease-in-out;
 
         @media (width >= 64em) {
             gap: 2rem;
@@ -33,11 +38,30 @@
             font-weight: 500;
             color: #130043;
             text-decoration: none;
-            transition: opacity 350ms ease-in-out;
+            transition:
+                color 350ms ease-in-out,
+                opacity 350ms ease-in-out;
 
             &:hover {
                 opacity: 0.6;
             }
+        }
+    }
+}
+
+:host-context(.scrolled) {
+    .nav {
+        &::before {
+            opacity: 0; /* cache la bordure */
+        }
+
+        .lists {
+            padding: 0;
+            background: transparent; /* fond transparent */
+        }
+
+        .item {
+            color: #130043; /* garde la couleur */
         }
     }
 }
