@@ -1,3 +1,8 @@
+:host {
+    display: block;
+    margin-top: calc(-1 * var(--lp-header-height, 4rem));
+}
+
 @keyframes hero-parallax {
     from {
         transform: translateY(-80px);
@@ -13,7 +18,7 @@
     height: var(--kanbano-spacing-1100);
     min-height: var(--kanbano-spacing-1100);
     padding-inline: 1rem;
-    padding-top: calc(6.25rem - 86px);
+    padding-top: calc(var(--lp-header-height, 4rem) + 1rem);
     color: var(--kanbano-white);
     view-timeline: --hero-view block;
 

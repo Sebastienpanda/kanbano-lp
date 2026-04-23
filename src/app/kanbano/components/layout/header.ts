@@ -1,8 +1,12 @@
+import { BreakpointObserver } from "@angular/cdk/layout";
 import { DOCUMENT } from "@angular/common";
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterLink } from "@angular/router";
+import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Logo } from "@shared/icons/logo";
+import { map } from "rxjs";
 
 export interface NavItem {
     link: string;
@@ -11,7 +15,7 @@ export interface NavItem {
 
 @Component({
     selector: "kanbano-lp-header",
-    imports: [Logo, RouterLink, MobileNav],
+    imports: [Logo, RouterLink, MobileNav, NavDesktop],
     templateUrl: "./header.html",
     styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -49,4 +53,10 @@ export class Header {
     toggleMenu(): void {
         this.isMenuOpen.update((v) => !v);
     }
+
+    private breakpoint = inject(BreakpointObserver);
+
+    isDesktop = toSignal(this.breakpoint.observe("(min-width: 1200px)").pipe(map((r) => r.matches)), {
+        initialValue: false,
+    });
 }

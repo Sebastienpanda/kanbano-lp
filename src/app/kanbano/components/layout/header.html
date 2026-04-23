@@ -1,5 +1,5 @@
 <header>
-    <div class="header">
+    <div class="container header">
         <a class="logo" routerLink="/">
             <kanbano-lp-logo />
         </a>
@@ -14,6 +14,10 @@
             <span class="burger"></span>
         </button>
 
+        @if (isDesktop()) {
+        <kanbano-lp-nav-desktop [nav]="nav()" />
+        } @else {
         <kanbano-lp-mobile-nav (linkClicked)="isMenuOpen.set(false)" [isActive]="isMenuOpen()" [nav]="nav()" />
+        }
     </div>
 </header>
