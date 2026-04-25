@@ -5,8 +5,9 @@ import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
+import { Button } from "@components/utilities/button";
 import { Logo } from "@shared/icons/logo";
-import { fromEvent, map, of, startWith } from "rxjs";
+import { map } from "rxjs";
 
 export interface NavItem {
     link: string;
@@ -15,13 +16,10 @@ export interface NavItem {
 
 @Component({
     selector: "kanbano-lp-header",
-    imports: [Logo, RouterLink, MobileNav, NavDesktop],
+    imports: [Logo, RouterLink, MobileNav, NavDesktop, Button],
     templateUrl: "./header.html",
     styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        "[class.scrolled]": "isScrolled()",
-    },
 })
 export class Header {
     protected readonly nav = signal<NavItem[]>([
@@ -46,17 +44,6 @@ export class Header {
     protected readonly isMenuOpen = signal<boolean>(false);
 
     private readonly document = inject(DOCUMENT);
-    private readonly window = this.document.defaultView;
-
-    readonly isScrolled = toSignal(
-        this.window
-            ? fromEvent(this.window, "scroll").pipe(
-                  map(() => (this.window?.scrollY ?? 0) > 10),
-                  startWith(false),
-              )
-            : of(false),
-        { initialValue: false },
-    );
 
     constructor() {
         effect(() => {
@@ -70,7 +57,7 @@ export class Header {
 
     private breakpoint = inject(BreakpointObserver);
 
-    isDesktop = toSignal(this.breakpoint.observe("(min-width: 1200px)").pipe(map((r) => r.matches)), {
+    isDesktop = toSignal(this.breakpoint.observe("(min-width: 1280px)").pipe(map((r) => r.matches)), {
         initialValue: false,
     });
 }

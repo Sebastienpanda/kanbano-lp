@@ -1,16 +1,8 @@
 <section class="hero-banner">
-    <div class="hero-banner__img-wrapper" aria-hidden="true">
-        <picture>
-            <source media="(min-width: 75em)" srcset="/fond-desktop.svg" />
-            <img alt="" class="hero-banner__img" fetchpriority="high" loading="eager" src="/fond-mobile.svg" />
-        </picture>
-    </div>
-
-    <div class="hero-banner__content">
-        <h1 class="hero-banner__heading hero-banner__heading--h1">
-            Gestion de projet <span class="hero-banner__heading hero-banner__heading--span">simple, </span>
-            <span class="hero-banner__heading hero-banner__heading--span">sûre et </span>
-            <span class="hero-banner__heading hero-banner__heading--span">accessible</span>
+    <div class="hero-banner__content container-hero-banner">
+        <h1 class="hero-banner__heading">
+            Gestion de projet
+            <span class="hero-banner__heading--accent">simple, sûre et accessible</span>
         </h1>
         <div class="hero-banner__description">
             <p>Le Kanban nouvelle génération qui booste votre productivité.</p>
@@ -19,6 +11,6 @@
         <div class="hero-banner__actions">
             <kanbano-lp-cta-actions />
         </div>
+        <kanbano-lp-checked />
     </div>
-    <kanbano-lp-checked />
 </section>

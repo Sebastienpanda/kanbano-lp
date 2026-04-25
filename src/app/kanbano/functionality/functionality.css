@@ -24,7 +24,12 @@
         margin-bottom: 2rem;
 
         @media (width >= 48em) {
-            margin-top: 6rem;
+            margin-top: 2rem;
+        }
+
+        @media (width >= 64em) {
+            margin-top: 0;
+            margin-bottom: 4rem;
         }
     }
 }
