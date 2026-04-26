@@ -20,13 +20,13 @@
 
     /* 1280px */
     @media (width >= 80em) {
-        max-width: 72em;
+        max-width: 77em;
         padding-inline: 0;
     }
 
     /* 1440px */
     @media (width >= 90em) {
-        max-width: 81.25em;
+        max-width: 96em;
     }
 }
 

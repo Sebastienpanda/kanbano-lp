@@ -121,7 +121,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "kanbano-lp",
+                        "prefix": "kanbanoDirective",
                         "style": "camelCase"
                     }
                 ],
