@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, input, output } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { NavItem } from "@components/layout/header";
-import { Logo } from "@shared/icons/logo";
 
 @Component({
     selector: "kanbano-lp-mobile-nav",
-    imports: [RouterLink, Logo],
+    imports: [RouterLink],
     templateUrl: "./mobile-nav.html",
     styleUrl: "./mobile-nav.css",
     changeDetection: ChangeDetectionStrategy.OnPush,

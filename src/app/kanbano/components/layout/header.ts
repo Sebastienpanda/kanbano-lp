@@ -7,8 +7,6 @@ import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
 import { ThemeObserverService } from "@kanbano/services/theme-observer.service";
-import { Logo } from "@shared/icons/logo";
-import { LogoDark } from "@shared/icons/logo-dark/logo-dark";
 import { map } from "rxjs";
 
 export interface NavItem {
@@ -18,7 +16,7 @@ export interface NavItem {
 
 @Component({
     selector: "kanbano-lp-header",
-    imports: [Logo, RouterLink, MobileNav, NavDesktop, Button, LogoDark],
+    imports: [RouterLink, MobileNav, NavDesktop, Button],
     templateUrl: "./header.html",
     styleUrl: "./header.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
