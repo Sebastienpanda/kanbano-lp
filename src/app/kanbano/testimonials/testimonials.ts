@@ -1,5 +1,17 @@
-import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { NgOptimizedImage } from "@angular/common";
+import {
+    ChangeDetectionStrategy,
+    Component,
+    CUSTOM_ELEMENTS_SCHEMA,
+    ElementRef,
+    afterNextRender,
+    signal,
+    viewChild,
+} from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
+import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
+import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
+import { SwiperContainer } from "swiper/element";
 
 interface Testimonial {
     id: number;
@@ -11,12 +23,15 @@ interface Testimonial {
 
 @Component({
     selector: "kanbano-lp-testimonials",
-    imports: [SectionHeader],
+    imports: [SectionHeader, NgOptimizedImage, TopSvg, BottomSvg],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: "./testimonials.html",
     styleUrl: "./testimonials.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Testimonials {
+    private readonly swiperEl = viewChild<ElementRef<HTMLElement>>("swiperEl");
+
     protected readonly testimonials = signal<Testimonial[]>([
         {
             id: 0,
@@ -27,17 +42,75 @@ export class Testimonials {
         },
         {
             id: 1,
-            text: "L'outil est très simple à prendre en main. Même les personnes les moins à l'aise avec l'informatique s'y retrouvent rapidement.",
-            authorName: "Sophie Martin",
-            authorRole: "Responsable administrative",
-            avatarSrc: "/assets/testimonials/avatar-2.png",
+            text: "Depuis qu'on utilise cet outil, on a gagné un temps énorme sur la gestion quotidienne. Tout est centralisé, plus clair.",
+            authorName: "Thomas Leroy",
+            authorRole: "Dirigeant, agence digitale",
+            avatarSrc: "/assets/testimonials/avatar-1.png",
         },
         {
             id: 2,
-            text: "Cet outil a complètement changé notre organisation. On a gagné en clarté, en efficacité et en sérénité dans notre gestion.",
-            authorName: "Camille Durand",
-            authorRole: "Fondatrice de startup",
-            avatarSrc: "/assets/testimonials/avatar-3.png",
+            text: "Depuis qu'on utilise cet outil, on a gagné un temps énorme sur la gestion quotidienne. Tout est centralisé, plus clair.",
+            authorName: "Thomas Leroy",
+            authorRole: "Dirigeant, agence digitale",
+            avatarSrc: "/assets/testimonials/avatar-1.png",
+        },
+        {
+            id: 3,
+            text: "Depuis qu'on utilise cet outil, on a gagné un temps énorme sur la gestion quotidienne. Tout est centralisé, plus clair.",
+            authorName: "Thomas Leroy",
+            authorRole: "Dirigeant, agence digitale",
+            avatarSrc: "/assets/testimonials/avatar-1.png",
+        },
+        {
+            id: 4,
+            text: "Depuis qu'on utilise cet outil, on a gagné un temps énorme sur la gestion quotidienne. Tout est centralisé, plus clair.",
+            authorName: "Thomas Leroy",
+            authorRole: "Dirigeant, agence digitale",
+            avatarSrc: "/assets/testimonials/avatar-1.png",
+        },
+        {
+            id: 5,
+            text: "Depuis qu'on utilise cet outil, on a gagné un temps énorme sur la gestion quotidienne. Tout est centralisé, plus clair.",
+            authorName: "Thomas Leroy",
+            authorRole: "Dirigeant, agence digitale",
+            avatarSrc: "/assets/testimonials/avatar-1.png",
         },
     ]);
+
+    constructor() {
+        afterNextRender(() => {
+            import("swiper/element/bundle").then(({ register }) => {
+                register();
+
+                const el = this.swiperEl()?.nativeElement as SwiperContainer;
+                if (!el) return;
+
+                Object.assign(el, {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    slidesPerGroup: 1,
+                    grabCursor: true,
+                    pagination: { clickable: true },
+                    injectStyles: [
+                        `.swiper { padding-bottom: 5rem; }
+                         .swiper-slide { height: auto !important; }`,
+                    ],
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                            spaceBetween: 24,
+                        },
+                    },
+                });
+
+                el.initialize();
+            });
+        });
+    }
 }

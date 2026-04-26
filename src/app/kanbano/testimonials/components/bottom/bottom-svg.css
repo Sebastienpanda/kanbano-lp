@@ -1,0 +1,28 @@
+:host {
+    position: absolute;
+    top: 144px;
+    right: 226px;
+    width: 470px;
+    height: 306px;
+    filter: blur(79px);
+
+    @media (width >= 48em) {
+        top: 70px;
+        right: 308px;
+        bottom: initial;
+    }
+
+    @media (width >= 64em) {
+        bottom: 198px;
+        left: 102px;
+    }
+
+    @media (width >= 80em) {
+        bottom: 222px;
+        left: -28px;
+    }
+}
+
+svg {
+    width: 100%;
+}
