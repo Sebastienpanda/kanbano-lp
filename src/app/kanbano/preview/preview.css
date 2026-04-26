@@ -1,35 +1,23 @@
 .preview {
     position: relative;
-    padding-inline: 1rem;
+    height: 502px;
     margin-top: -8rem;
 
     @media (width >= 48em) {
+        height: 756px;
         padding-inline: 0;
-        margin-top: -6rem;
     }
 
     @media (width >= 64em) {
-        margin-top: -8rem;
+        height: 626px;
     }
 
-    @media (width >= 75em) {
-        margin-top: -15rem;
+    @media (width >= 80em) {
+        margin-top: -12rem;
     }
 
     .container-preview {
         position: relative;
-        height: 468px;
-
-        @media (width >= 48em) {
-            width: 500px;
-            height: 758px;
-            margin-inline: auto;
-        }
-
-        @media (width >= 64em) {
-            width: 900px;
-            height: 626px;
-        }
 
         & .preview__purple {
             position: absolute;

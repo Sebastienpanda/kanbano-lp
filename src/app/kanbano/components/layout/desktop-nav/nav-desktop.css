@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
 
-    /* Contour extérieur semi-transparent */
     &::before {
         position: absolute;
         inset: -4px;
@@ -52,16 +51,16 @@
 :host-context(.scrolled) {
     .nav {
         &::before {
-            opacity: 0; /* cache la bordure */
+            opacity: 0;
         }
 
         .lists {
             padding: 0;
-            background: transparent; /* fond transparent */
+            background: transparent;
         }
 
         .item {
-            color: #130043; /* garde la couleur */
+            color: #130043;
         }
     }
 }
