@@ -1,4 +1,4 @@
-<nav aria-label="Navigation principale" class="nav">
+<nav aria-label="Navigation principale" class="nav" [class.theme-light]="theme() === 'dark'">
     <ul class="lists">
         @for (item of nav(); track item.link) {
         <li class="item">

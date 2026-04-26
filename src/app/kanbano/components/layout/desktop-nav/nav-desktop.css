@@ -24,6 +24,8 @@
         border-radius: 2.5rem;
         transition:
             background 350ms ease-in-out,
+            backdrop-filter 350ms ease-in-out,
+            box-shadow 350ms ease-in-out,
             padding 350ms ease-in-out,
             border-radius 350ms ease-in-out;
 
@@ -46,21 +48,21 @@
             }
         }
     }
-}
 
-:host-context(.scrolled) {
-    .nav {
-        &::before {
-            opacity: 0;
-        }
+    &.theme-light {
+        @media (width >= 80em) {
+            &::before {
+                border-color: rgba(0, 0, 0, 0.15);
+            }
 
-        .lists {
-            padding: 0;
-            background: transparent;
-        }
+            .lists {
+                background: rgba(255, 255, 255, 0.85);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-        .item {
-            color: #130043;
+                .item {
+                    color: #130043;
+                }
+            }
         }
     }
 }

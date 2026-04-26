@@ -1,8 +1,20 @@
 .header {
     position: sticky;
-    top: 24px;
+    top: 0;
     z-index: 1000;
     width: 100%;
+    padding-block: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+
+    @media (width >= 80em) {
+        top: 24px;
+        padding-block: 0;
+        background: initial;
+        box-shadow: initial;
+        backdrop-filter: initial;
+    }
 
     & .header-container {
         display: flex;
@@ -11,7 +23,28 @@
         padding-block: 0;
 
         & .logo {
+            position: relative;
+            display: flex;
             flex: 1;
+            align-items: center;
+
+            .logo-variant {
+                transition: opacity 300ms ease;
+            }
+
+            .logo-variant--dark {
+                position: absolute;
+                opacity: 0;
+            }
+
+            &.light-section {
+                .logo-variant--white {
+                    opacity: 0;
+                }
+                .logo-variant--dark {
+                    opacity: 1;
+                }
+            }
         }
 
         & .menu {
@@ -26,6 +59,23 @@
 
             @media (min-width: 80em) {
                 display: none;
+            }
+
+            .burger,
+            .burger::before,
+            .burger::after {
+                background-color: var(--kanbano-white);
+                transition:
+                    background-color 350ms ease-in-out,
+                    transform 350ms ease-in-out;
+            }
+
+            &.theme-light {
+                .burger,
+                .burger::before,
+                .burger::after {
+                    background-color: #130043;
+                }
             }
 
             .burger {
@@ -93,7 +143,13 @@
                 width: 35px;
                 height: 35px;
                 background-color: #fff;
+                border: 0 solid transparent;
                 border-radius: 50%;
+                transition: border 350ms ease-in-out;
+
+                &.right-section {
+                    border: 2px solid rgba(0, 0, 0, 0.15);
+                }
             }
         }
     }

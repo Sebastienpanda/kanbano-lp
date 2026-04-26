@@ -1,13 +1,15 @@
 <header class="header">
     <div class="container header-container">
-        <a class="logo" routerLink="/">
-            <kanbano-lp-logo />
+        <a class="logo" [class.light-section]="theme() === 'dark'" routerLink="/">
+            <kanbano-lp-logo class="logo-variant logo-variant--white" />
+            <kanbano-lp-logo-dark class="logo-variant logo-variant--dark" />
         </a>
 
         <button
             class="menu"
             [class.active]="isMenuOpen()"
             [attr.aria-expanded]="isMenuOpen()"
+            [class.theme-light]="theme() === 'dark'"
             aria-label="Menu de navigation"
             (click)="toggleMenu()"
         >
@@ -20,7 +22,7 @@
         <kanbano-lp-mobile-nav (linkClicked)="isMenuOpen.set(false)" [isActive]="isMenuOpen()" [nav]="nav()" />
         }
         <div class="right">
-            <button class="toggle-theme">
+            <button class="toggle-theme" [class.right-section]="theme() === 'dark'">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask
                         id="mask0_789_79"
