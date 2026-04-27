@@ -1,15 +1,40 @@
 <header class="header">
     <div class="container header-container">
-        <a class="logo" [class.light-section]="theme() === 'light'" routerLink="/">
-            <img src="/blanc.png" class="logo-variant logo-variant--white" alt="" width="219" height="45" />
-            <img src="/dark.png" class="logo-variant logo-variant--dark" alt="" width="219" height="45" />
+        <a class="logo" [class.light-section]="theme() === 'dark'" routerLink="/">
+            <picture class="logo-variant logo-variant--dark">
+                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
+                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
+                <img
+                    alt=""
+                    fetchpriority="high"
+                    height="45"
+                    loading="eager"
+                    sizes="264px"
+                    src="/assets/logo/logo-dark/logo-dark.png"
+                    srcset="/assets/logo/logo-dark/logo-dark.webp 219w"
+                    width="219"
+                />
+            </picture>
+            <picture class="logo-variant logo-variant--light">
+                <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
+                <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+                <img
+                    alt=""
+                    fetchpriority="high"
+                    height="45"
+                    loading="eager"
+                    sizes="264px"
+                    src="/assets/logo/logo-light/logo-light.png"
+                    srcset="/assets/logo/logo-light/logo-light.webp 219w"
+                    width="219"
+                />
+            </picture>
         </a>
 
         <button
             class="menu"
             [class.active]="isMenuOpen()"
             [attr.aria-expanded]="isMenuOpen()"
-            [class.theme-light]="theme() === 'dark'"
             aria-label="Menu de navigation"
             (click)="toggleMenu()"
         >

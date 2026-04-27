@@ -1,7 +1,18 @@
 <nav [class.activeNav]="isActive()" aria-label="Navigation principale" class="nav">
-    <div>
-        <img src="/blanc.png" alt="" />
-    </div>
+    <picture class="logo">
+        <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
+        <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+        <img
+            alt=""
+            fetchpriority="high"
+            height="45"
+            loading="eager"
+            sizes="264px"
+            src="/assets/logo/logo-light/logo-light.png"
+            srcset="/assets/logo/logo-light/logo-light.webp 219w"
+            width="219"
+        />
+    </picture>
     <ul class="lists">
         @for (item of nav(); track item.link) {
         <li class="item">
