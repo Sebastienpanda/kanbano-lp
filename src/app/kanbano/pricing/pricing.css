@@ -13,6 +13,16 @@
         width: 1100px;
     }
 
+    .icon {
+        width: 112px;
+        min-width: 112px;
+        max-width: 112px;
+        height: 97px;
+        min-height: 97px;
+        max-height: 97px;
+        margin-inline: auto;
+    }
+
     .subtitle {
         color: var(--kanbano-purple-text);
 

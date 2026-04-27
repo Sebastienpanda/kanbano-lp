@@ -21,6 +21,15 @@
         transform: translateY(0);
     }
 
+    .logo {
+        width: 219px;
+        min-width: 219px;
+        max-width: 219px;
+        height: 45px;
+        min-height: 45px;
+        max-height: 45px;
+    }
+
     .lists {
         display: flex;
         flex-direction: column;
