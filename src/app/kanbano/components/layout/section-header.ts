@@ -8,6 +8,5 @@ import { ChangeDetectionStrategy, Component, input } from "@angular/core";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionHeader {
-    readonly icon = input.required<string>();
     readonly title = input.required<string>();
 }

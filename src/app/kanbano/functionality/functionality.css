@@ -12,6 +12,16 @@
         margin-inline: auto;
     }
 
+    .icon {
+        width: 112px;
+        min-width: 112px;
+        max-width: 112px;
+        height: 102px;
+        min-height: 102px;
+        max-height: 102px;
+        margin-inline: auto;
+    }
+
     & .functionality__title {
         margin-top: 1.25rem;
         font-size: 2.75rem;
