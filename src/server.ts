@@ -18,6 +18,16 @@ export async function createServer(): Promise<FastifyInstance> {
         wildcard: false,
     });
 
+    app.addHook("onSend", (_req, reply, _payload, done) => {
+        const url = _req.url.split("?")[0];
+        if (/\.(js|css|woff2)$/.test(url)) {
+            reply.header("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (/\.(avif|webp|png|jpg|jpeg|svg|ico)$/.test(url)) {
+            reply.header("Cache-Control", "public, max-age=2592000");
+        }
+        done();
+    });
+
     app.get("*", async (req, reply) => {
         const html = await engine.render({
             bootstrap,
