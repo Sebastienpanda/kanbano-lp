@@ -1,0 +1,9 @@
+{
+    "provider": "node",
+    "build": {
+        "cmd": "pnpm run build"
+    },
+    "deploy": {
+        "cmd": "pnpm run serve:ssr:kanbano-landing-page"
+    }
+}
