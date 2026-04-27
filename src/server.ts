@@ -13,19 +13,21 @@ export async function createServer(): Promise<FastifyInstance> {
     const app = Fastify({ logger: true });
     const engine = new CommonEngine();
 
+    app.addHook("onSend", async (req, reply) => {
+        const url = req.url;
+
+        if (/\.(js|css|avif|webp|png|jpg|woff2)(\?.*)?$/.test(url)) {
+            reply.header("Cache-Control", "public, immutable, max-age=31536000");
+        } else if (/\.svg(\?.*)?$/.test(url)) {
+            reply.header("Cache-Control", "public, max-age=604800");
+        } else if (url.endsWith(".html") || url === "/") {
+            reply.header("Cache-Control", "no-cache, no-store, must-revalidate");
+        }
+    });
+
     app.register(fastifyStatic, {
         root: browserDistFolder,
         wildcard: false,
-    });
-
-    app.addHook("onSend", (_req, reply, _payload, done) => {
-        const url = _req.url.split("?")[0];
-        if (/\.(js|css|woff2)$/.test(url)) {
-            reply.header("Cache-Control", "public, max-age=31536000, immutable");
-        } else if (/\.(avif|webp|png|jpg|jpeg|svg|ico)$/.test(url)) {
-            reply.header("Cache-Control", "public, max-age=2592000");
-        }
-        done();
     });
 
     app.get("*", async (req, reply) => {
