@@ -1,6 +1,6 @@
 @layer reset, base, layout, components, modules, utilities;
 
-@import url(https://fonts.bunny.net/css?family=baloo-2:500,700|mulish:400,700);
+@import url(https://fonts.bunny.net/css?family=baloo-2:500,700|mulish:400,700&display=swap);
 
 @import "./base/reset.css" layer(reset);
 @import "base/typography.css" layer(base);
