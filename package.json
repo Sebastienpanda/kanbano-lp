@@ -4,11 +4,11 @@
     "private": true,
     "scripts": {
         "ng": "ng",
-        "starts": "ng serve",
+        "start": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky",
-        "start": "node dist/kanbano-landing-page/server/server.mjs",
+        "serve:ssr:kanbano-landing-page": "node dist/kanbano-landing-page/server/server.mjs",
         "lint": "oxlint",
         "lint:fix": "oxlint --fix",
         "fmt": "oxfmt",
