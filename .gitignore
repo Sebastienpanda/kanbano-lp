@@ -44,3 +44,8 @@ __screenshots__/
 Thumbs.db
 
 multiples_de_4.md
+
+.agents
+.claude/skills
+PRODUCT.md
+skills-lock.json
