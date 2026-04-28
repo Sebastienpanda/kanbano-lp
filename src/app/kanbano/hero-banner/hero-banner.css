@@ -7,10 +7,11 @@
     position: relative;
     height: 1163px;
     max-height: 1163px;
+    overflow: hidden;
 
     color: var(--kanbano-white);
 
-    background-image: url("/fond-mobile.svg");
+    background-image: url("/assets/background-hero-banner/fond-mobile.svg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -23,7 +24,69 @@
     @media (width >= 75em) {
         height: 906px;
         max-height: 906px;
-        background-image: url("/fond-desktop.svg");
+        background-image: url("/assets/background-hero-banner/fond-desktop.svg");
+    }
+
+    .k1 {
+        display: none;
+
+        @media (width >= 48em) {
+            position: absolute;
+            left: -342px;
+            display: block;
+            width: 632px;
+            min-width: 632px;
+            max-width: 632px;
+            height: 604px;
+            min-height: 604px;
+            max-height: 604px;
+            filter: blur(6px);
+        }
+
+        @media (width >= 80em) {
+            top: -154px;
+            left: -184px;
+        }
+    }
+
+    .k2 {
+        display: none;
+
+        @media (width >= 48em) {
+            position: absolute;
+            bottom: 92px;
+            left: 50%;
+            display: block;
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
+            height: 324px;
+            min-height: 324px;
+            max-height: 324px;
+            filter: blur(10px);
+            transform: translateX(-50%);
+        }
+
+        @media (width >= 80em) {
+            bottom: 208px;
+        }
+    }
+
+    .k3 {
+        position: absolute;
+        top: 336px;
+        right: 0;
+        width: 318px;
+        min-width: 318px;
+        max-width: 318px;
+        height: 337px;
+        min-height: 337px;
+        max-height: 337px;
+        filter: blur(10px);
+
+        @media (width >= 48em) {
+            top: 0;
+        }
     }
 
     & .hero-banner__content {
