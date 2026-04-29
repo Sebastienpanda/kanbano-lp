@@ -69,10 +69,6 @@ canvas {
     height: auto;
 }
 
-svg {
-    fill: currentColor;
-}
-
 input,
 button,
 textarea,
@@ -154,4 +150,9 @@ details > summary {
 ::selection {
     color: highlighttext;
     background-color: highlight;
+}
+
+html,
+body {
+    overflow-x: clip;
 }
