@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Footer } from "@components/layout/footer/footer";
 import { Header } from "@components/layout/header";
 import { DataProtection } from "@kanbano/data-protection/data-protection";
 import { Pricing } from "@kanbano/pricing/pricing";
@@ -10,7 +11,7 @@ import { Preview } from "./preview/preview";
 
 @Component({
     selector: "kanbano-lp-home",
-    imports: [Header, HeroBanner, Preview, Functionality, Pricing, Testimonials, DataProtection],
+    imports: [Header, HeroBanner, Preview, Functionality, Pricing, Testimonials, DataProtection, Footer],
     templateUrl: "./home.html",
 })
 export class Home {}
