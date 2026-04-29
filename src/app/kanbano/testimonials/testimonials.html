@@ -4,7 +4,22 @@
         <kanbano-lp-bottom-testimonials-svg />
     </div>
 
-    <kanbano-lp-section-header icon="/assets/testimonials/testimonials-icon.png" title="Témoignages" />
+    <kanbano-lp-section-header title="Témoignages">
+        <picture class="icon" icon>
+            <source sizes="139px" srcset="/assets/testimonials/icons/icons.avif 139w" type="image/avif" />
+            <source sizes="139px" srcset="/assets/testimonials/icons/icons.webp 139w" type="image/webp" />
+            <img
+                alt=""
+                fetchpriority="high"
+                height="120"
+                loading="eager"
+                sizes="139px"
+                src="/assets/testimonials/icons/icons.png"
+                srcset="/assets/testimonials/icons/icons.png 139w"
+                width="139"
+            />
+        </picture>
+    </kanbano-lp-section-header>
 
     <swiper-container #swiperEl init="false">
         @for (testimonial of testimonials(); track testimonial.id) {
