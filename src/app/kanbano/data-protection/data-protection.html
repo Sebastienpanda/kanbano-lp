@@ -1,9 +1,33 @@
 <section class="data-protection">
-    <kanbano-lp-section-header icon="/assets/data-protection/data-protection-icon.png" title="Protection des données" />
+    <kanbano-lp-section-header title="Protection des données">
+        <picture class="icon" icon>
+            <source sizes="140px" srcset="/assets/data-protection/icons.avif 140w" type="image/avif" />
+            <source sizes="140px" srcset="/assets/data-protection/icons.webp 140w" type="image/webp" />
+            <img
+                alt=""
+                fetchpriority="high"
+                height="120"
+                loading="eager"
+                sizes="140px"
+                src="/assets/data-protection/icons.png"
+                srcset="/assets/data-protection/icons.png 140w"
+                width="140"
+            />
+        </picture>
+    </kanbano-lp-section-header>
 
     <div class="data-protection__bloc">
         <div class="data-protection__quote-block">
-            <img alt="" class="data-protection__quote-img" src="/assets/data-protection/quote.png" />
+            <svg width="43" height="36" viewBox="0 0 43 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14.6875 0C16.8414 0 18.5938 1.75234 18.5938 3.90625V15.8711C18.5938 22.1115 17.2283 26.9574 14.5352 30.2734C11.8134 33.6246 7.70369 35.4775 2.32031 35.7803C2.30571 35.7811 2.29097 35.7812 2.27637 35.7812C2.07735 35.7812 1.88568 35.7048 1.74023 35.5674C1.58414 35.4198 1.49512 35.2148 1.49512 35V27.2324C1.49512 26.8284 1.80371 26.4907 2.20605 26.4541C6.56818 26.0571 8.78215 23.0228 8.95996 17.1865H3.90625C1.75234 17.1865 0 15.4342 0 13.2803V3.90625C0 1.75234 1.75234 0 3.90625 0H14.6875Z"
+                    fill="#BD0CA9"
+                />
+                <path
+                    d="M38.2812 0C40.4352 0 42.1875 1.75234 42.1875 3.90625V15.8711C42.1875 22.1115 40.822 26.9574 38.1289 30.2734C35.4072 33.6246 31.2974 35.4775 25.9141 35.7803C25.8995 35.7811 25.8847 35.7812 25.8701 35.7812C25.6711 35.7812 25.4794 35.7048 25.334 35.5674C25.1779 35.4198 25.0889 35.2148 25.0889 35V27.2324C25.0889 26.8284 25.3975 26.4907 25.7998 26.4541C30.1619 26.0571 32.3759 23.0228 32.5537 17.1865H27.5C25.3461 17.1865 23.5938 15.4342 23.5938 13.2803V3.90625C23.5938 1.75234 25.3461 0 27.5 0H38.2812Z"
+                    fill="#BD0CA9"
+                />
+            </svg>
             <p class="data-protection__quote-text">
                 Kanbano vous garantit
                 <strong class="data-protection__highlight">le contrôle total</strong>
@@ -13,21 +37,15 @@
 
         <ul class="data-protection__list">
             <li class="data-protection__item">
-                <span aria-hidden="true" class="data-protection__arrow">
-                    <img alt="" src="/assets/data-protection/arrow.png" />
-                </span>
+                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
                 <p>100% suisse sans aucune influence extérieure</p>
             </li>
             <li class="data-protection__item">
-                <span aria-hidden="true" class="data-protection__arrow">
-                    <img alt="" src="/assets/data-protection/arrow.png" />
-                </span>
+                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
                 <p>Un cadre juridique suisse conforme avec le droit européen avec le respect du RGPD</p>
             </li>
             <li class="data-protection__item">
-                <span aria-hidden="true" class="data-protection__arrow">
-                    <img alt="" src="/assets/data-protection/arrow.png" />
-                </span>
+                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
                 <p>Les données sont hébergées au cœur de l'Europe</p>
             </li>
         </ul>
