@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    contain-intrinsic-size: 0 800px;
+    content-visibility: auto;
+}
+
 .pricing {
     padding: 2.5rem 1rem 1rem;
     margin-block: 2.5rem;

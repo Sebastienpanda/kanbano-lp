@@ -10,9 +10,8 @@
             <source sizes="139px" srcset="/assets/testimonials/icons/icons.webp 139w" type="image/webp" />
             <img
                 alt=""
-                fetchpriority="high"
                 height="120"
-                loading="eager"
+                loading="lazy"
                 sizes="139px"
                 src="/assets/testimonials/icons/icons.png"
                 srcset="/assets/testimonials/icons/icons.png 139w"
@@ -21,10 +20,11 @@
         </picture>
     </kanbano-lp-section-header>
 
+    <section aria-label="Témoignages clients" aria-roledescription="carousel">
     <swiper-container #swiperEl init="false">
         @for (testimonial of testimonials(); track testimonial.id) {
         <swiper-slide>
-            <article class="testimonials__card">
+            <article class="testimonials__card" aria-roledescription="diapositive">
                 <div class="testimonials__quote-block">
                     <img
                         ngSrc="/quotation_1005100%201.svg"
@@ -54,4 +54,5 @@
         </swiper-slide>
         }
     </swiper-container>
+    </section>
 </section>

@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    contain-intrinsic-size: 0 650px;
+    content-visibility: auto;
+}
+
 .testimonials {
     position: relative;
     width: 100%;
