@@ -11,7 +11,7 @@ import { UserThemeService } from "@kanbano/services/user-theme.service";
 import { map } from "rxjs";
 
 export interface NavItem {
-    link: string;
+    fragment: string;
     name: string;
 }
 
@@ -28,19 +28,19 @@ export class Header {
 
     protected readonly nav = signal<NavItem[]>([
         {
-            link: "fonctionnalités",
+            fragment: "fonctionnalités",
             name: "Fonctionnalités",
         },
         {
-            link: "prix",
+            fragment: "prix",
             name: "Prix",
         },
         {
-            link: "témoignages",
+            fragment: "témoignages",
             name: "Témoignages",
         },
         {
-            link: "protection",
+            fragment: "protection",
             name: "Protection des données",
         },
     ]);
