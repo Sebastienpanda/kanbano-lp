@@ -49,7 +49,7 @@ export class Header {
 
     constructor() {
         effect(() => {
-            this.document.body.style.overflow = this.isMenuOpen() ? "hidden" : "";
+            this.document.documentElement.style.overflow = this.isMenuOpen() ? "hidden" : "";
         });
     }
 
