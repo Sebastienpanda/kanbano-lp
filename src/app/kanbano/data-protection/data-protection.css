@@ -7,8 +7,13 @@
 
     @media (width >= 80em) {
         width: 100%;
-        max-width: 1100px;
+        max-width: 740px;
+        padding: 0 0 1.25rem;
         margin-inline: auto;
+    }
+
+    @media (width >= 90em) {
+        max-width: 1100px;
     }
 
     .icon {
