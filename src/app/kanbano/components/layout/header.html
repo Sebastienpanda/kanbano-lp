@@ -44,7 +44,12 @@
         @if (isDesktop()) {
         <kanbano-lp-nav-desktop [nav]="nav()" />
         } @else {
-        <kanbano-lp-mobile-nav (linkClicked)="isMenuOpen.set(false)" [isActive]="isMenuOpen()" [nav]="nav()" [theme]="theme()" />
+        <kanbano-lp-mobile-nav
+            (linkClicked)="isMenuOpen.set(false)"
+            [isActive]="isMenuOpen()"
+            [nav]="nav()"
+            [theme]="theme()"
+        />
         }
         <div class="right">
             <button class="toggle-theme" [class.right-section]="theme() === 'dark'">
