@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 
 type ButtonVariant = "primary" | "secondary";
 
@@ -7,7 +7,9 @@ type ButtonVariant = "primary" | "secondary";
     imports: [],
     templateUrl: "./button.html",
     styleUrl: "./button.css",
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Button {
     readonly variant = input<ButtonVariant>("primary");
+    readonly full = input<boolean>(false);
 }

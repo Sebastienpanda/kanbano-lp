@@ -5,9 +5,8 @@
             <source sizes="112px" srcset="/assets/pricing/icon.webp 112w" type="image/webp" />
             <img
                 alt=""
-                fetchpriority="high"
                 height="97"
-                loading="eager"
+                loading="lazy"
                 sizes="112px"
                 src="/assets/pricing/icon.png"
                 srcset="/assets/pricing/icon.png 112w"
@@ -47,7 +46,9 @@
                     </li>
                 </ul>
             </div>
-            <kanbano-lp-button variant="secondary">Je choisis ce plan</kanbano-lp-button>
+            <kanbano-lp-button variant="secondary" aria-label="Choisir le Plan Premium"
+                >Je choisis ce plan</kanbano-lp-button
+            >
         </section>
 
         <section aria-label="Plan Professionnel" class="pricing__card pricing__card--pro">
@@ -72,7 +73,9 @@
                     </li>
                 </ul>
             </div>
-            <kanbano-lp-button variant="secondary">Je choisis ce plan</kanbano-lp-button>
+            <kanbano-lp-button variant="secondary" aria-label="Choisir le Plan Professionnel"
+                >Je choisis ce plan</kanbano-lp-button
+            >
         </section>
 
         <section aria-label="Plan Gratuit" class="pricing__card pricing__card--free">
@@ -97,7 +100,9 @@
                     </li>
                 </ul>
             </div>
-            <kanbano-lp-button variant="secondary">Je choisis ce plan</kanbano-lp-button>
+            <kanbano-lp-button variant="secondary" aria-label="Choisir le Plan Gratuit"
+                >Je choisis ce plan</kanbano-lp-button
+            >
         </section>
     </div>
     <div class="pricing__custom">

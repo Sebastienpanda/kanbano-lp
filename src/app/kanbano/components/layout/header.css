@@ -85,7 +85,7 @@
                 display: block;
                 width: 40px;
                 height: 3px;
-                background-color: #130043;
+                background-color: var(--kanbano-primary);
                 transition:
                     background-color 350ms ease-in-out,
                     transform 350ms ease-in-out;
@@ -98,7 +98,7 @@
                     width: 40px;
                     height: 3px;
                     content: "";
-                    background-color: #130043;
+                    background-color: var(--kanbano-primary);
                     transition: transform 350ms ease-in-out;
                 }
 
@@ -144,15 +144,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 35px;
-                height: 35px;
-                background-color: #fff;
+                width: 44px;
+                height: 44px;
+                color: var(--kanbano-primary);
+                cursor: pointer;
+                background-color: var(--kanbano-white);
                 border: 0 solid transparent;
                 border-radius: 50%;
-                transition: border 350ms ease-in-out;
+                transition:
+                    border 350ms ease-in-out,
+                    background-color 350ms ease-in-out,
+                    color 350ms ease-in-out;
 
                 &.right-section {
-                    border: 2px solid rgba(0, 0, 0, 0.15);
+                    color: var(--kanbano-white);
+                    background-color: transparent;
+                    border: 2px solid oklch(1 0 0 / 20%);
                 }
             }
         }

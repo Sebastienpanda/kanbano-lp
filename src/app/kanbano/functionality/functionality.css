@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    contain-intrinsic-size: 0 1200px;
+    content-visibility: auto;
+}
+
 .functionality {
     overflow: hidden;
     text-align: center;

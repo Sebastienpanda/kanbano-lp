@@ -10,9 +10,8 @@
             <source sizes="139px" srcset="/assets/testimonials/icons/icons.webp 139w" type="image/webp" />
             <img
                 alt=""
-                fetchpriority="high"
                 height="120"
-                loading="eager"
+                loading="lazy"
                 sizes="139px"
                 src="/assets/testimonials/icons/icons.png"
                 srcset="/assets/testimonials/icons/icons.png 139w"
@@ -21,37 +20,39 @@
         </picture>
     </kanbano-lp-section-header>
 
-    <swiper-container #swiperEl init="false">
-        @for (testimonial of testimonials(); track testimonial.id) {
-        <swiper-slide>
-            <article class="testimonials__card">
-                <div class="testimonials__quote-block">
-                    <img
-                        ngSrc="/quotation_1005100%201.svg"
-                        width="40"
-                        height="40"
-                        alt=""
-                        aria-hidden="true"
-                        class="testimonials__quote-icon"
-                    />
-                    <p class="testimonials__text">{{ testimonial.text }}</p>
-                </div>
-                <div class="testimonials__author">
-                    <div class="testimonials__author-info">
-                        <p class="testimonials__author-name">{{ testimonial.authorName }}</p>
-                        <p class="testimonials__author-role">{{ testimonial.authorRole }}</p>
+    <section aria-label="Témoignages clients" aria-roledescription="carousel">
+        <swiper-container #swiperEl init="false">
+            @for (testimonial of testimonials(); track testimonial.id) {
+            <swiper-slide>
+                <article class="testimonials__card" aria-roledescription="diapositive">
+                    <div class="testimonials__quote-block">
+                        <img
+                            ngSrc="/quotation_1005100%201.svg"
+                            width="40"
+                            height="40"
+                            alt=""
+                            aria-hidden="true"
+                            class="testimonials__quote-icon"
+                        />
+                        <p class="testimonials__text">{{ testimonial.text }}</p>
                     </div>
-                    <img
-                        [ngSrc]="testimonial.avatarSrc"
-                        width="65"
-                        height="65"
-                        [alt]="testimonial.authorName"
-                        class="testimonials__avatar"
-                    />
-                </div>
-                <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials__stars" />
-            </article>
-        </swiper-slide>
-        }
-    </swiper-container>
+                    <div class="testimonials__author">
+                        <div class="testimonials__author-info">
+                            <p class="testimonials__author-name">{{ testimonial.authorName }}</p>
+                            <p class="testimonials__author-role">{{ testimonial.authorRole }}</p>
+                        </div>
+                        <img
+                            [ngSrc]="testimonial.avatarSrc"
+                            width="65"
+                            height="65"
+                            [alt]="testimonial.authorName"
+                            class="testimonials__avatar"
+                        />
+                    </div>
+                    <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials__stars" />
+                </article>
+            </swiper-slide>
+            }
+        </swiper-container>
+    </section>
 </section>

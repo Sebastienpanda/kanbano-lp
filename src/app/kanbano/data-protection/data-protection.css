@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    contain-intrinsic-size: 0 500px;
+    content-visibility: auto;
+}
+
 .data-protection {
     display: flex;
     flex-direction: column;
@@ -7,8 +13,13 @@
 
     @media (width >= 80em) {
         width: 100%;
-        max-width: 1100px;
+        max-width: 740px;
+        padding: 0 0 1.25rem;
         margin-inline: auto;
+    }
+
+    @media (width >= 90em) {
+        max-width: 1100px;
     }
 
     .icon {
@@ -71,6 +82,11 @@
         padding: 0;
         margin: 0;
         list-style: none;
+    }
+
+    .data-protection__arrow {
+        flex-shrink: 0;
+        color: var(--kanbano-green);
     }
 
     .data-protection__item {

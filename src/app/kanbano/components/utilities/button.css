@@ -36,6 +36,10 @@
         }
     }
 
+    &.full {
+        max-width: 100%;
+    }
+
     &.secondary {
         color: var(--kanbano-primary);
         background-color: var(--kanbano-green);

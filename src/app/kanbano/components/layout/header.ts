@@ -7,6 +7,7 @@ import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
 import { ThemeObserverService } from "@kanbano/services/theme-observer.service";
+import { UserThemeService } from "@kanbano/services/user-theme.service";
 import { map } from "rxjs";
 
 export interface NavItem {
@@ -23,6 +24,7 @@ export interface NavItem {
 })
 export class Header {
     protected readonly theme = inject(ThemeObserverService).currentTheme;
+    protected readonly userTheme = inject(UserThemeService);
 
     protected readonly nav = signal<NavItem[]>([
         {
@@ -49,7 +51,7 @@ export class Header {
 
     constructor() {
         effect(() => {
-            this.document.body.style.overflow = this.isMenuOpen() ? "hidden" : "";
+            this.document.documentElement.style.overflow = this.isMenuOpen() ? "hidden" : "";
         });
     }
 

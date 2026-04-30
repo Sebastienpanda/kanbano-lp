@@ -5,9 +5,8 @@
             <source sizes="140px" srcset="/assets/data-protection/icons.webp 140w" type="image/webp" />
             <img
                 alt=""
-                fetchpriority="high"
                 height="120"
-                loading="eager"
+                loading="lazy"
                 sizes="140px"
                 src="/assets/data-protection/icons.png"
                 srcset="/assets/data-protection/icons.png 140w"
@@ -37,15 +36,15 @@
 
         <ul class="data-protection__list">
             <li class="data-protection__item">
-                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
+                <svg lucideArrowRight [size]="36" [strokeWidth]="1" class="data-protection__arrow"></svg>
                 <p>100% suisse sans aucune influence extérieure</p>
             </li>
             <li class="data-protection__item">
-                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
+                <svg lucideArrowRight [size]="36" [strokeWidth]="1" class="data-protection__arrow"></svg>
                 <p>Un cadre juridique suisse conforme avec le droit européen avec le respect du RGPD</p>
             </li>
             <li class="data-protection__item">
-                <svg lucideArrowRight [size]="36" color="#2BE5CF" [strokeWidth]="1"></svg>
+                <svg lucideArrowRight [size]="36" [strokeWidth]="1" class="data-protection__arrow"></svg>
                 <p>Les données sont hébergées au cœur de l'Europe</p>
             </li>
         </ul>

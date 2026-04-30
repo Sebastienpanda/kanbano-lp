@@ -91,6 +91,13 @@ export class Testimonials {
                     slidesPerGroup: 1,
                     grabCursor: true,
                     pagination: { clickable: true },
+                    a11y: {
+                        enabled: true,
+                        prevSlideMessage: "Témoignage précédent",
+                        nextSlideMessage: "Témoignage suivant",
+                        paginationBulletMessage: "Aller au témoignage {{index}}",
+                        slideLabelMessage: "Témoignage {{index}} sur {{slidesLength}}",
+                    },
                     injectStyles: [
                         `.swiper { padding-bottom: 5rem; }
                          .swiper-slide { height: auto !important; }`,

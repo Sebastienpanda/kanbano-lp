@@ -37,7 +37,7 @@
             font-family: "Baloo 2", sans-serif;
             font-size: 1.0625rem;
             font-weight: 500;
-            color: #130043;
+            color: var(--kanbano-primary);
             text-decoration: none;
             transition:
                 color 350ms ease-in-out,
@@ -60,7 +60,7 @@
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
                 .item {
-                    color: #130043;
+                    color: var(--kanbano-primary);
                 }
             }
         }
