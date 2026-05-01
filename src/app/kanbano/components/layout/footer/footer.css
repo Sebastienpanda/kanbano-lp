@@ -96,42 +96,16 @@
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
-        align-items: center;
         width: 100%;
 
         @media (width >= 64em) {
             flex-direction: row;
-            align-items: center;
         }
     }
 
     .footer__logo {
         width: 13.75rem;
         height: 2.75rem;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
-
-    .footer__logo--dark-theme {
-        display: none;
-    }
-
-    .footer__logo--light-theme {
-        display: block;
-    }
-
-    :host-context([data-theme="dark"]) {
-        .footer__logo--dark-theme {
-            display: block;
-        }
-
-        .footer__logo--light-theme {
-            display: none;
-        }
     }
 
     .footer__nav {
@@ -140,12 +114,9 @@
         gap: 1.25rem;
         align-items: center;
         padding: 1rem 0;
-        margin: 0;
-        list-style: none;
 
         @media (width >= 64em) {
             flex-direction: row;
-            padding: 0;
         }
     }
 

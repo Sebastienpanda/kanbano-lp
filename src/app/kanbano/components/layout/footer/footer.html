@@ -18,29 +18,22 @@
         </div>
 
         <div class="footer__bottom">
-            <picture class="footer__logo footer__logo--dark-theme">
+            <picture class="footer__logo">
+                @if (isDark()) {
                 <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.avif 220w" type="image/avif" />
                 <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.webp 220w" type="image/webp" />
                 <img
                     alt="Kanbano"
                     height="45"
                     loading="lazy"
-                    sizes="220px"
                     src="/assets/logo/logo-light/logo-light.png"
                     width="219"
                 />
-            </picture>
-            <picture class="footer__logo footer__logo--light-theme">
+                } @else {
                 <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.avif 220w" type="image/avif" />
                 <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.webp 220w" type="image/webp" />
-                <img
-                    alt="Kanbano"
-                    height="45"
-                    loading="lazy"
-                    sizes="220px"
-                    src="/assets/logo/logo-dark/logo-dark.png"
-                    width="219"
-                />
+                <img alt="Kanbano" height="45" loading="lazy" src="/assets/logo/logo-dark/logo-dark.png" width="219" />
+                }
             </picture>
 
             <nav aria-label="Navigation du pied de page">
