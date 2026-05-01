@@ -40,7 +40,7 @@
 [data-theme="dark"] {
     --kanbano-bg: var(--kanbano-primary);
     --kanbano-bg-card-price: oklch(0.2722 0.1233 288.05); /* 28135E */
-    --kanbano-bg-card-pro: oklch(0.300 0.141 289); /* 30186D */
+    --kanbano-bg-card-pro: oklch(0.3 0.141 289); /* 30186D */
     --kanbano-bg-newsletter: oklch(0.994 0 0); /* FDFDFD */
     --kanbano-bg-protection: var(--kanbano-purple-deep); /* 382762 */
     --kanbano-bg-footer: oklch(0.2603 0.1075 289.94); /* 261453 */
