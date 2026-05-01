@@ -61,8 +61,16 @@
                 [attr.aria-label]="userTheme.theme() === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
                 (click)="userTheme.toggle()"
             >
-                <svg lucideSun class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'light'"></svg>
-                <svg lucideMoon class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'dark'"></svg>
+                <svg
+                    lucideSun
+                    class="header-theme-icon"
+                    [class.header-theme-icon-visible]="userTheme.theme() === 'light'"
+                ></svg>
+                <svg
+                    lucideMoon
+                    class="header-theme-icon"
+                    [class.header-theme-icon-visible]="userTheme.theme() === 'dark'"
+                ></svg>
             </button>
             <kanbano-lp-button>Rejoindre la file d'attente</kanbano-lp-button>
         </div>
