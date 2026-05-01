@@ -141,6 +141,7 @@
             }
 
             & .toggle-theme {
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -148,18 +149,30 @@
                 height: 44px;
                 color: var(--kanbano-primary);
                 cursor: pointer;
-                background-color: var(--kanbano-white);
-                border: 0 solid transparent;
+                background-color: transparent;
+                border: 2px solid color-mix(in oklch, var(--kanbano-primary) 25%, transparent);
                 border-radius: 50%;
                 transition:
-                    border 350ms ease-in-out,
-                    background-color 350ms ease-in-out,
+                    border-color 350ms ease-in-out,
                     color 350ms ease-in-out;
 
                 &.right-section {
                     color: var(--kanbano-white);
-                    background-color: transparent;
-                    border: 2px solid oklch(1 0 0 / 20%);
+                    border-color: oklch(1 0 0 / 20%);
+                }
+
+                .theme-icon {
+                    position: absolute;
+                    opacity: 0;
+                    transform: rotate(-45deg) scale(0.6);
+                    transition:
+                        opacity 300ms ease,
+                        transform 300ms ease;
+
+                    &.theme-icon--visible {
+                        opacity: 1;
+                        transform: rotate(0deg) scale(1);
+                    }
                 }
             }
         }
