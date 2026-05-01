@@ -1,11 +1,11 @@
 <section class="testimonials" id="témoignages">
-    <div class="container-svg">
+    <div class="testimonials-svg-container">
         <kanbano-lp-top-testimonials-svg />
         <kanbano-lp-bottom-testimonials-svg />
     </div>
 
     <kanbano-lp-section-header title="Témoignages">
-        <picture class="icon" icon>
+        <picture class="testimonials-icon" icon>
             <source sizes="139px" srcset="/assets/testimonials/icons/icons.avif 139w" type="image/avif" />
             <source sizes="139px" srcset="/assets/testimonials/icons/icons.webp 139w" type="image/webp" />
             <img
@@ -24,32 +24,32 @@
         <swiper-container #swiperEl init="false">
             @for (testimonial of testimonials(); track testimonial.id) {
             <swiper-slide>
-                <article class="testimonials__card" aria-roledescription="diapositive">
-                    <div class="testimonials__quote-block">
+                <article class="testimonials-card" aria-roledescription="diapositive">
+                    <div class="testimonials-quote-block">
                         <img
                             ngSrc="/quotation_1005100%201.svg"
                             width="40"
                             height="40"
                             alt=""
                             aria-hidden="true"
-                            class="testimonials__quote-icon"
+                            class="testimonials-quote-icon"
                         />
-                        <p class="testimonials__text">{{ testimonial.text }}</p>
+                        <p class="testimonials-text">{{ testimonial.text }}</p>
                     </div>
-                    <div class="testimonials__author">
-                        <div class="testimonials__author-info">
-                            <p class="testimonials__author-name">{{ testimonial.authorName }}</p>
-                            <p class="testimonials__author-role">{{ testimonial.authorRole }}</p>
+                    <div class="testimonials-author">
+                        <div class="testimonials-author-info">
+                            <p class="testimonials-author-name">{{ testimonial.authorName }}</p>
+                            <p class="testimonials-author-role">{{ testimonial.authorRole }}</p>
                         </div>
                         <img
                             [ngSrc]="testimonial.avatarSrc"
                             width="65"
                             height="65"
                             [alt]="testimonial.authorName"
-                            class="testimonials__avatar"
+                            class="testimonials-avatar"
                         />
                     </div>
-                    <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials__stars" />
+                    <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials-stars" />
                 </article>
             </swiper-slide>
             }

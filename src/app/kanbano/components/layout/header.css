@@ -22,13 +22,13 @@
         justify-content: space-between;
         padding-block: 0;
 
-        & .logo {
+        & .header-logo {
             position: relative;
             display: flex;
             flex: 1;
             align-items: center;
 
-            .logo-variant {
+            & .header-logo-picture {
                 width: 219px;
                 min-width: 219px;
                 max-width: 219px;
@@ -38,7 +38,7 @@
                 transition: opacity 300ms ease;
             }
 
-            .logo-variant--light {
+            & .header-logo-picture-light {
                 position: absolute;
                 opacity: 0;
 
@@ -47,17 +47,18 @@
                 }
             }
 
-            &.light-section {
-                .logo-variant--light {
+            &.header-logo-dark {
+                & .header-logo-picture-light {
                     opacity: 0;
                 }
-                .logo-variant--dark {
+
+                & .header-logo-picture-dark {
                     opacity: 1;
                 }
             }
         }
 
-        & .menu {
+        & .header-menu {
             position: relative;
             z-index: 51;
             display: flex;
@@ -65,22 +66,21 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            cursor: pointer;
 
             @media (min-width: 80em) {
                 display: none;
             }
 
-            .burger,
-            .burger::before,
-            .burger::after {
+            & .header-burger,
+            & .header-burger::before,
+            & .header-burger::after {
                 background-color: var(--kanbano-white);
                 transition:
                     background-color 350ms ease-in-out,
                     transform 350ms ease-in-out;
             }
 
-            .burger {
+            & .header-burger {
                 position: relative;
                 display: block;
                 width: 40px;
@@ -112,7 +112,7 @@
             }
 
             &.active {
-                .burger {
+                & .header-burger {
                     background-color: transparent;
                     transform: translateX(-6px);
 
@@ -129,7 +129,7 @@
             }
         }
 
-        & .right {
+        & .header-right {
             display: none;
 
             @media (min-width: 80em) {
@@ -140,7 +140,7 @@
                 justify-content: end;
             }
 
-            & .toggle-theme {
+            & .header-toggle-theme {
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -148,7 +148,6 @@
                 width: 44px;
                 height: 44px;
                 color: var(--kanbano-primary);
-                cursor: pointer;
                 background-color: transparent;
                 border: 2px solid color-mix(in oklch, var(--kanbano-primary) 25%, transparent);
                 border-radius: 50%;
@@ -156,12 +155,12 @@
                     border-color 350ms ease-in-out,
                     color 350ms ease-in-out;
 
-                &.right-section {
+                &.header-toggle-theme-light {
                     color: var(--kanbano-white);
                     border-color: oklch(1 0 0 / 20%);
                 }
 
-                .theme-icon {
+                & .header-theme-icon {
                     position: absolute;
                     opacity: 0;
                     transform: rotate(-45deg) scale(0.6);
@@ -169,7 +168,7 @@
                         opacity 300ms ease,
                         transform 300ms ease;
 
-                    &.theme-icon--visible {
+                    &.header-theme-icon-visible {
                         opacity: 1;
                         transform: rotate(0deg) scale(1);
                     }

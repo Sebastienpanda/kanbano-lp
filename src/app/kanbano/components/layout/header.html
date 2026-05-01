@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container header-container">
-        <a class="logo" [class.light-section]="!showLightElements()" routerLink="/">
-            <picture class="logo-variant logo-variant--dark">
+        <a class="header-logo" [class.header-logo-dark]="!showLightElements()" routerLink="/">
+            <picture class="header-logo-picture header-logo-picture-dark">
                 <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
                 <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
                 <img
@@ -15,7 +15,7 @@
                     width="219"
                 />
             </picture>
-            <picture class="logo-variant logo-variant--light">
+            <picture class="header-logo-picture header-logo-picture-light">
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
                 <img
@@ -33,13 +33,13 @@
 
         <button
             type="button"
-            class="menu"
+            class="header-menu"
             [class.active]="isMenuOpen()"
             [attr.aria-expanded]="isMenuOpen()"
             aria-label="Menu de navigation"
             (click)="toggleMenu()"
         >
-            <span class="burger"></span>
+            <span class="header-burger"></span>
         </button>
 
         @if (isDesktop()) {
@@ -53,16 +53,16 @@
             [theme]="userTheme.theme()"
         />
         }
-        <div class="right">
+        <div class="header-right">
             <button
                 type="button"
-                class="toggle-theme"
-                [class.right-section]="showLightElements()"
+                class="header-toggle-theme"
+                [class.header-toggle-theme-light]="showLightElements()"
                 [attr.aria-label]="userTheme.theme() === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
                 (click)="userTheme.toggle()"
             >
-                <svg lucideSun class="theme-icon" [class.theme-icon--visible]="userTheme.theme() === 'light'"></svg>
-                <svg lucideMoon class="theme-icon" [class.theme-icon--visible]="userTheme.theme() === 'dark'"></svg>
+                <svg lucideSun class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'light'"></svg>
+                <svg lucideMoon class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'dark'"></svg>
             </button>
             <kanbano-lp-button>Rejoindre la file d'attente</kanbano-lp-button>
         </div>

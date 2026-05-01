@@ -1,8 +1,8 @@
-<nav aria-label="Navigation principale" class="nav" [class.theme-light]="!showLightElements()">
-    <ul class="lists">
+<nav aria-label="Navigation principale" class="desktop-nav" [class.desktop-nav-theme-light]="!showLightElements()">
+    <ul class="desktop-nav-lists">
         @for (item of nav(); track item.fragment) {
-        <li class="item">
-            <a [fragment]="item.fragment" [routerLink]="['/']" class="link"> {{ item.name }} </a>
+        <li class="desktop-nav-item">
+            <a [fragment]="item.fragment" [routerLink]="['/']" class="desktop-nav-link"> {{ item.name }} </a>
         </li>
         }
     </ul>

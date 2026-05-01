@@ -7,7 +7,6 @@
     font-family: var(--font-baloo), display, serif;
     font-size: 1rem;
     font-weight: 700;
-    cursor: pointer;
     border: 0.125rem solid transparent;
     border-radius: 2.5rem;
     transition: opacity 200ms ease;

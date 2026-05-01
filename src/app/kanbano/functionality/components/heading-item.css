@@ -19,23 +19,23 @@
         padding: 2.5rem 3.125rem 4.375rem;
     }
 
-    & .heading__title {
+    & .heading-title {
         font-family: var(--font-baloo), display, serif;
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--kanbano-text-workspace);
     }
 
-    & .heading__description {
+    & .heading-description {
         font-size: 1.125rem;
         color: var(--kanbano-purple-text);
 
-        & .heading__description--bold {
+        & .heading-description-bold {
             font-weight: 700;
         }
     }
 
-    &.heading--workspace {
+    &.heading-workspace {
         @media (width >= 64em) {
             position: absolute;
             left: 0;
@@ -43,7 +43,7 @@
         }
     }
 
-    &.heading--task {
+    &.heading-task {
         @media (width >= 64em) {
             position: absolute;
             right: 104px;
@@ -51,7 +51,7 @@
         }
     }
 
-    &.heading--participant {
+    &.heading-participant {
         @media (width >= 64em) {
             min-width: 482px;
             max-width: 482px;

@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.section-header__title {
+.section-header-title {
     font-size: 2.75rem;
     font-weight: 700;
     color: var(--kanbano-text-heading);

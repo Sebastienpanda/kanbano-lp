@@ -16,10 +16,10 @@
         margin-top: -12rem;
     }
 
-    .container-preview {
+    & .container-preview {
         position: relative;
 
-        & .preview__purple {
+        & .preview-purple {
             position: absolute;
             top: 152px;
             left: 50%;
@@ -37,7 +37,7 @@
             }
         }
 
-        & .preview__pink {
+        & .preview-pink {
             position: absolute;
             top: 208px;
             left: 60px;
@@ -60,7 +60,7 @@
             }
         }
 
-        & .preview__green {
+        & .preview-green {
             position: absolute;
             top: 160px;
             right: 10px;
@@ -79,7 +79,7 @@
             }
         }
 
-        & .preview__purple-right {
+        & .preview-purple-right {
             position: absolute;
             top: 152px;
             right: 20px;
