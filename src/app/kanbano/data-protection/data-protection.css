@@ -41,7 +41,7 @@
         width: 100%;
         padding: 2.5rem;
         overflow: hidden;
-        background-color: var(--kanbano-primary);
+        background-color: var(--kanbano-bg-protection);
         border-radius: 0.75rem;
     }
 

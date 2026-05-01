@@ -13,7 +13,7 @@
         bottom: 508px;
         left: 126px;
         width: 192px;
-        box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+        box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
     }
 
     @media (width >= 75em) {

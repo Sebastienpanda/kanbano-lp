@@ -12,5 +12,5 @@
 .section-header__title {
     font-size: 2.75rem;
     font-weight: 700;
-    color: var(--kanbano-gradient-purple);
+    color: var(--kanbano-text-heading);
 }

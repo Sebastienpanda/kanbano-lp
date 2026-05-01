@@ -1,5 +1,23 @@
 <!--suppress AngularNgOptimizedImage -->
 <picture>
+    @if (isDark()) {
+    <source
+        sizes="(min-width: 768px) 382px, 330px"
+        srcset="
+            /assets/functionality/task/empty-330/empty-task-dark-330.avif 330w,
+            /assets/functionality/task/empty-382/empty-task-dark-382.avif 382w
+        "
+        type="image/avif"
+    />
+    <source
+        sizes="(min-width: 768px) 382px, 330px"
+        srcset="
+            /assets/functionality/task/empty-330/empty-task-dark-330.webp 330w,
+            /assets/functionality/task/empty-382/empty-task-dark-382.webp 382w
+        "
+        type="image/webp"
+    />
+    }
     <source
         sizes="(min-width: 768px) 382px, 330px"
         srcset="

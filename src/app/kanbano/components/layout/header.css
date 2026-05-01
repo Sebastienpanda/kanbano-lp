@@ -5,7 +5,7 @@
     width: 100%;
     padding-block: 1rem;
     background: rgba(255, 255, 255, 0.55);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--kanbano-shadow-black);
     backdrop-filter: blur(10px);
 
     @media (width >= 80em) {

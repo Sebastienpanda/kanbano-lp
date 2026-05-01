@@ -4,7 +4,7 @@
     width: 325px;
     margin-inline: auto;
     margin-top: 0.75rem;
-    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+    box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
 
     @media (width >= 48em) {
         width: 386px;

@@ -4,7 +4,7 @@
     display: block;
     width: 264px;
     margin-inline: auto;
-    box-shadow: 0 4px 100px 0 rgba(155, 43, 229, 0.41);
+    box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
 
     @media (width >= 48em) {
         right: 0;

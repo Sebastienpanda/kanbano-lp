@@ -118,7 +118,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5625rem;
-        color: var(--kanbano-primary);
+        color: var(--kanbano-purple-text);
     }
 
     .testimonials__author-role {
@@ -126,7 +126,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5625rem;
-        color: var(--kanbano-gradient-purple);
+        color: var(--kanbano-text-heading);
     }
 
     .testimonials__avatar {
