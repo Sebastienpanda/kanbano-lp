@@ -1,7 +1,6 @@
 :host {
     display: block;
     contain-intrinsic-size: 0 650px;
-    content-visibility: auto;
 }
 
 .testimonials {
@@ -15,7 +14,7 @@
         margin-inline: auto;
     }
 
-    .icon {
+    & .testimonials-icon {
         width: 139px;
         min-width: 139px;
         max-width: 139px;
@@ -25,7 +24,7 @@
         margin-inline: auto;
     }
 
-    .container-svg {
+    & .testimonials-svg-container {
         position: absolute;
         top: 37px;
         left: 0;
@@ -48,7 +47,7 @@
         }
     }
 
-    .testimonials__wrapper {
+    & .testimonials-wrapper {
         width: 100%;
         margin-top: 1.25rem;
     }
@@ -65,7 +64,7 @@
         margin-top: 2rem;
     }
 
-    .testimonials__card {
+    & .testimonials-card {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
@@ -79,7 +78,7 @@
         box-shadow: 0 4px 20px 0 var(--kanbano-shadow-card);
     }
 
-    .testimonials__quote-block {
+    & .testimonials-quote-block {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
@@ -87,13 +86,13 @@
         width: 100%;
     }
 
-    .testimonials__quote-icon {
+    & .testimonials-quote-icon {
         flex-shrink: 0;
         width: 2.5rem;
         height: 2.5rem;
     }
 
-    .testimonials__text {
+    & .testimonials-text {
         font-family: var(--font-mulish), sans-serif;
         font-size: 1.0625rem;
         font-weight: 400;
@@ -101,36 +100,36 @@
         color: var(--kanbano-purple-text);
     }
 
-    .testimonials__author {
+    & .testimonials-author {
         display: flex;
         gap: 0.625rem;
         align-items: center;
         width: 100%;
     }
 
-    .testimonials__author-info {
+    & .testimonials-author-info {
         display: flex;
         flex: 1;
         flex-direction: column;
     }
 
-    .testimonials__author-name {
+    & .testimonials-author-name {
         font-family: var(--font-baloo), display, serif;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5625rem;
-        color: var(--kanbano-primary);
+        color: var(--kanbano-purple-text);
     }
 
-    .testimonials__author-role {
+    & .testimonials-author-role {
         font-family: var(--font-baloo), display, serif;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.5625rem;
-        color: var(--kanbano-gradient-purple);
+        color: var(--kanbano-text-heading);
     }
 
-    .testimonials__avatar {
+    & .testimonials-avatar {
         flex-shrink: 0;
         width: 4.0625rem;
         height: 4.0625rem;
@@ -138,7 +137,7 @@
         border-radius: 2.5rem;
     }
 
-    .testimonials__stars {
+    & .testimonials-stars {
         width: 9.0625rem;
         height: 1.5625rem;
     }

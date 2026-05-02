@@ -8,9 +8,7 @@
     height: 1163px;
     max-height: 1163px;
     overflow: hidden;
-
     color: var(--kanbano-white);
-
     background-image: url("/assets/background-hero-banner/fond-mobile.svg");
     background-repeat: no-repeat;
     background-position: center top;
@@ -27,7 +25,7 @@
         background-image: url("/assets/background-hero-banner/fond-desktop.svg");
     }
 
-    .k1 {
+    & .hero-banner-k1 {
         display: none;
 
         @media (width >= 48em) {
@@ -49,7 +47,7 @@
         }
     }
 
-    .k2 {
+    & .hero-banner-k2 {
         display: none;
 
         @media (width >= 48em) {
@@ -72,7 +70,7 @@
         }
     }
 
-    .k3 {
+    & .hero-banner-k3 {
         position: absolute;
         top: 336px;
         right: 0;
@@ -89,7 +87,7 @@
         }
     }
 
-    & .hero-banner__content {
+    & .hero-banner-content {
         position: absolute;
         top: 150px;
         left: 50%;
@@ -104,7 +102,7 @@
             justify-content: center;
         }
 
-        & .hero-banner__heading {
+        & .hero-banner-heading {
             font-size: 3rem;
             font-weight: 400;
             line-height: 1.2;
@@ -118,12 +116,12 @@
                 line-height: initial;
             }
 
-            & .hero-banner__heading--accent {
+            & .hero-banner-heading-accent {
                 font-weight: 700;
             }
         }
 
-        & .hero-banner__description {
+        & .hero-banner-description {
             font-size: 1.5rem;
             font-weight: 700;
 
@@ -132,7 +130,7 @@
             }
         }
 
-        & .hero-banner__actions {
+        & .hero-banner-actions {
             width: 100%;
             margin-top: 2.5rem;
         }

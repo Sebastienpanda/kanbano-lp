@@ -4,7 +4,7 @@
     left: 135px;
     display: block;
     width: 202px;
-    box-shadow: 0 4px 100px rgba(155, 43, 229, 0.41);
+    box-shadow: 0 4px 100px var(--kanbano-shadow-purple);
 
     @media (width >= 48em) {
         left: 358px;

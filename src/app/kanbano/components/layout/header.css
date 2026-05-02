@@ -5,7 +5,7 @@
     width: 100%;
     padding-block: 1rem;
     background: rgba(255, 255, 255, 0.55);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--kanbano-shadow-black);
     backdrop-filter: blur(10px);
 
     @media (width >= 80em) {
@@ -22,13 +22,13 @@
         justify-content: space-between;
         padding-block: 0;
 
-        & .logo {
+        & .header-logo {
             position: relative;
             display: flex;
             flex: 1;
             align-items: center;
 
-            .logo-variant {
+            & .header-logo-picture {
                 width: 219px;
                 min-width: 219px;
                 max-width: 219px;
@@ -38,7 +38,7 @@
                 transition: opacity 300ms ease;
             }
 
-            .logo-variant--light {
+            & .header-logo-picture-light {
                 position: absolute;
                 opacity: 0;
 
@@ -47,17 +47,18 @@
                 }
             }
 
-            &.light-section {
-                .logo-variant--light {
+            &.header-logo-dark {
+                & .header-logo-picture-light {
                     opacity: 0;
                 }
-                .logo-variant--dark {
+
+                & .header-logo-picture-dark {
                     opacity: 1;
                 }
             }
         }
 
-        & .menu {
+        & .header-menu {
             position: relative;
             z-index: 51;
             display: flex;
@@ -65,22 +66,21 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            cursor: pointer;
 
             @media (min-width: 80em) {
                 display: none;
             }
 
-            .burger,
-            .burger::before,
-            .burger::after {
+            & .header-burger,
+            & .header-burger::before,
+            & .header-burger::after {
                 background-color: var(--kanbano-white);
                 transition:
                     background-color 350ms ease-in-out,
                     transform 350ms ease-in-out;
             }
 
-            .burger {
+            & .header-burger {
                 position: relative;
                 display: block;
                 width: 40px;
@@ -112,7 +112,7 @@
             }
 
             &.active {
-                .burger {
+                & .header-burger {
                     background-color: transparent;
                     transform: translateX(-6px);
 
@@ -129,7 +129,7 @@
             }
         }
 
-        & .right {
+        & .header-right {
             display: none;
 
             @media (min-width: 80em) {
@@ -140,26 +140,38 @@
                 justify-content: end;
             }
 
-            & .toggle-theme {
+            & .header-toggle-theme {
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 44px;
                 height: 44px;
                 color: var(--kanbano-primary);
-                cursor: pointer;
-                background-color: var(--kanbano-white);
-                border: 0 solid transparent;
+                background-color: transparent;
+                border: 2px solid color-mix(in oklch, var(--kanbano-primary) 25%, transparent);
                 border-radius: 50%;
                 transition:
-                    border 350ms ease-in-out,
-                    background-color 350ms ease-in-out,
+                    border-color 350ms ease-in-out,
                     color 350ms ease-in-out;
 
-                &.right-section {
+                &.header-toggle-theme-light {
                     color: var(--kanbano-white);
-                    background-color: transparent;
-                    border: 2px solid oklch(1 0 0 / 20%);
+                    border-color: oklch(1 0 0 / 20%);
+                }
+
+                & .header-theme-icon {
+                    position: absolute;
+                    opacity: 0;
+                    transform: rotate(-45deg) scale(0.6);
+                    transition:
+                        opacity 300ms ease,
+                        transform 300ms ease;
+
+                    &.header-theme-icon-visible {
+                        opacity: 1;
+                        transform: rotate(0deg) scale(1);
+                    }
                 }
             }
         }

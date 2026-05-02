@@ -1,11 +1,11 @@
 <nav
-    [class.activeNav]="isActive()"
+    [class.mobile-nav-active]="isActive()"
     [attr.inert]="isActive() ? null : ''"
     aria-label="Navigation principale"
-    class="nav"
+    class="mobile-nav"
 >
-    <div class="nav-top">
-        <picture class="logo">
+    <div class="mobile-nav-top">
+        <picture class="mobile-nav-logo">
             <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
             <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
             <img
@@ -20,13 +20,20 @@
         </picture>
     </div>
 
-    <ul class="lists">
-        @for (item of nav(); track item.link) {
-        <li class="item">
-            <a (click)="linkClicked.emit()" [fragment]="item.link" [routerLink]="['/']" class="link">
-                <span class="item-index" aria-hidden="true">0{{ $index + 1 }}</span>
-                <span class="item-label">{{ item.name }}</span>
-                <svg class="item-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <ul class="mobile-nav-lists">
+        @for (item of nav(); track item.fragment) {
+        <li class="mobile-nav-item">
+            <a (click)="linkClicked.emit()" [fragment]="item.fragment" [routerLink]="['/']" class="mobile-nav-link">
+                <span class="mobile-nav-item-index" aria-hidden="true">0{{ $index + 1 }}</span>
+                <span class="mobile-nav-item-label">{{ item.name }}</span>
+                <svg
+                    class="mobile-nav-item-arrow"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                >
                     <path
                         d="M7 17L17 7M17 7H7M17 7V17"
                         stroke="currentColor"
@@ -40,11 +47,11 @@
         }
     </ul>
 
-    <div class="nav-footer">
-        <div class="nav-footer-divider"></div>
-        <div class="nav-footer-actions">
+    <div class="mobile-nav-footer">
+        <div class="mobile-nav-footer-divider"></div>
+        <div class="mobile-nav-footer-actions">
             <button
-                class="toggle-theme"
+                class="mobile-nav-toggle-theme"
                 [attr.aria-label]="theme() === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'"
                 (click)="themeToggle.emit()"
             >
@@ -147,7 +154,7 @@
                     />
                 </svg>
                 }
-                <span class="toggle-label">{{ theme() === 'dark' ? 'Mode clair' : 'Mode sombre' }}</span>
+                <span class="mobile-nav-toggle-label">{{ theme() === 'dark' ? 'Mode clair' : 'Mode sombre' }}</span>
             </button>
             <kanbano-lp-button [full]="true">Rejoindre la file d'attente</kanbano-lp-button>
         </div>

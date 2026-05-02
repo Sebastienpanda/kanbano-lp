@@ -13,7 +13,7 @@
         justify-content: center;
     }
 
-    .checked__item {
+    & .checked-item {
         display: flex;
         gap: 1rem;
         align-items: center;

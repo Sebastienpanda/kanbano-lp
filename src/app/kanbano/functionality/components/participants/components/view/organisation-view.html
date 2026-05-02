@@ -1,5 +1,17 @@
 <!--suppress AngularNgOptimizedImage -->
 <picture>
+    @if (isDark()) {
+    <source
+        sizes="264px"
+        srcset="/assets/functionality/organisation/view-264/view-dark-264.avif 264w"
+        type="image/avif"
+    />
+    <source
+        sizes="264px"
+        srcset="/assets/functionality/organisation/view-264/view-dark-264.webp 264w"
+        type="image/webp"
+    />
+    }
     <source sizes="264px" srcset="/assets/functionality/organisation/view-264/view-264.avif 264w" type="image/avif" />
     <source sizes="264px" srcset="/assets/functionality/organisation/view-264/view-264.webp 264w" type="image/webp" />
     <img

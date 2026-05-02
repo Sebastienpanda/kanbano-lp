@@ -1,4 +1,4 @@
-.nav {
+.desktop-nav {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -14,7 +14,7 @@
         transition: opacity 350ms ease-in-out;
     }
 
-    .lists {
+    & .desktop-nav-lists {
         display: flex;
         gap: 2rem;
         align-items: center;
@@ -33,7 +33,7 @@
             gap: 2rem;
         }
 
-        .item {
+        & .desktop-nav-item {
             font-family: "Baloo 2", sans-serif;
             font-size: 1.0625rem;
             font-weight: 500;
@@ -49,17 +49,17 @@
         }
     }
 
-    &.theme-light {
+    &.desktop-nav-theme-light {
         @media (width >= 80em) {
             &::before {
                 border-color: rgba(0, 0, 0, 0.15);
             }
 
-            .lists {
+            & .desktop-nav-lists {
                 background: rgba(255, 255, 255, 0.95);
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                box-shadow: 0 4px 20px var(--kanbano-shadow-black);
 
-                .item {
+                & .desktop-nav-item {
                     color: var(--kanbano-primary);
                 }
             }
