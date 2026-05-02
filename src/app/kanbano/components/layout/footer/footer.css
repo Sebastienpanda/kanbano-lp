@@ -71,6 +71,7 @@
 
                 & .footer-label {
                     font-size: 1.125rem;
+                    color: var(--kanbano-text-newsletter);
                 }
 
                 & .footer-form-input {
