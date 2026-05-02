@@ -6,7 +6,6 @@ import { RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
-import { ThemeObserverService } from "@kanbano/services/theme-observer.service";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
 import { LucideMoon, LucideSun } from "@lucide/angular";
 import { map } from "rxjs";
@@ -24,12 +23,8 @@ export interface NavItem {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-    protected readonly theme = inject(ThemeObserverService).currentTheme;
     protected readonly userTheme = inject(UserThemeService);
-
-    protected readonly showLightElements = computed(
-        () => this.theme() === "light" || this.userTheme.theme() === "dark",
-    );
+    protected readonly isDark = computed(() => this.userTheme.theme() === "dark");
 
     protected readonly nav = signal<NavItem[]>([
         {

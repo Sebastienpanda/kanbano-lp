@@ -1,28 +1,14 @@
 <header class="header">
     <div class="container header-container">
-        <a
-            aria-label="Kanbano — Retour à l'accueil"
-            class="header-logo"
-            [class.header-logo-dark]="!showLightElements()"
-            routerLink="/"
-        >
-            <picture class="header-logo-picture header-logo-picture-dark">
-                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
-                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
-                <img
-                    alt=""
-                    fetchpriority="high"
-                    height="45"
-                    loading="eager"
-                    sizes="264px"
-                    src="/assets/logo/logo-dark/logo-dark.png"
-                    srcset="/assets/logo/logo-dark/logo-dark.png 219w"
-                    width="219"
-                />
-            </picture>
-            <picture class="header-logo-picture header-logo-picture-light">
+        <a aria-label="Kanbano — Retour à l'accueil" class="header-logo" routerLink="/">
+            <picture class="header-logo-picture">
+                @if (isDark()) {
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+                } @else {
+                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
+                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
+                }
                 <img
                     alt=""
                     fetchpriority="high"
@@ -62,7 +48,7 @@
             <button
                 type="button"
                 class="header-toggle-theme"
-                [class.header-toggle-theme-light]="showLightElements()"
+                [class.header-toggle-theme-dark]="!isDark()"
                 [attr.aria-label]="userTheme.theme() === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
                 (click)="userTheme.toggle()"
             >
