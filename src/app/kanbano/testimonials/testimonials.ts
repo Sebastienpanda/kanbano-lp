@@ -4,7 +4,8 @@ import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
 import { SwiperDirective } from "@kanbano/testimonials/swiper.directive";
-import { register } from "swiper/element/bundle";
+import { A11y, Pagination } from "swiper/modules";
+import { register } from "swiper/element";
 import { SwiperOptions } from "swiper/types";
 
 register();
@@ -72,6 +73,7 @@ export class Testimonials {
     ]);
 
     swiperConfig: SwiperOptions = {
+        modules: [Pagination, A11y],
         slidesPerView: 1,
         spaceBetween: 20,
         slidesPerGroup: 1,
