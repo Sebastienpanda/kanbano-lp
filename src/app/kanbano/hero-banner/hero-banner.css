@@ -1,3 +1,25 @@
+@keyframes hero-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero-banner {
     position: relative;
     height: 1163px;
@@ -98,6 +120,7 @@
         }
 
         & .hero-banner-heading {
+            animation: hero-zoom-in 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
             font-size: 3rem;
             font-weight: 400;
             line-height: 1.2;
@@ -117,6 +140,7 @@
         }
 
         & .hero-banner-description {
+            animation: hero-fade-up 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms both;
             font-size: 1.5rem;
             font-weight: 700;
 
@@ -126,8 +150,22 @@
         }
 
         & .hero-banner-actions {
+            animation: hero-fade-up 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 280ms both;
             width: 100%;
             margin-top: 2.5rem;
+        }
+
+        & kanbano-lp-checked {
+            animation: hero-fade-up 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 410ms both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            & .hero-banner-heading,
+            & .hero-banner-description,
+            & .hero-banner-actions,
+            & kanbano-lp-checked {
+                animation: none;
+            }
         }
     }
 }
