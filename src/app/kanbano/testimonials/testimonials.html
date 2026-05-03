@@ -21,7 +21,7 @@
     </kanbano-lp-section-header>
 
     <section aria-label="Témoignages clients" aria-roledescription="carousel">
-        <swiper-container #swiperEl init="false">
+        <swiper-container kanbanoDirectiveSwiper [config]="swiperConfig" init="false">
             @for (testimonial of testimonials(); track testimonial.id) {
             <swiper-slide>
                 <article class="testimonials-card" aria-roledescription="diapositive">
