@@ -1,4 +1,5 @@
-import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { afterNextRender, ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { CtaActions } from "@components/utilities/cta-actions";
 import { SectionThemeDirective } from "@kanbano/directives/section-theme.directive";
 import { createTimeline } from "animejs";
@@ -13,6 +14,8 @@ import { Checked } from "./components/checked";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroBanner {
+    private readonly document = inject(DOCUMENT);
+
     constructor() {
         afterNextRender(() => {
             const prefersReducedMotion = this.document.defaultView?.matchMedia(
