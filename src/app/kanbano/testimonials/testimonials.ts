@@ -4,8 +4,8 @@ import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
 import { SwiperDirective } from "@kanbano/testimonials/swiper.directive";
-import { A11y, Pagination } from "swiper/modules";
 import { register } from "swiper/element";
+import { A11y, Pagination } from "swiper/modules";
 import { SwiperOptions } from "swiper/types";
 
 register();
