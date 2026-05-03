@@ -55,5 +55,4 @@ export class Header {
     toggleMenu(): void {
         this.isMenuOpen.update((v) => !v);
     }
-
 }
