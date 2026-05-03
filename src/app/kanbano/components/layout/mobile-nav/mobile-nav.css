@@ -1,3 +1,9 @@
+:host {
+    @media (width >= 80em) {
+        display: none;
+    }
+}
+
 .mobile-nav {
     position: fixed;
     inset: 0;

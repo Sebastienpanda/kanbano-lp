@@ -1,17 +1,13 @@
 import { NgOptimizedImage } from "@angular/common";
-import {
-    ChangeDetectionStrategy,
-    Component,
-    CUSTOM_ELEMENTS_SCHEMA,
-    ElementRef,
-    afterNextRender,
-    signal,
-    viewChild,
-} from "@angular/core";
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, signal } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
-import { SwiperContainer } from "swiper/element";
+import { SwiperDirective } from "@kanbano/testimonials/swiper.directive";
+import { register } from "swiper/element/bundle";
+import { SwiperOptions } from "swiper/types";
+
+register();
 
 interface Testimonial {
     id: number;
@@ -23,15 +19,13 @@ interface Testimonial {
 
 @Component({
     selector: "kanbano-lp-testimonials",
-    imports: [SectionHeader, NgOptimizedImage, TopSvg, BottomSvg],
+    imports: [SectionHeader, NgOptimizedImage, TopSvg, BottomSvg, SwiperDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: "./testimonials.html",
     styleUrl: "./testimonials.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Testimonials {
-    private readonly swiperEl = viewChild<ElementRef<HTMLElement>>("swiperEl");
-
     protected readonly testimonials = signal<Testimonial[]>([
         {
             id: 0,
@@ -77,47 +71,34 @@ export class Testimonials {
         },
     ]);
 
-    constructor() {
-        afterNextRender(() => {
-            import("swiper/element/bundle").then(({ register }) => {
-                register();
-
-                const el = this.swiperEl()?.nativeElement as SwiperContainer;
-                if (!el) return;
-
-                Object.assign(el, {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    slidesPerGroup: 1,
-                    grabCursor: true,
-                    pagination: { clickable: true },
-                    a11y: {
-                        enabled: true,
-                        prevSlideMessage: "Témoignage précédent",
-                        nextSlideMessage: "Témoignage suivant",
-                        paginationBulletMessage: "Aller au témoignage {{index}}",
-                        slideLabelMessage: "Témoignage {{index}} sur {{slidesLength}}",
-                    },
-                    injectStyles: [
-                        `.swiper { padding-bottom: 5rem; }
-                         .swiper-slide { height: auto !important; }`,
-                    ],
-                    breakpoints: {
-                        768: {
-                            slidesPerView: 2,
-                            slidesPerGroup: 2,
-                            spaceBetween: 20,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            slidesPerGroup: 3,
-                            spaceBetween: 24,
-                        },
-                    },
-                });
-
-                el.initialize();
-            });
-        });
-    }
+    swiperConfig: SwiperOptions = {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        grabCursor: true,
+        pagination: { clickable: true },
+        a11y: {
+            enabled: true,
+            prevSlideMessage: "Témoignage précédent",
+            nextSlideMessage: "Témoignage suivant",
+            paginationBulletMessage: "Aller au témoignage {{index}}",
+            slideLabelMessage: "Témoignage {{index}} sur {{slidesLength}}",
+        },
+        injectStyles: [
+            `.swiper { padding-bottom: 5rem; }
+                             .swiper-slide { height: auto !important; }`,
+        ],
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 24,
+            },
+        },
+    };
 }

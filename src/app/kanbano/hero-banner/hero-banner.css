@@ -1,8 +1,3 @@
-:host {
-    display: block;
-    margin-top: calc(-1 * var(--lp-header-height, 4rem));
-}
-
 .hero-banner {
     position: relative;
     height: 1163px;

@@ -33,9 +33,7 @@
             <span class="header-burger"></span>
         </button>
 
-        @if (isDesktop()) {
         <kanbano-lp-nav-desktop [nav]="nav()" />
-        } @else {
         <kanbano-lp-mobile-nav
             (linkClicked)="isMenuOpen.set(false)"
             (themeToggle)="userTheme.toggle()"
@@ -43,7 +41,6 @@
             [nav]="nav()"
             [theme]="userTheme.theme()"
         />
-        }
         <div class="header-right">
             <button
                 type="button"
