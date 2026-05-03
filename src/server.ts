@@ -2,6 +2,7 @@ import { join } from "node:path";
 
 import { APP_BASE_HREF } from "@angular/common";
 import { CommonEngine } from "@angular/ssr/node";
+import compress from "@fastify/compress";
 import fastifyStatic from "@fastify/static";
 import Fastify, { FastifyInstance } from "fastify";
 
@@ -24,6 +25,8 @@ export async function createServer(): Promise<FastifyInstance> {
             reply.header("Cache-Control", "no-cache, no-store, must-revalidate");
         }
     });
+
+    await app.register(compress, { global: true });
 
     app.register(fastifyStatic, {
         root: browserDistFolder,
