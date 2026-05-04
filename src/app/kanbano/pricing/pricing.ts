@@ -28,9 +28,17 @@ export class Pricing {
 
             this.document
                 .querySelectorAll<HTMLElement>(
-                    '[data-animate="pricing-free"], [data-animate="pricing-pro"], [data-animate="pricing-premium"]',
+                    '[data-animate="pricing-heading"], [data-animate="pricing-free"],' +
+                        '[data-animate="pricing-pro"], [data-animate="pricing-premium"]',
                 )
                 .forEach((el) => (el.style.opacity = "0"));
+
+            const heading = this.document.querySelector<HTMLElement>('[data-animate="pricing-heading"]');
+            if (heading) {
+                createTimeline({
+                    autoplay: onScroll({ target: heading, enter: "bottom bottom", repeat: false }),
+                }).add(heading, { opacity: [0, 1], scale: [0.85, 1], duration: 600, ease: "out(2)" });
+            }
 
             createTimeline({
                 autoplay: onScroll({

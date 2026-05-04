@@ -28,13 +28,6 @@
         margin-inline: auto;
     }
 
-    & .functionality-title {
-        margin-top: 1.25rem;
-        font-size: 2.75rem;
-        font-weight: 700;
-        color: var(--kanbano-text-heading);
-    }
-
     & .functionality-actions {
         margin-top: 8rem;
         margin-bottom: 2rem;

@@ -25,8 +25,17 @@ export class DataProtection {
 
             if (prefersReducedMotion) return;
 
+            const heading = this.document.querySelector<HTMLElement>('[data-animate="protection-heading"]');
             const bloc = this.document.querySelector<HTMLElement>(".data-protection-bloc");
+
+            if (heading) heading.style.opacity = "0";
             if (bloc) bloc.style.opacity = "0";
+
+            if (heading) {
+                createTimeline({
+                    autoplay: onScroll({ target: heading, enter: "bottom bottom", repeat: false }),
+                }).add(heading, { opacity: [0, 1], scale: [0.85, 1], duration: 600, ease: "out(2)" });
+            }
 
             createTimeline({
                 autoplay: onScroll({

@@ -3,19 +3,28 @@
     z-index: 1000;
     width: 100%;
     padding-block: 1rem;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.55);
-    box-shadow: 0 4px 20px var(--kanbano-shadow-black);
-    backdrop-filter: blur(10px);
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background-color: rgba(255, 255, 255, 0.55);
+        box-shadow: 0 4px 20px var(--kanbano-shadow-black);
+        backdrop-filter: blur(10px);
+
+        @media (width >= 80em) {
+            display: none;
+        }
+    }
 
     @media (width >= 80em) {
         padding-block: 2rem;
-        background-color: initial;
-        box-shadow: initial;
-        backdrop-filter: initial;
     }
 
     & .header-container {
+        position: relative;
+        z-index: 51;
         display: flex;
         align-items: center;
         justify-content: space-between;

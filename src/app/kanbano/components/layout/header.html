@@ -2,7 +2,7 @@
     <div class="container header-container" #headerContainer>
         <a aria-label="Kanbano — Retour à l'accueil" class="header-logo" routerLink="/">
             <picture class="header-logo-picture">
-                @if (isDark()) {
+                @if (isDark() || isMenuOpen()) {
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
                 <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
                 } @else {
@@ -34,18 +34,11 @@
         </button>
 
         <kanbano-lp-nav-desktop [nav]="nav()" />
-        <kanbano-lp-mobile-nav
-            (linkClicked)="isMenuOpen.set(false)"
-            (themeToggle)="userTheme.toggle()"
-            [isActive]="isMenuOpen()"
-            [nav]="nav()"
-            [theme]="userTheme.theme()"
-        />
         <div class="header-right">
             <button
                 type="button"
                 class="header-toggle-theme"
-                [class.header-toggle-theme-dark]="!isDark()"
+                [class.header-toggle-theme-light]="isDark()"
                 [attr.aria-label]="userTheme.theme() === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
                 (click)="userTheme.toggle()"
             >
@@ -63,4 +56,11 @@
             <kanbano-lp-button>Rejoindre la file d'attente</kanbano-lp-button>
         </div>
     </div>
+    <kanbano-lp-mobile-nav
+        (linkClicked)="isMenuOpen.set(false)"
+        (themeToggle)="userTheme.toggle()"
+        [isActive]="isMenuOpen()"
+        [nav]="nav()"
+        [theme]="userTheme.theme()"
+    />
 </header>

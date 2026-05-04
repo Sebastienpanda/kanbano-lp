@@ -53,6 +53,10 @@ export class Header {
         });
 
         afterNextRender(() => {
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            if (prefersReducedMotion) return;
+
             animate(".header-container", {
                 opacity: [0, 1],
                 translateY: [-20, 0],

@@ -1,9 +1,18 @@
-import { NgOptimizedImage } from "@angular/common";
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, signal } from "@angular/core";
+import { DOCUMENT, isPlatformBrowser, NgOptimizedImage } from "@angular/common";
+import {
+    afterNextRender,
+    ChangeDetectionStrategy,
+    Component,
+    CUSTOM_ELEMENTS_SCHEMA,
+    inject,
+    PLATFORM_ID,
+    signal,
+} from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
 import { SwiperDirective } from "@kanbano/testimonials/swiper.directive";
+import { createTimeline, onScroll } from "animejs";
 import { register } from "swiper/element";
 import { A11y, Pagination } from "swiper/modules";
 import { SwiperOptions } from "swiper/types";
@@ -27,6 +36,9 @@ interface Testimonial {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Testimonials {
+    private readonly document = inject(DOCUMENT);
+    private readonly platformId = inject(PLATFORM_ID);
+
     protected readonly testimonials = signal<Testimonial[]>([
         {
             id: 0,
@@ -103,4 +115,24 @@ export class Testimonials {
             },
         },
     };
+
+    constructor() {
+        afterNextRender(() => {
+            if (!isPlatformBrowser(this.platformId)) return;
+
+            const prefersReducedMotion = this.document.defaultView?.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            ).matches;
+            if (prefersReducedMotion) return;
+
+            const heading = this.document.querySelector<HTMLElement>('[data-animate="testimonials-heading"]');
+            if (!heading) return;
+
+            heading.style.opacity = "0";
+
+            createTimeline({
+                autoplay: onScroll({ target: heading, enter: "bottom bottom", repeat: false }),
+            }).add(heading, { opacity: [0, 1], scale: [0.85, 1], duration: 600, ease: "out(2)" });
+        });
+    }
 }

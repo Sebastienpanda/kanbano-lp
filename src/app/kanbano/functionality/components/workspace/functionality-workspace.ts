@@ -45,7 +45,6 @@ export class FunctionalityWorkspace {
 
             if (prefersReducedMotion) return;
 
-            // État initial masqué
             this.document
                 .querySelectorAll<HTMLElement>(
                     '[data-animate="1"], [data-animate="2"], [data-animate="3"],' +
@@ -54,39 +53,48 @@ export class FunctionalityWorkspace {
                 )
                 .forEach((el) => (el.style.opacity = "0"));
 
-            // Image 1 : 400ms — flèches à 75% = t300
-            // Flèches : 300ms — image 2 à 75% = t525
-            // Image 2 : 400ms — flèche create à 75% = t825
-            // Flèche create : 300ms — image 3 à 75% = t1050
-            createTimeline({
-                autoplay: onScroll({
-                    target: ".heading-workspace",
-                    enter: "bottom bottom",
-                    repeat: false,
-                }),
-            })
-                .add('[data-animate="1"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 0)
-                .add(
-                    '[data-animate="empty-arrow-1"]',
-                    { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
-                    450,
-                )
-                .add(
-                    '[data-animate="empty-arrow-2"]',
-                    { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
-                    500,
-                )
-                .add('[data-animate="2"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 800)
-                .add(
-                    '[data-animate="create-rose-2"]',
-                    { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
-                    1200,
-                )
-                .add(
-                    '[data-animate="3"]',
-                    { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" },
-                    1600,
+            const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
+
+            if (isDesktop) {
+                this.buildTimeline(
+                    createTimeline({
+                        autoplay: onScroll({ target: ".heading-workspace", enter: "bottom bottom", repeat: false }),
+                    }),
                 );
+            } else {
+                const heading = this.document.querySelector(".heading-workspace");
+                if (!heading) return;
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (!entry.isIntersecting) return;
+                        observer.disconnect();
+                        this.buildTimeline(createTimeline());
+                    },
+                    { rootMargin: "0px 0px -20% 0px", threshold: 0 },
+                );
+                observer.observe(heading);
+            }
         });
+    }
+
+    private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
+        tl.add('[data-animate="1"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 0)
+            .add(
+                '[data-animate="empty-arrow-1"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
+                450,
+            )
+            .add(
+                '[data-animate="empty-arrow-2"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
+                500,
+            )
+            .add('[data-animate="2"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 800)
+            .add(
+                '[data-animate="create-rose-2"]',
+                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
+                1200,
+            )
+            .add('[data-animate="3"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 1600);
     }
 }
