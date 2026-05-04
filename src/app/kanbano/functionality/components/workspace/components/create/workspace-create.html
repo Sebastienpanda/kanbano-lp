@@ -1,27 +1,37 @@
 <!--suppress AngularNgOptimizedImage -->
-<picture>
-    @if (isDark()) {
-    <source
-        sizes="264px"
-        srcset="/assets/functionality/workspace/create-264/create-dark-264.avif 264w"
-        type="image/avif"
-    />
-    <source
-        sizes="264px"
-        srcset="/assets/functionality/workspace/create-264/create-dark-264.webp 264w"
-        type="image/webp"
-    />
-    }
-    <source sizes="264px" srcset="/assets/functionality/workspace/create-264/create-264.avif 264w" type="image/avif" />
-    <source sizes="264px" srcset="/assets/functionality/workspace/create-264/create-264.webp 264w" type="image/webp" />
-    <img
-        alt=""
-        height="262"
-        loading="lazy"
-        sizes="264px"
-        src="/assets/functionality/workspace/create-264/create-264.png"
-        srcset="/assets/functionality/workspace/create-264/create-264.png 264w"
-        width="264"
-    />
-</picture>
-<kanbano-lp-arrow-three />
+<figure>
+    <picture data-animate="2">
+        @if (isDark()) {
+        <source
+            sizes="264px"
+            srcset="/assets/functionality/workspace/create-264/create-dark-264.avif 264w"
+            type="image/avif"
+        />
+        <source
+            sizes="264px"
+            srcset="/assets/functionality/workspace/create-264/create-dark-264.webp 264w"
+            type="image/webp"
+        />
+        }
+        <source
+            sizes="264px"
+            srcset="/assets/functionality/workspace/create-264/create-264.avif 264w"
+            type="image/avif"
+        />
+        <source
+            sizes="264px"
+            srcset="/assets/functionality/workspace/create-264/create-264.webp 264w"
+            type="image/webp"
+        />
+        <img
+            alt=""
+            height="262"
+            loading="lazy"
+            sizes="264px"
+            src="/assets/functionality/workspace/create-264/create-264.png"
+            srcset="/assets/functionality/workspace/create-264/create-264.png 264w"
+            width="264"
+        />
+    </picture>
+    <kanbano-lp-arrow-three data-animate="create-rose-2" />
+</figure>

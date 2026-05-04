@@ -1,4 +1,8 @@
 :host {
+    display: contents;
+}
+
+svg {
     position: absolute;
     bottom: -74px;
     left: 100px;
