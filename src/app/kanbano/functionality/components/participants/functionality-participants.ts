@@ -57,13 +57,41 @@ export class FunctionalityParticipants {
                     repeat: false,
                 }),
             })
-                .add('[data-animate="intervenant"]', { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" }, 0)
-                .add('[data-animate="organisation-list"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 450)
-                .add('[data-animate="organisation-list-arrow-one"]', { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" }, 1050)
-                .add('[data-animate="organisation-list-arrow-two"]', { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" }, 1050)
-                .add('[data-animate="organisation-list-arrow-three"]', { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" }, 1050)
-                .add('[data-animate="invitation-create"]', { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" }, 1500)
-                .add('[data-animate="organisation-view"]', { opacity: [0, 1], translateY: [30, 0], duration: 600, ease: "out(2)" }, 1550);
+                .add(
+                    '[data-animate="intervenant"]',
+                    { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" },
+                    0,
+                )
+                .add(
+                    '[data-animate="organisation-list"]',
+                    { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" },
+                    450,
+                )
+                .add(
+                    '[data-animate="organisation-list-arrow-one"]',
+                    { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
+                    1050,
+                )
+                .add(
+                    '[data-animate="organisation-list-arrow-two"]',
+                    { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
+                    1050,
+                )
+                .add(
+                    '[data-animate="organisation-list-arrow-three"]',
+                    { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
+                    1050,
+                )
+                .add(
+                    '[data-animate="invitation-create"]',
+                    { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" },
+                    1500,
+                )
+                .add(
+                    '[data-animate="organisation-view"]',
+                    { opacity: [0, 1], translateY: [30, 0], duration: 600, ease: "out(2)" },
+                    1550,
+                );
         });
     }
 }
