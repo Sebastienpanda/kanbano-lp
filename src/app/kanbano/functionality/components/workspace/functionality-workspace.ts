@@ -79,10 +79,22 @@ export class FunctionalityWorkspace {
 
     private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
         tl.add('[data-animate="1"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 0)
-            .add('[data-animate="empty-arrow-1"]', { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" }, 450)
-            .add('[data-animate="empty-arrow-2"]', { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" }, 500)
+            .add(
+                '[data-animate="empty-arrow-1"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
+                450,
+            )
+            .add(
+                '[data-animate="empty-arrow-2"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
+                500,
+            )
             .add('[data-animate="2"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 800)
-            .add('[data-animate="create-rose-2"]', { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" }, 1200)
+            .add(
+                '[data-animate="create-rose-2"]',
+                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
+                1200,
+            )
             .add('[data-animate="3"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 1600);
     }
 }

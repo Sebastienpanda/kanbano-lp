@@ -47,9 +47,21 @@ export class Pricing {
                     repeat: false,
                 }),
             })
-                .add('[data-animate="pricing-free"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 0)
-                .add('[data-animate="pricing-pro"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 150)
-                .add('[data-animate="pricing-premium"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 300);
+                .add(
+                    '[data-animate="pricing-free"]',
+                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
+                    0,
+                )
+                .add(
+                    '[data-animate="pricing-pro"]',
+                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
+                    150,
+                )
+                .add(
+                    '[data-animate="pricing-premium"]',
+                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
+                    300,
+                );
         });
     }
 }

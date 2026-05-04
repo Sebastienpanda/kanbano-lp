@@ -1,5 +1,13 @@
 import { DOCUMENT, isPlatformBrowser, NgOptimizedImage } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID, signal } from "@angular/core";
+import {
+    afterNextRender,
+    ChangeDetectionStrategy,
+    Component,
+    CUSTOM_ELEMENTS_SCHEMA,
+    inject,
+    PLATFORM_ID,
+    signal,
+} from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
@@ -112,7 +120,9 @@ export class Testimonials {
         afterNextRender(() => {
             if (!isPlatformBrowser(this.platformId)) return;
 
-            const prefersReducedMotion = this.document.defaultView?.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const prefersReducedMotion = this.document.defaultView?.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            ).matches;
             if (prefersReducedMotion) return;
 
             const heading = this.document.querySelector<HTMLElement>('[data-animate="testimonials-heading"]');

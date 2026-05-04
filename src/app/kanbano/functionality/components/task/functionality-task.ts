@@ -78,12 +78,40 @@ export class FunctionalityTask {
     }
 
     private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
-        tl.add('[data-animate="create-task"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 0)
-            .add('[data-animate="task-empty"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 400)
-            .add('[data-animate="task-empty-arrow-two"]', { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" }, 800)
-            .add('[data-animate="task-create-arrow-three"]', { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" }, 800)
-            .add('[data-animate="task-create"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 1250)
-            .add('[data-animate="task-empty-arrow-one"]', { opacity: [0, 1], translateX: [60, 0], duration: 450, ease: "out(2)" }, 1850)
-            .add('[data-animate="task-view"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 2210);
+        tl.add(
+            '[data-animate="create-task"]',
+            { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" },
+            0,
+        )
+            .add(
+                '[data-animate="task-empty"]',
+                { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" },
+                400,
+            )
+            .add(
+                '[data-animate="task-empty-arrow-two"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
+                800,
+            )
+            .add(
+                '[data-animate="task-create-arrow-three"]',
+                { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
+                800,
+            )
+            .add(
+                '[data-animate="task-create"]',
+                { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
+                1250,
+            )
+            .add(
+                '[data-animate="task-empty-arrow-one"]',
+                { opacity: [0, 1], translateX: [60, 0], duration: 450, ease: "out(2)" },
+                1850,
+            )
+            .add(
+                '[data-animate="task-view"]',
+                { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" },
+                2210,
+            );
     }
 }

@@ -5,10 +5,10 @@
     padding-block: 1rem;
 
     &::before {
-        content: "";
         position: absolute;
         inset: 0;
         z-index: -1;
+        content: "";
         background-color: rgba(255, 255, 255, 0.55);
         box-shadow: 0 4px 20px var(--kanbano-shadow-black);
         backdrop-filter: blur(10px);

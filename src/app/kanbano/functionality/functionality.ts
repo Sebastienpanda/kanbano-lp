@@ -23,7 +23,9 @@ export class Functionality {
         afterNextRender(() => {
             if (!isPlatformBrowser(this.platformId)) return;
 
-            const prefersReducedMotion = this.document.defaultView?.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const prefersReducedMotion = this.document.defaultView?.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            ).matches;
             if (prefersReducedMotion) return;
 
             const heading = this.document.querySelector<HTMLElement>('[data-animate="fonctionnalite-heading"]');
