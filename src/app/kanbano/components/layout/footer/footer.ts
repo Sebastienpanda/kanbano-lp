@@ -1,5 +1,13 @@
 import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID, signal } from "@angular/core";
+import {
+    afterNextRender,
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+    inject,
+    PLATFORM_ID,
+    signal,
+} from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { NavItem } from "@components/layout/header";
 import { Button } from "@components/utilities/button";
