@@ -1,10 +1,15 @@
 :host {
+    display: contents;
+}
+
+svg {
     display: none;
 
     @media (width >= 64em) {
         position: absolute;
         right: 177px;
         bottom: -120px;
+        z-index: 6;
         display: block;
     }
 }

@@ -1,52 +1,54 @@
 <!--suppress AngularNgOptimizedImage -->
-<picture>
-    @if (isDark()) {
-    <source
-        sizes="(min-width: 768px) 382px, 330px"
-        srcset="
-            /assets/functionality/task/empty-330/empty-task-dark-330.avif 330w,
-            /assets/functionality/task/empty-382/empty-task-dark-382.avif 382w
-        "
-        type="image/avif"
-    />
-    <source
-        sizes="(min-width: 768px) 382px, 330px"
-        srcset="
-            /assets/functionality/task/empty-330/empty-task-dark-330.webp 330w,
-            /assets/functionality/task/empty-382/empty-task-dark-382.webp 382w
-        "
-        type="image/webp"
-    />
-    }
-    <source
-        sizes="(min-width: 768px) 382px, 330px"
-        srcset="
-            /assets/functionality/task/empty-330/empty-330.avif 330w,
-            /assets/functionality/task/empty-382/empty-382.avif 382w
-        "
-        type="image/avif"
-    />
-    <source
-        sizes="(min-width: 768px) 382px, 330px"
-        srcset="
-            /assets/functionality/task/empty-330/empty-330.webp 330w,
-            /assets/functionality/task/empty-382/empty-382.webp 382w
-        "
-        type="image/webp"
-    />
-    <img
-        alt=""
-        height="249"
-        loading="lazy"
-        sizes="(min-width: 768px) 382px, 330px"
-        src="/assets/functionality/task/empty-330/empty-330.png"
-        srcset="
-            /assets/functionality/task/empty-330/empty-330.png 330w,
-            /assets/functionality/task/empty-382/empty-382.png 382w
-        "
-        width="330"
-    />
-</picture>
-<kanbano-lp-arrow-one-task />
-<kanbano-lp-arrow-one-task-laptop />
-<kanbano-lp-arrow-two-task />
+<figure>
+    <picture data-animate="task-empty">
+        @if (isDark()) {
+        <source
+            sizes="(min-width: 768px) 382px, 330px"
+            srcset="
+                /assets/functionality/task/empty-330/empty-task-dark-330.avif 330w,
+                /assets/functionality/task/empty-382/empty-task-dark-382.avif 382w
+            "
+            type="image/avif"
+        />
+        <source
+            sizes="(min-width: 768px) 382px, 330px"
+            srcset="
+                /assets/functionality/task/empty-330/empty-task-dark-330.webp 330w,
+                /assets/functionality/task/empty-382/empty-task-dark-382.webp 382w
+            "
+            type="image/webp"
+        />
+        }
+        <source
+            sizes="(min-width: 768px) 382px, 330px"
+            srcset="
+                /assets/functionality/task/empty-330/empty-330.avif 330w,
+                /assets/functionality/task/empty-382/empty-382.avif 382w
+            "
+            type="image/avif"
+        />
+        <source
+            sizes="(min-width: 768px) 382px, 330px"
+            srcset="
+                /assets/functionality/task/empty-330/empty-330.webp 330w,
+                /assets/functionality/task/empty-382/empty-382.webp 382w
+            "
+            type="image/webp"
+        />
+        <img
+            alt=""
+            height="249"
+            loading="lazy"
+            sizes="(min-width: 768px) 382px, 330px"
+            src="/assets/functionality/task/empty-330/empty-330.png"
+            srcset="
+                /assets/functionality/task/empty-330/empty-330.png 330w,
+                /assets/functionality/task/empty-382/empty-382.png 382w
+            "
+            width="330"
+        />
+    </picture>
+    <kanbano-lp-arrow-one-task />
+    <kanbano-lp-arrow-one-task-laptop />
+    <kanbano-lp-arrow-two-task />
+</figure>

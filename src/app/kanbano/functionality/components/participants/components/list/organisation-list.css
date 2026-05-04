@@ -1,4 +1,8 @@
 :host {
+    display: contents;
+}
+
+figure {
     position: relative;
     display: block;
     width: 308px;

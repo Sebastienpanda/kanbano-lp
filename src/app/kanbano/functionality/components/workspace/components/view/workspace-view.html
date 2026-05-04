@@ -1,18 +1,28 @@
 <!--suppress AngularNgOptimizedImage -->
-<picture>
-    @if (isDark()) {
-    <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-dark-285.avif 285w" type="image/avif" />
-    <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-dark-285.webp 285w" type="image/webp" />
-    }
-    <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-285.avif 285w" type="image/avif" />
-    <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-285.webp 285w" type="image/webp" />
-    <img
-        alt=""
-        height="287"
-        loading="lazy"
-        sizes="285px"
-        src="/assets/functionality/workspace/view-285/view-285.png"
-        srcset="/assets/functionality/workspace/view-285/view-285.webp 285w"
-        width="285"
-    />
-</picture>
+<figure>
+    <picture data-animate="3">
+        @if (isDark()) {
+        <source
+            sizes="285px"
+            srcset="/assets/functionality/workspace/view-285/view-dark-285.avif 285w"
+            type="image/avif"
+        />
+        <source
+            sizes="285px"
+            srcset="/assets/functionality/workspace/view-285/view-dark-285.webp 285w"
+            type="image/webp"
+        />
+        }
+        <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-285.avif 285w" type="image/avif" />
+        <source sizes="285px" srcset="/assets/functionality/workspace/view-285/view-285.webp 285w" type="image/webp" />
+        <img
+            alt=""
+            height="287"
+            loading="lazy"
+            sizes="285px"
+            src="/assets/functionality/workspace/view-285/view-285.png"
+            srcset="/assets/functionality/workspace/view-285/view-285.webp 285w"
+            width="285"
+        />
+    </picture>
+</figure>

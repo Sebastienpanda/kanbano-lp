@@ -11,4 +11,5 @@ export class HeadingItem {
     readonly title = input.required<string>();
     readonly description = input.required<string>();
     readonly bold = input.required<string>();
+    readonly animate = input<string>();
 }
