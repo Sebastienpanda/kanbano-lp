@@ -31,11 +31,7 @@
                         "security": {
                             "allowedHosts": []
                         },
-                        "externalDependencies": [
-                            "fastify",
-                            "@fastify/compress",
-                            "@fastify/static"
-                        ],
+                        "externalDependencies": ["fastify", "@fastify/compress", "@fastify/static"],
                         "ssr": {
                             "entry": "src/server.ts"
                         }
