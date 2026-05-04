@@ -23,7 +23,6 @@ import { TaskView } from "./components/view/task-view";
         TaskEmpty,
         TaskView,
         TaskCreate,
-        TaskView,
         Book,
     ],
     templateUrl: "./functionality-task.html",

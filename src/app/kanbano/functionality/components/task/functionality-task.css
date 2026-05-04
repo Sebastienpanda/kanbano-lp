@@ -10,10 +10,5 @@
 
     & .container-task {
         position: relative;
-        height: 962px;
-
-        @media (width >= 64em) {
-            height: 632px;
-        }
     }
 }
