@@ -4,7 +4,7 @@ import { VectorBlueBold } from "@kanbano/functionality/svg/vector-blue-bold/vect
 import { VectorBlueBottom } from "@kanbano/functionality/svg/vector-blue/vector-blue-bottom";
 import { VectorGreenTop } from "@kanbano/functionality/svg/vector-green/vector-green-top";
 import { VectorPurpleTop2 } from "@kanbano/functionality/svg/vector-purple/vector-purple-top-2";
-import { createTimeline, onScroll } from "animejs";
+import { animate, createTimeline, onScroll } from "animejs";
 
 import { HeadingItem } from "../heading-item";
 import { TaskCreate } from "./components/create/task-create";
@@ -43,33 +43,39 @@ export class FunctionalityTask {
 
             if (prefersReducedMotion) return;
 
-            this.document
-                .querySelectorAll<HTMLElement>(
-                    '[data-animate="create-task"], [data-animate="task-empty"],' +
-                        '[data-animate="task-empty-arrow-one"], [data-animate="task-empty-arrow-two"],' +
-                        '[data-animate="task-create"], [data-animate="task-create-arrow-three"],' +
-                        '[data-animate="task-view"]',
-                )
-                .forEach((el) => (el.style.opacity = "0"));
-
             const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
 
             if (isDesktop) {
+                this.document
+                    .querySelectorAll<HTMLElement>(
+                        '[data-animate="create-task"], [data-animate="task-empty"],' +
+                            '[data-animate="task-empty-arrow-one"], [data-animate="task-empty-arrow-two"],' +
+                            '[data-animate="task-create"], [data-animate="task-create-arrow-three"],' +
+                            '[data-animate="task-view"]',
+                    )
+                    .forEach((el) => (el.style.opacity = "0"));
+
                 this.buildTimeline(
                     createTimeline({
                         autoplay: onScroll({ target: ".heading-task", enter: "bottom bottom", repeat: false }),
                     }),
                 );
             } else {
+                const cards = this.document.querySelectorAll<HTMLElement>(
+                    '[data-animate="create-task"], [data-animate="task-empty"],' +
+                        '[data-animate="task-create"], [data-animate="task-view"]',
+                );
+                cards.forEach((el) => (el.style.opacity = "0"));
+
                 const heading = this.document.querySelector(".heading-task");
                 if (!heading) return;
                 const observer = new IntersectionObserver(
                     ([entry]) => {
                         if (!entry.isIntersecting) return;
                         observer.disconnect();
-                        this.buildTimeline(createTimeline());
+                        animate(cards, { opacity: [0, 1], translateY: [20, 0], duration: 500, ease: "out(2)" });
                     },
-                    { rootMargin: "0px 0px -20% 0px", threshold: 0 },
+                    { rootMargin: "0px 0px -10% 0px", threshold: 0 },
                 );
                 observer.observe(heading);
             }

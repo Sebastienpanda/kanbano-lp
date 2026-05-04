@@ -2,7 +2,7 @@ import { DOCUMENT, isPlatformBrowser } from "@angular/common";
 import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from "@angular/core";
 import { VectorGreenRightParticipant } from "@kanbano/functionality/svg/vector-green-participants/vector-green-right-participant";
 import { VectorPurpleLeftParticipant } from "@kanbano/functionality/svg/vector-purple-participants/vector-purple-left-participant";
-import { createTimeline, onScroll } from "animejs";
+import { animate, createTimeline, onScroll } from "animejs";
 
 import { HeadingItem } from "../heading-item";
 import { InvitationCreate } from "./components/create/invitation-create";
@@ -41,34 +41,40 @@ export class FunctionalityParticipants {
 
             if (prefersReducedMotion) return;
 
-            this.document
-                .querySelectorAll<HTMLElement>(
-                    '[data-animate="intervenant"], [data-animate="organisation-list"],' +
-                        '[data-animate="organisation-list-arrow-one"], [data-animate="organisation-list-arrow-two"],' +
-                        '[data-animate="organisation-list-arrow-three"],' +
-                        '[data-animate="arrow-one-mobile"], [data-animate="arrow-two-mobile"],' +
-                        '[data-animate="invitation-create"], [data-animate="organisation-view"]',
-                )
-                .forEach((el) => (el.style.opacity = "0"));
-
             const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
 
             if (isDesktop) {
+                this.document
+                    .querySelectorAll<HTMLElement>(
+                        '[data-animate="intervenant"], [data-animate="organisation-list"],' +
+                            '[data-animate="organisation-list-arrow-one"], [data-animate="organisation-list-arrow-two"],' +
+                            '[data-animate="organisation-list-arrow-three"],' +
+                            '[data-animate="arrow-one-mobile"], [data-animate="arrow-two-mobile"],' +
+                            '[data-animate="invitation-create"], [data-animate="organisation-view"]',
+                    )
+                    .forEach((el) => (el.style.opacity = "0"));
+
                 this.buildTimeline(
                     createTimeline({
                         autoplay: onScroll({ target: ".heading-participant", enter: "bottom bottom", repeat: false }),
                     }),
                 );
             } else {
+                const cards = this.document.querySelectorAll<HTMLElement>(
+                    '[data-animate="intervenant"], [data-animate="organisation-list"],' +
+                        '[data-animate="invitation-create"], [data-animate="organisation-view"]',
+                );
+                cards.forEach((el) => (el.style.opacity = "0"));
+
                 const heading = this.document.querySelector(".heading-participant");
                 if (!heading) return;
                 const observer = new IntersectionObserver(
                     ([entry]) => {
                         if (!entry.isIntersecting) return;
                         observer.disconnect();
-                        this.buildTimeline(createTimeline());
+                        animate(cards, { opacity: [0, 1], translateY: [20, 0], duration: 500, ease: "out(2)" });
                     },
-                    { rootMargin: "0px 0px -20% 0px", threshold: 0 },
+                    { rootMargin: "0px 0px -10% 0px", threshold: 0 },
                 );
                 observer.observe(heading);
             }
