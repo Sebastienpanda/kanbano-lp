@@ -1,7 +1,9 @@
 :host {
+    display: contents;
+}
+figure {
     position: relative;
     bottom: 222px;
-    z-index: 6;
     display: block;
     width: 148px;
 
@@ -13,11 +15,17 @@
         bottom: 508px;
         left: 126px;
         width: 192px;
-        box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
     }
 
     @media (width >= 75em) {
         bottom: 476px;
         left: 80px;
+    }
+}
+
+picture {
+    position: relative;
+    @media (width >= 64em) {
+        box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
     }
 }

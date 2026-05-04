@@ -1,34 +1,36 @@
 <!--suppress AngularNgOptimizedImage -->
-<picture>
-    @if (isDark()) {
-    <source
-        sizes="242px"
-        srcset="/assets/functionality/organisation/create-242/create-invitation-dark-242.avif 242w"
-        type="image/avif"
-    />
-    <source
-        sizes="242px"
-        srcset="/assets/functionality/organisation/create-242/create-invitation-dark-242.webp 242w"
-        type="image/webp"
-    />
-    }
-    <source
-        sizes="242px"
-        srcset="/assets/functionality/organisation/create-242/create-242.avif 242w"
-        type="image/avif"
-    />
-    <source
-        sizes="242px"
-        srcset="/assets/functionality/organisation/create-242/create-242.webp 242w"
-        type="image/webp"
-    />
-    <img
-        alt=""
-        height="185"
-        loading="lazy"
-        sizes="242"
-        src="/assets/functionality/organisation/create-242/create-242.png"
-        srcset="/assets/functionality/organisation/create-242/create-242.png 242w"
-        width="242"
-    />
-</picture>
+<figure>
+    <picture data-animate="invitation-create">
+        @if (isDark()) {
+        <source
+            sizes="242px"
+            srcset="/assets/functionality/organisation/create-242/create-invitation-dark-242.avif 242w"
+            type="image/avif"
+        />
+        <source
+            sizes="242px"
+            srcset="/assets/functionality/organisation/create-242/create-invitation-dark-242.webp 242w"
+            type="image/webp"
+        />
+        }
+        <source
+            sizes="242px"
+            srcset="/assets/functionality/organisation/create-242/create-242.avif 242w"
+            type="image/avif"
+        />
+        <source
+            sizes="242px"
+            srcset="/assets/functionality/organisation/create-242/create-242.webp 242w"
+            type="image/webp"
+        />
+        <img
+            alt=""
+            height="185"
+            loading="lazy"
+            sizes="242"
+            src="/assets/functionality/organisation/create-242/create-242.png"
+            srcset="/assets/functionality/organisation/create-242/create-242.png 242w"
+            width="242"
+        />
+    </picture>
+</figure>

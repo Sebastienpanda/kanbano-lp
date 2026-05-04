@@ -1,27 +1,29 @@
 <!--suppress AngularNgOptimizedImage -->
-<picture>
-    @if (isDark()) {
-    <source
-        sizes="202px"
-        srcset="/assets/functionality/task/create-202/create-task-dark-202.avif 202w"
-        type="image/avif"
-    />
-    <source
-        sizes="202px"
-        srcset="/assets/functionality/task/create-202/create-task-dark-202.webp 202w"
-        type="image/webp"
-    />
-    }
-    <source sizes="202px" srcset="/assets/functionality/task/create-202/create-202.avif 202w" type="image/avif" />
-    <source sizes="202px" srcset="/assets/functionality/task/create-202/create-202.webp 202w" type="image/webp" />
-    <img
-        alt=""
-        height="240"
-        loading="lazy"
-        sizes="202px"
-        src="/assets/functionality/task/create-202/create-202.png"
-        srcset="/assets/functionality/task/create-202/create-202.png 202w"
-        width="202"
-    />
-</picture>
-<kanbano-lp-arrow-three-task />
+<figure>
+    <picture data-animate="task-create">
+        @if (isDark()) {
+        <source
+            sizes="202px"
+            srcset="/assets/functionality/task/create-202/create-task-dark-202.avif 202w"
+            type="image/avif"
+        />
+        <source
+            sizes="202px"
+            srcset="/assets/functionality/task/create-202/create-task-dark-202.webp 202w"
+            type="image/webp"
+        />
+        }
+        <source sizes="202px" srcset="/assets/functionality/task/create-202/create-202.avif 202w" type="image/avif" />
+        <source sizes="202px" srcset="/assets/functionality/task/create-202/create-202.webp 202w" type="image/webp" />
+        <img
+            alt=""
+            height="240"
+            loading="lazy"
+            sizes="202px"
+            src="/assets/functionality/task/create-202/create-202.png"
+            srcset="/assets/functionality/task/create-202/create-202.png 202w"
+            width="202"
+        />
+    </picture>
+    <kanbano-lp-arrow-three-task />
+</figure>

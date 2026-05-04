@@ -1,10 +1,13 @@
 :host {
+    display: contents;
+}
+
+figure {
     position: relative;
     left: 6px;
     display: block;
     width: 330px;
     margin-top: 0.75rem;
-    box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
 
     @media (width >= 48em) {
         left: 176px;
@@ -24,5 +27,6 @@
 
 picture {
     position: relative;
-    z-index: 4;
+    z-index: 5;
+    box-shadow: 0 4px 100px 0 var(--kanbano-shadow-purple);
 }
