@@ -4,23 +4,7 @@
     aria-label="Navigation principale"
     class="mobile-nav"
 >
-    <div class="mobile-nav-top">
-        <picture class="mobile-nav-logo">
-            <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
-            <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
-            <img
-                alt="Kanbano"
-                fetchpriority="high"
-                height="45"
-                loading="eager"
-                sizes="219px"
-                src="/assets/logo/logo-light/logo-light.png"
-                width="219"
-            />
-        </picture>
-    </div>
-
-    <ul class="mobile-nav-lists">
+    <ul class="mobile-nav-lists container">
         @for (item of nav(); track item.fragment) {
         <li class="mobile-nav-item">
             <a (click)="linkClicked.emit()" [fragment]="item.fragment" [routerLink]="['/']" class="mobile-nav-link">
@@ -47,7 +31,7 @@
         }
     </ul>
 
-    <div class="mobile-nav-footer">
+    <div class="mobile-nav-footer container">
         <div class="mobile-nav-footer-divider"></div>
         <div class="mobile-nav-footer-actions">
             <button

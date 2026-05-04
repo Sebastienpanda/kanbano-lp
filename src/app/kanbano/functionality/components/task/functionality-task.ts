@@ -53,48 +53,37 @@ export class FunctionalityTask {
                 )
                 .forEach((el) => (el.style.opacity = "0"));
 
-            createTimeline({
-                autoplay: onScroll({
-                    target: ".heading-task",
-                    enter: "bottom bottom",
-                    repeat: false,
-                }),
-            })
-                .add(
-                    '[data-animate="create-task"]',
-                    { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" },
-                    0,
-                )
-                .add(
-                    '[data-animate="task-empty"]',
-                    { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" },
-                    400,
-                )
-                .add(
-                    '[data-animate="task-empty-arrow-two"]',
-                    { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
-                    800,
-                )
-                .add(
-                    '[data-animate="task-create-arrow-three"]',
-                    { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
-                    800,
-                )
-                .add(
-                    '[data-animate="task-create"]',
-                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
-                    1250,
-                )
-                .add(
-                    '[data-animate="task-empty-arrow-one"]',
-                    { opacity: [0, 1], translateX: [60, 0], duration: 450, ease: "out(2)" },
-                    1850,
-                )
-                .add(
-                    '[data-animate="task-view"]',
-                    { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" },
-                    2210,
+            const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
+
+            if (isDesktop) {
+                this.buildTimeline(
+                    createTimeline({
+                        autoplay: onScroll({ target: ".heading-task", enter: "bottom bottom", repeat: false }),
+                    }),
                 );
+            } else {
+                const heading = this.document.querySelector(".heading-task");
+                if (!heading) return;
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (!entry.isIntersecting) return;
+                        observer.disconnect();
+                        this.buildTimeline(createTimeline());
+                    },
+                    { rootMargin: "0px 0px -20% 0px", threshold: 0 },
+                );
+                observer.observe(heading);
+            }
         });
+    }
+
+    private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
+        tl.add('[data-animate="create-task"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 0)
+            .add('[data-animate="task-empty"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 400)
+            .add('[data-animate="task-empty-arrow-two"]', { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" }, 800)
+            .add('[data-animate="task-create-arrow-three"]', { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" }, 800)
+            .add('[data-animate="task-create"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 1250)
+            .add('[data-animate="task-empty-arrow-one"]', { opacity: [0, 1], translateX: [60, 0], duration: 450, ease: "out(2)" }, 1850)
+            .add('[data-animate="task-view"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 2210);
     }
 }

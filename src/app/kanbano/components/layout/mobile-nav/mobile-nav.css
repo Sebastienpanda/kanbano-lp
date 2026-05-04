@@ -11,7 +11,7 @@
     flex-direction: column;
     width: 100%;
     height: 100dvh;
-    padding: 1.25rem 1.5rem 2rem;
+    padding-block: 1.25rem 2rem;
     color: var(--kanbano-white);
     background: var(--kanbano-gradient-radial-bottom);
     opacity: 0;
@@ -24,20 +24,6 @@
         z-index: 50;
         opacity: 1;
         transform: translateY(0);
-    }
-
-    & .mobile-nav-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-block: 0.5rem;
-
-        & .mobile-nav-logo {
-            width: 160px;
-            min-width: 160px;
-            max-width: 160px;
-            height: 33px;
-        }
     }
 
     & .mobile-nav-lists {

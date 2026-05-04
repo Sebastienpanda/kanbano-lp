@@ -9,4 +9,5 @@ import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 })
 export class SectionHeader {
     readonly title = input.required<string>();
+    readonly animate = input<string>();
 }

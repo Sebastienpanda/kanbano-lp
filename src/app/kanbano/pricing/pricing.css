@@ -29,6 +29,7 @@
 
     & .pricing-subtitle {
         color: var(--kanbano-purple-text);
+        text-align: center;
 
         & .pricing-subtitle-bold {
             font-weight: 700;
