@@ -79,7 +79,7 @@ export class FunctionalityWorkspace {
                 .add('[data-animate="2"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 800)
                 .add(
                     '[data-animate="create-rose-2"]',
-                    { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
+                    { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
                     1200,
                 )
                 .add(
