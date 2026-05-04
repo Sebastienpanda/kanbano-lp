@@ -3,7 +3,7 @@ import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_I
 import { VectorBlueBottom } from "@kanbano/functionality/svg/vector-blue/vector-blue-bottom";
 import { VectorGreenTop } from "@kanbano/functionality/svg/vector-green/vector-green-top";
 import { VectorPurpleTop2 } from "@kanbano/functionality/svg/vector-purple/vector-purple-top-2";
-import { createTimeline, onScroll } from "animejs";
+import { animate, createTimeline, onScroll } from "animejs";
 
 import { HeadingItem } from "../heading-item";
 import { WorkspaceCreate } from "./components/create/workspace-create";
@@ -45,32 +45,37 @@ export class FunctionalityWorkspace {
 
             if (prefersReducedMotion) return;
 
-            this.document
-                .querySelectorAll<HTMLElement>(
-                    '[data-animate="1"], [data-animate="2"], [data-animate="3"],' +
-                        '[data-animate="empty-arrow-1"], [data-animate="empty-arrow-2"],' +
-                        '[data-animate="create-rose-2"]',
-                )
-                .forEach((el) => (el.style.opacity = "0"));
-
             const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
 
             if (isDesktop) {
+                this.document
+                    .querySelectorAll<HTMLElement>(
+                        '[data-animate="1"], [data-animate="2"], [data-animate="3"],' +
+                            '[data-animate="empty-arrow-1"], [data-animate="empty-arrow-2"],' +
+                            '[data-animate="create-rose-2"]',
+                    )
+                    .forEach((el) => (el.style.opacity = "0"));
+
                 this.buildTimeline(
                     createTimeline({
                         autoplay: onScroll({ target: ".heading-workspace", enter: "bottom bottom", repeat: false }),
                     }),
                 );
             } else {
+                const cards = this.document.querySelectorAll<HTMLElement>(
+                    '[data-animate="1"], [data-animate="2"], [data-animate="3"]',
+                );
+                cards.forEach((el) => (el.style.opacity = "0"));
+
                 const heading = this.document.querySelector(".heading-workspace");
                 if (!heading) return;
                 const observer = new IntersectionObserver(
                     ([entry]) => {
                         if (!entry.isIntersecting) return;
                         observer.disconnect();
-                        this.buildTimeline(createTimeline());
+                        animate(cards, { opacity: [0, 1], translateY: [20, 0], duration: 500, ease: "out(2)" });
                     },
-                    { rootMargin: "0px 0px -20% 0px", threshold: 0 },
+                    { rootMargin: "0px 0px -10% 0px", threshold: 0 },
                 );
                 observer.observe(heading);
             }
