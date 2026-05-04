@@ -1,7 +1,5 @@
 :host {
     display: block;
-    contain-intrinsic-size: 0 800px;
-    content-visibility: auto;
 }
 
 .pricing {
