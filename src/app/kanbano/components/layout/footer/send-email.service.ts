@@ -11,4 +11,8 @@ export class SendEmailService {
     sendEmail(email: string): Observable<{ message: string }> {
         return this.http.post<{ message: string }>(`${this.baseUrl}/verify-email/send`, { email });
     }
+
+    resendEmail(email: string): Observable<{ message: string }> {
+        return this.http.post<{ message: string }>(`${this.baseUrl}/verify-email/resend-token`, { email });
+    }
 }

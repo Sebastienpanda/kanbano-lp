@@ -3,6 +3,8 @@ import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, PLATFOR
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { SendEmailService } from "@components/layout/footer/send-email.service";
+import { FormError } from "@components/utilities/form-error";
 import { VerifyToken } from "@kanbano/modal/modal.service";
 import { filter } from "rxjs";
 
@@ -12,7 +14,7 @@ interface ResendForm {
 
 @Component({
     selector: "kanbano-lp-modal",
-    imports: [FormsModule, ReactiveFormsModule],
+    imports: [FormsModule, ReactiveFormsModule, FormError],
     templateUrl: "./modal.html",
     styleUrl: "./modal.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,6 +30,7 @@ export class Modal {
     private readonly document = inject(DOCUMENT);
     private readonly destroyRef = inject(DestroyRef);
     private readonly platformId = inject(PLATFORM_ID);
+    private readonly sendEmailService = inject(SendEmailService);
     protected readonly verifyToken = inject(VerifyToken);
     protected readonly router = inject(Router);
     protected readonly route = inject(ActivatedRoute);
@@ -77,8 +80,21 @@ export class Modal {
 
     onResend(): void {
         if (this.resendForm.invalid) return;
+
+        const { email } = this.resendForm.getRawValue();
         this.isResending.set(true);
-        this.isResending.set(false);
+
+        this.sendEmailService.resendEmail(email).subscribe({
+            next: () => {
+                this.isResending.set(false);
+                this.verificationStatus.set("info");
+            },
+            error: (error) => {
+                this.isResending.set(false);
+                const errorMessage = error.error?.message || "Une erreur s'est produite, veuillez réessayer";
+                this.message.set(errorMessage);
+            },
+        });
     }
 
     private verifyWaitlistToken(): void {

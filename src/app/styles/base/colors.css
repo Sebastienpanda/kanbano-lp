@@ -44,6 +44,11 @@
     --kanbano-waitlist-step-color: var(--kanbano-white);
     --kanbano-waitlist-text: var(--kanbano-primary);
     --kanbano-waitlist-muted: oklch(0.5 0.06 292);
+    --kanbano-waitlist-input-text: var(--kanbano-primary);
+    --kanbano-waitlist-input-placeholder: oklch(0.5 0.06 292);
+    /* modal bg = blanc en light → rose foncé suffisant */
+    --kanbano-waitlist-error: var(--kanbano-rose);
+    --kanbano-waitlist-error-bg: oklch(0.551 0.2409 334.34 / 12%);
 
     /* newsletter form — surface sombre en light, error doit être claire */
     --kanbano-newsletter-input-border: oklch(1 0 0 / 30%);
@@ -81,6 +86,11 @@
     --kanbano-waitlist-step-color: var(--kanbano-primary);
     --kanbano-waitlist-text: var(--kanbano-white);
     --kanbano-waitlist-muted: oklch(0.78 0.05 295);
+    --kanbano-waitlist-input-text: var(--kanbano-primary);
+    --kanbano-waitlist-input-placeholder: oklch(0.45 0.07 292);
+    /* modal bg = violet foncé en dark → rose clair pour ~9:1 */
+    --kanbano-waitlist-error: oklch(0.88 0.12 10);
+    --kanbano-waitlist-error-bg: oklch(0.88 0.12 10 / 12%);
 
     /* newsletter form — surface claire en dark, error doit être foncée */
     --kanbano-newsletter-input-border: oklch(0.6 0.08 295 / 50%);
