@@ -35,10 +35,6 @@ export class Header {
             name: "Prix",
         },
         {
-            fragment: "témoignages",
-            name: "Témoignages",
-        },
-        {
             fragment: "protection",
             name: "Protection des données",
         },
