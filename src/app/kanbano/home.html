@@ -7,6 +7,10 @@
     <!--    <kanbano-lp-testimonials />-->
     <kanbano-lp-data-protection />
 </main>
+@defer (on viewport; hydrate on viewport) {
 <kanbano-lp-footer />
+} @placeholder {
+<div></div>
+}
 <ngx-sonner-toaster position="top-right" richColors closeButton />
 <kanbano-lp-modal />
