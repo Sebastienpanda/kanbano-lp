@@ -185,8 +185,8 @@ dialog {
 
 .modal-resend-error {
     font-size: 0.875rem;
-    text-align: center;
     color: var(--kanbano-waitlist-error);
+    text-align: center;
 }
 
 .modal-submit {
