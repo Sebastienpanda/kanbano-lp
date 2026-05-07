@@ -30,10 +30,6 @@ export class Footer {
             name: "Prix",
         },
         {
-            fragment: "témoignages",
-            name: "Témoignages",
-        },
-        {
             fragment: "protection",
             name: "Protection des données",
         },
