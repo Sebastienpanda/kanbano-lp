@@ -17,7 +17,7 @@
         inset: -4px;
         pointer-events: none;
         content: "";
-        border: 4px solid rgba(255, 255, 255, 0.2);
+        border: 4px solid rgba(255, 255, 255, 0.1);
         border-radius: 2.5rem;
         transition:
             opacity 350ms ease-in-out,
@@ -62,7 +62,7 @@
     &.desktop-nav-theme-light {
         @media (width >= 80em) {
             &::before {
-                border-color: rgba(0, 0, 0, 0.15);
+                border-color: rgba(0, 0, 0, 0.07);
             }
 
             & .desktop-nav-lists {

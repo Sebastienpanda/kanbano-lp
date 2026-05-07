@@ -1,0 +1,73 @@
+## Theme Kanbano
+
+### Thème light
+
+- Blanc #fffff
+- Texte navbar desktop 130043
+- Icon light/dark mode 130043
+- Linear Gradient button primary
+    - BD0CA9 stops 0%
+    - 831892 stops 33%
+    - 006A9B stops 66%
+    - 2BE5CF stops 100%
+- Background button primary 130043
+- Stroke button secondary 80FFF0
+- Background button secondary 2BE5CF
+- texte section heading 831892
+- texte card background FFFFFF
+- texte card section 831892
+- texte content card 2D1E53
+- background section price F1F8F7
+- background plan free 3D2A6B
+- heading card price 2BE5CF
+- background plan pro 2D1E53
+- stroke plan premium BD0CA9
+- linear gradient plan premium
+    - step 0 820080
+    - step 100% 130043
+- background plan sur mesure 2BE5CF
+- text plan sur mesure 130043
+- content testimonials 2D1E53
+- name person testimonials 100038
+- name entreprise testimonials 831892
+- protection des données background 130043
+- protection des données span bold 2BE5CF
+- background footer F0F8F7
+- text heading footer 130043
+- background section newsletters footer 2D1E53
+
+### Thème Dark
+
+- Blanc fffff
+- Texte navbar desktop 130043
+- Icon light/dark mode 130043
+- Linear Gradient button primary
+    - BD0CA9 stops 0%
+    - 831892 stops 33%
+    - 006A9B stops 66%
+    - 2BE5CF stops 100%
+- Background button primary 130043
+- Stroke button secondary 80FFF0
+- Background button secondary 2BE5CF
+- texte section heading 2BE5CF
+- texte card background 2D1E53 opacité à 60%
+- texte card section D1C0FD
+- texte content card fffff
+- background section price 200959
+- background plan free 28135E
+- heading card price 2BE5CF
+- background plan pro 30186D
+- stroke plan premium 831892
+- linear gradient plan premium
+    - step 0 91009E
+    - step 100% 361B7B
+- background plan sur mesure 2BE5CF
+- text plan sur mesure 130043
+- content testimonials FFFFFF
+- name person testimonials FFFFFF
+- name entreprise testimonials 2BE5CF
+- protection des données background 382762
+- protection des données span bold 2BE5CF
+- background footer 261453
+- text heading footer FFFFFF
+- background section newsletters footer FDFDFD
