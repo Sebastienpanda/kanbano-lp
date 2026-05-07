@@ -51,10 +51,22 @@ export class FunctionalityTask {
     private buildTimeline(tl: gsap.core.Timeline): void {
         tl.from('[data-animate="create-task"]', { autoAlpha: 0, x: 60, duration: 0.6, ease: "power2.out" }, 0)
             .from('[data-animate="task-empty"]', { autoAlpha: 0, x: 60, duration: 0.6, ease: "power2.out" }, 0.4)
-            .from('[data-animate="task-empty-arrow-two"]', { autoAlpha: 0, y: -30, duration: 0.45, ease: "power2.out" }, 0.8)
-            .from('[data-animate="task-create-arrow-three"]', { autoAlpha: 0, y: -30, duration: 0.45, ease: "power2.out" }, 0.8)
+            .from(
+                '[data-animate="task-empty-arrow-two"]',
+                { autoAlpha: 0, y: -30, duration: 0.45, ease: "power2.out" },
+                0.8,
+            )
+            .from(
+                '[data-animate="task-create-arrow-three"]',
+                { autoAlpha: 0, y: -30, duration: 0.45, ease: "power2.out" },
+                0.8,
+            )
             .from('[data-animate="task-create"]', { autoAlpha: 0, y: 60, duration: 0.6, ease: "power2.out" }, 1.25)
-            .from('[data-animate="task-empty-arrow-one"]', { autoAlpha: 0, x: 60, duration: 0.45, ease: "power2.out" }, 1.85)
+            .from(
+                '[data-animate="task-empty-arrow-one"]',
+                { autoAlpha: 0, x: 60, duration: 0.45, ease: "power2.out" },
+                1.85,
+            )
             .from('[data-animate="task-view"]', { autoAlpha: 0, x: -60, duration: 0.6, ease: "power2.out" }, 2.21);
     }
 }

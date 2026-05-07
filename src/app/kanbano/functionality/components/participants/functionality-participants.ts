@@ -48,13 +48,41 @@ export class FunctionalityParticipants {
 
     private buildTimeline(tl: gsap.core.Timeline): void {
         tl.from('[data-animate="intervenant"]', { autoAlpha: 0, y: -30, duration: 0.6, ease: "power2.out" }, 0)
-            .from('[data-animate="organisation-list"]', { autoAlpha: 0, x: -60, duration: 0.6, ease: "power2.out" }, 0.45)
-            .from('[data-animate="organisation-list-arrow-one"]', { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" }, 1.05)
-            .from('[data-animate="organisation-list-arrow-two"]', { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" }, 1.05)
-            .from('[data-animate="organisation-list-arrow-three"]', { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" }, 1.05)
-            .from('[data-animate="arrow-one-mobile"]', { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" }, 1.05)
+            .from(
+                '[data-animate="organisation-list"]',
+                { autoAlpha: 0, x: -60, duration: 0.6, ease: "power2.out" },
+                0.45,
+            )
+            .from(
+                '[data-animate="organisation-list-arrow-one"]',
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
+            )
+            .from(
+                '[data-animate="organisation-list-arrow-two"]',
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
+            )
+            .from(
+                '[data-animate="organisation-list-arrow-three"]',
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
+            )
+            .from(
+                '[data-animate="arrow-one-mobile"]',
+                { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" },
+                1.05,
+            )
             .from('[data-animate="arrow-two-mobile"]', { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" }, 1.3)
-            .from('[data-animate="invitation-create"]', { autoAlpha: 0, y: -30, duration: 0.6, ease: "power2.out" }, 1.5)
-            .from('[data-animate="organisation-view"]', { autoAlpha: 0, y: 30, duration: 0.6, ease: "power2.out" }, 1.55);
+            .from(
+                '[data-animate="invitation-create"]',
+                { autoAlpha: 0, y: -30, duration: 0.6, ease: "power2.out" },
+                1.5,
+            )
+            .from(
+                '[data-animate="organisation-view"]',
+                { autoAlpha: 0, y: 30, duration: 0.6, ease: "power2.out" },
+                1.55,
+            );
     }
 }

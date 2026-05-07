@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, PLATFOR
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { filter } from "rxjs";
 import { VerifyToken } from "@kanbano/modal/modal.service";
+import { filter } from "rxjs";
 
 interface ResendForm {
     email: FormControl<string>;

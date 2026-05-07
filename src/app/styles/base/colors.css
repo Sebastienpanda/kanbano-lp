@@ -47,7 +47,7 @@
 
     /* newsletter form — surface sombre en light, error doit être claire */
     --kanbano-newsletter-input-border: oklch(1 0 0 / 30%);
-    --kanbano-newsletter-error-text: oklch(0.88 0.12 10);   /* rose clair → ~11:1 sur fond violet */
+    --kanbano-newsletter-error-text: oklch(0.88 0.12 10); /* rose clair → ~11:1 sur fond violet */
     --kanbano-newsletter-error-border: oklch(0.88 0.12 10); /* même teinte sur input blanc → 3.4:1 ✓ */
     --kanbano-newsletter-error-shadow: oklch(0.88 0.12 10 / 25%);
 }
@@ -84,7 +84,7 @@
 
     /* newsletter form — surface claire en dark, error doit être foncée */
     --kanbano-newsletter-input-border: oklch(0.6 0.08 295 / 50%);
-    --kanbano-newsletter-error-text: oklch(0.45 0.22 334);   /* rose foncé → ~5.5:1 sur fond clair */
+    --kanbano-newsletter-error-text: oklch(0.45 0.22 334); /* rose foncé → ~5.5:1 sur fond clair */
     --kanbano-newsletter-error-border: oklch(0.45 0.22 334);
     --kanbano-newsletter-error-shadow: oklch(0.45 0.22 334 / 25%);
 }

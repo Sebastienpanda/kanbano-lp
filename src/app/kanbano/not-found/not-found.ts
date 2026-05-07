@@ -36,13 +36,17 @@ export class NotFound {
                         transformOrigin: "center bottom",
                     })
                     // Sol apparaît à l'impact
-                    .to(".not-found-ground", {
-                        autoAlpha: 1,
-                        scaleX: 1,
-                        duration: 0.15,
-                        ease: "power2.out",
-                        transformOrigin: "center center",
-                    }, "<")
+                    .to(
+                        ".not-found-ground",
+                        {
+                            autoAlpha: 1,
+                            scaleX: 1,
+                            duration: 0.15,
+                            ease: "power2.out",
+                            transformOrigin: "center center",
+                        },
+                        "<",
+                    )
                     // Rebond vers le haut
                     .to(".not-found-k", {
                         scaleY: 1.06,
