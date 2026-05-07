@@ -1,8 +1,10 @@
-import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from "@angular/core";
+import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { LucideArrowRight } from "@lucide/angular";
-import { createTimeline, onScroll } from "animejs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
     selector: "kanbano-lp-data-protection",
@@ -12,42 +14,20 @@ import { createTimeline, onScroll } from "animejs";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataProtection {
-    private readonly document = inject(DOCUMENT);
-    private readonly platformId = inject(PLATFORM_ID);
-
     constructor() {
         afterNextRender(() => {
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            const prefersReducedMotion = this.document.defaultView?.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
-
-            if (prefersReducedMotion) return;
-
-            const heading = this.document.querySelector<HTMLElement>('[data-animate="protection-heading"]');
-            const bloc = this.document.querySelector<HTMLElement>(".data-protection-bloc");
-
-            if (heading) heading.style.opacity = "0";
-            if (bloc) bloc.style.opacity = "0";
-
-            if (heading) {
-                createTimeline({
-                    autoplay: onScroll({ target: heading, enter: "bottom bottom", repeat: false }),
-                }).add(heading, { opacity: [0, 1], scale: [0.85, 1], duration: 600, ease: "out(2)" });
-            }
-
-            createTimeline({
-                autoplay: onScroll({
-                    target: ".data-protection",
-                    enter: "top top",
-                    repeat: false,
-                }),
-            }).add(".data-protection-bloc", {
-                opacity: [0, 1],
-                scale: [0.85, 1],
-                duration: 600,
-                ease: "out(2)",
+            gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+                gsap.from(".data-protection-bloc", {
+                    autoAlpha: 0,
+                    scale: 0.85,
+                    duration: 0.6,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".data-protection-bloc",
+                        start: "top 85%",
+                        toggleActions: "play none none none",
+                    },
+                });
             });
         });
     }

@@ -1,0 +1,34 @@
+<main class="not-found">
+    <a class="not-found-logo" routerLink="/" aria-label="Kanbano — Retour à l'accueil">
+        <picture>
+            @if (isDark()) {
+            <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
+            <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+            } @else {
+            <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
+            <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
+            }
+            <img
+                [src]="isDark() ? '/assets/logo/logo-light/logo-light.png' : '/assets/logo/logo-dark/logo-dark.png'"
+                alt="Kanbano"
+                height="43"
+                width="209"
+            />
+        </picture>
+    </a>
+
+    <p class="not-found-oups">OUPS</p>
+
+    <div class="not-found-illustration" aria-hidden="true">
+        <div class="not-found-k">
+            <img src="/assets/not-found/logo.svg" alt="" width="400" height="334" />
+        </div>
+        <div class="not-found-ground">
+            <img src="/assets/not-found/sol.svg" alt="" width="384" height="85" />
+        </div>
+    </div>
+
+    <p class="not-found-text">Il semble que Kanbano se soit crashé !</p>
+
+    <a class="not-found-btn" routerLink="/">Retour à l'accueil</a>
+</main>

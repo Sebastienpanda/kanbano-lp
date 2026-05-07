@@ -35,6 +35,21 @@
     --kanbano-text-heading: var(--kanbano-gradient-purple); /* 831892 */
     --kanbano-text-newsletter: var(--kanbano-white); /* FFFFFF */
     --kanbano-text-workspace: var(--kanbano-gradient-purple);
+
+    /* waitlist */
+    --kanbano-bg-waitlist-form: var(--kanbano-white);
+    --kanbano-waitlist-input-bg: var(--kanbano-white);
+    --kanbano-waitlist-input-border: oklch(0.82 0 0);
+    --kanbano-waitlist-step-bg: var(--kanbano-primary);
+    --kanbano-waitlist-step-color: var(--kanbano-white);
+    --kanbano-waitlist-text: var(--kanbano-primary);
+    --kanbano-waitlist-muted: oklch(0.5 0.06 292);
+
+    /* newsletter form — surface sombre en light, error doit être claire */
+    --kanbano-newsletter-input-border: oklch(1 0 0 / 30%);
+    --kanbano-newsletter-error-text: oklch(0.88 0.12 10);   /* rose clair → ~11:1 sur fond violet */
+    --kanbano-newsletter-error-border: oklch(0.88 0.12 10); /* même teinte sur input blanc → 3.4:1 ✓ */
+    --kanbano-newsletter-error-shadow: oklch(0.88 0.12 10 / 25%);
 }
 
 [data-theme="dark"] {
@@ -57,4 +72,19 @@
     --kanbano-text-heading: var(--kanbano-green); /* 2BE5CF */
     --kanbano-text-newsletter: var(--kanbano-primary); /* 130043 */
     --kanbano-text-workspace: oklch(0.844 0.084 297); /* D1C0FD */
+
+    /* waitlist */
+    --kanbano-bg-waitlist-form: oklch(0.3264 0.1002 293.34);
+    --kanbano-waitlist-input-bg: oklch(0.922 0.0247 298.59);
+    --kanbano-waitlist-input-border: oklch(0.5 0.1 293 / 60%);
+    --kanbano-waitlist-step-bg: var(--kanbano-green);
+    --kanbano-waitlist-step-color: var(--kanbano-primary);
+    --kanbano-waitlist-text: var(--kanbano-white);
+    --kanbano-waitlist-muted: oklch(0.78 0.05 295);
+
+    /* newsletter form — surface claire en dark, error doit être foncée */
+    --kanbano-newsletter-input-border: oklch(0.6 0.08 295 / 50%);
+    --kanbano-newsletter-error-text: oklch(0.45 0.22 334);   /* rose foncé → ~5.5:1 sur fond clair */
+    --kanbano-newsletter-error-border: oklch(0.45 0.22 334);
+    --kanbano-newsletter-error-shadow: oklch(0.45 0.22 334 / 25%);
 }

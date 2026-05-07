@@ -7,7 +7,8 @@
         "paths": {
             "@shared/*": ["src/app/kanbano/shared/*"],
             "@components/*": ["src/app/kanbano/components/*"],
-            "@kanbano/*": ["src/app/kanbano/*"]
+            "@kanbano/*": ["src/app/kanbano/*"],
+            "@environnement/*": ["src/environments*"]
         },
         "strict": true,
         "noImplicitOverride": true,

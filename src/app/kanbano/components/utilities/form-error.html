@@ -1,0 +1,7 @@
+@if (control().invalid && (control().dirty || control().touched)) {
+<div [id]="errorId()" role="alert" aria-live="polite">
+    @for (msg of getErrorMessages(); track $index) {
+    <span>{{ msg }}</span>
+    }
+</div>
+}

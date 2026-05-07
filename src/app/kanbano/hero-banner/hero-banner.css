@@ -48,7 +48,7 @@
         @media (width >= 48em) {
             position: absolute;
             bottom: 92px;
-            left: 50%;
+            left: calc(50% - 130px);
             display: block;
             width: 260px;
             min-width: 260px;
@@ -57,7 +57,6 @@
             min-height: 324px;
             max-height: 324px;
             filter: blur(10px);
-            transform: translateX(-50%);
         }
 
         @media (width >= 80em) {
@@ -101,7 +100,6 @@
             font-size: 3rem;
             font-weight: 400;
             line-height: 1.2;
-            opacity: 0;
 
             @media (width >= 48em) {
                 text-align: center;
@@ -120,7 +118,6 @@
         & .hero-banner-description {
             font-size: 1.5rem;
             font-weight: 700;
-            opacity: 0;
 
             @media (width >= 48em) {
                 text-align: center;
@@ -130,11 +127,6 @@
         & .hero-banner-actions {
             width: 100%;
             margin-top: 2.5rem;
-            opacity: 0;
-        }
-
-        & kanbano-lp-checked {
-            opacity: 0;
         }
     }
 }

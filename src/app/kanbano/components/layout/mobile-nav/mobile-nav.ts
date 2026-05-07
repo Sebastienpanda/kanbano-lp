@@ -20,4 +20,5 @@ export class MobileNav {
     readonly theme = input<UserTheme>("light");
     readonly linkClicked = output<void>();
     readonly themeToggle = output<void>();
+    readonly waitlistClick = output<void>();
 }
