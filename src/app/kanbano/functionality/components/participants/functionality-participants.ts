@@ -1,8 +1,8 @@
-import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from "@angular/core";
+import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
 import { VectorGreenRightParticipant } from "@kanbano/functionality/svg/vector-green-participants/vector-green-right-participant";
 import { VectorPurpleLeftParticipant } from "@kanbano/functionality/svg/vector-purple-participants/vector-purple-left-participant";
-import { animate, createTimeline, onScroll } from "animejs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { HeadingItem } from "../heading-item";
 import { InvitationCreate } from "./components/create/invitation-create";
@@ -10,6 +10,8 @@ import { Calculator } from "./components/icons/calculator";
 import { Coffee } from "./components/icons/coffee";
 import { OrganisationList } from "./components/list/organisation-list";
 import { OrganisationView } from "./components/view/organisation-view";
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
     selector: "kanbano-lp-functionality-participants",
@@ -28,104 +30,59 @@ import { OrganisationView } from "./components/view/organisation-view";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FunctionalityParticipants {
-    private readonly document = inject(DOCUMENT);
-    private readonly platformId = inject(PLATFORM_ID);
-
     constructor() {
         afterNextRender(() => {
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            const prefersReducedMotion = this.document.defaultView?.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
-
-            if (prefersReducedMotion) return;
-
-            const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
-
-            if (isDesktop) {
-                this.document
-                    .querySelectorAll<HTMLElement>(
-                        '[data-animate="intervenant"], [data-animate="organisation-list"],' +
-                            '[data-animate="organisation-list-arrow-one"], [data-animate="organisation-list-arrow-two"],' +
-                            '[data-animate="organisation-list-arrow-three"],' +
-                            '[data-animate="arrow-one-mobile"], [data-animate="arrow-two-mobile"],' +
-                            '[data-animate="invitation-create"], [data-animate="organisation-view"]',
-                    )
-                    .forEach((el) => (el.style.opacity = "0"));
-
+            gsap.matchMedia().add("(prefers-reduced-motion: no-preference) and (min-width: 64em)", () => {
                 this.buildTimeline(
-                    createTimeline({
-                        autoplay: onScroll({ target: ".heading-participant", enter: "bottom bottom", repeat: false }),
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".heading-participant",
+                            start: "bottom bottom",
+                            toggleActions: "play none none none",
+                        },
                     }),
                 );
-            } else {
-                const cards = this.document.querySelectorAll<HTMLElement>(
-                    '[data-animate="intervenant"], [data-animate="organisation-list"],' +
-                        '[data-animate="invitation-create"], [data-animate="organisation-view"]',
-                );
-                cards.forEach((el) => (el.style.opacity = "0"));
-
-                const heading = this.document.querySelector(".heading-participant");
-                if (!heading) return;
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (!entry.isIntersecting) return;
-                        observer.disconnect();
-                        animate(cards, { opacity: [0, 1], translateY: [20, 0], duration: 500, ease: "out(2)" });
-                    },
-                    { rootMargin: "0px 0px -10% 0px", threshold: 0 },
-                );
-                observer.observe(heading);
-            }
+            });
         });
     }
 
-    private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
-        tl.add(
-            '[data-animate="intervenant"]',
-            { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" },
-            0,
-        )
-            .add(
+    private buildTimeline(tl: gsap.core.Timeline): void {
+        tl.from('[data-animate="intervenant"]', { autoAlpha: 0, y: -30, duration: 0.6, ease: "power2.out" }, 0)
+            .from(
                 '[data-animate="organisation-list"]',
-                { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" },
-                450,
+                { autoAlpha: 0, x: -60, duration: 0.6, ease: "power2.out" },
+                0.45,
             )
-            .add(
+            .from(
                 '[data-animate="organisation-list-arrow-one"]',
-                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
-                1050,
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
             )
-            .add(
+            .from(
                 '[data-animate="organisation-list-arrow-two"]',
-                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
-                1050,
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
             )
-            .add(
+            .from(
                 '[data-animate="organisation-list-arrow-three"]',
-                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
-                1050,
+                { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" },
+                1.05,
             )
-            .add(
+            .from(
                 '[data-animate="arrow-one-mobile"]',
-                { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
-                1050,
+                { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" },
+                1.05,
             )
-            .add(
-                '[data-animate="arrow-two-mobile"]',
-                { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
-                1300,
-            )
-            .add(
+            .from('[data-animate="arrow-two-mobile"]', { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" }, 1.3)
+            .from(
                 '[data-animate="invitation-create"]',
-                { opacity: [0, 1], translateY: [-30, 0], duration: 600, ease: "out(2)" },
-                1500,
+                { autoAlpha: 0, y: -30, duration: 0.6, ease: "power2.out" },
+                1.5,
             )
-            .add(
+            .from(
                 '[data-animate="organisation-view"]',
-                { opacity: [0, 1], translateY: [30, 0], duration: 600, ease: "out(2)" },
-                1550,
+                { autoAlpha: 0, y: 30, duration: 0.6, ease: "power2.out" },
+                1.55,
             );
     }
 }

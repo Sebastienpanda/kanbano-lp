@@ -1,12 +1,12 @@
 import { DOCUMENT } from "@angular/common";
 import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, inject, signal } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
 import { LucideMoon, LucideSun } from "@lucide/angular";
-import { animate } from "animejs";
+import gsap from "gsap";
 
 export interface NavItem {
     fragment: string;
@@ -23,6 +23,7 @@ export interface NavItem {
 export class Header {
     protected readonly userTheme = inject(UserThemeService);
     protected readonly isDark = computed(() => this.userTheme.theme() === "dark");
+    private readonly router = inject(Router);
 
     protected readonly nav = signal<NavItem[]>([
         {
@@ -57,16 +58,21 @@ export class Header {
 
             if (prefersReducedMotion) return;
 
-            animate(".header-container", {
-                opacity: [0, 1],
-                translateY: [-20, 0],
-                duration: 500,
-                ease: "cubicBezier(0.16, 1, 0.3, 1)",
+            gsap.from(".header-container", {
+                autoAlpha: 0,
+                y: -20,
+                duration: 1.2,
+                ease: "circ.out",
             });
         });
     }
 
     toggleMenu(): void {
         this.isMenuOpen.update((v) => !v);
+    }
+
+    navigateToWaitlist(): void {
+        this.isMenuOpen.set(false);
+        this.router.navigate([], { fragment: "waitlist" });
     }
 }

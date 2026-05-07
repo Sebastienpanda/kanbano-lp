@@ -12,4 +12,6 @@ type ButtonVariant = "primary" | "secondary";
 export class Button {
     readonly variant = input<ButtonVariant>("primary");
     readonly full = input<boolean>(false);
+    readonly type = input<string>("button");
+    readonly disabled = input<boolean>(false);
 }

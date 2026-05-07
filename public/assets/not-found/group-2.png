@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 98.7388 98.7386" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M87.1216 98.7386L4.30541 98.7386C1.92932 98.7386 3.64549e-07 96.8099 3.54381e-07 94.4338L0 11.617C-2.01048e-08 6.91867 2.83059 2.68258 7.1713 0.884819C11.512 -0.913544 16.5088 0.0804065 19.831 3.40262L95.3359 78.9075C98.6582 82.2298 99.6521 87.2266 97.8544 91.5673C96.056 95.908 91.8205 98.7386 87.1216 98.7386Z" fill="url(#paint0_linear_0_29)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_29" x1="0.000268499" y1="98.7386" x2="195.352" y2="-104.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2BE5CF"/>
+<stop offset="0.31" stop-color="#006A9B"/>
+<stop offset="0.69" stop-color="#831892"/>
+<stop offset="1" stop-color="#BD0CA9"/>
+</linearGradient>
+</defs>
+</svg>

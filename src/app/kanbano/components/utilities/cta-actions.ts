@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { Button } from "./button";
 
@@ -9,4 +10,10 @@ import { Button } from "./button";
     styleUrl: "./cta-actions.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CtaActions {}
+export class CtaActions {
+    private readonly router = inject(Router);
+
+    navigateToWaitlist(): void {
+        this.router.navigate([], { fragment: "waitlist" });
+    }
+}

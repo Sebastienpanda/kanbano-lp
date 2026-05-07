@@ -140,7 +140,9 @@
                 }
                 <span class="mobile-nav-toggle-label">{{ theme() === 'dark' ? 'Mode clair' : 'Mode sombre' }}</span>
             </button>
-            <kanbano-lp-button [full]="true">Rejoindre la file d'attente</kanbano-lp-button>
+            <kanbano-lp-button [full]="true" (click)="waitlistClick.emit()"
+                >Rejoindre la file d'attente</kanbano-lp-button
+            >
         </div>
     </div>
 </nav>

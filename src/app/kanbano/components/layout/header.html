@@ -53,12 +53,13 @@
                     [class.header-theme-icon-visible]="userTheme.theme() === 'dark'"
                 ></svg>
             </button>
-            <kanbano-lp-button>Rejoindre la file d'attente</kanbano-lp-button>
+            <kanbano-lp-button (click)="navigateToWaitlist()">Rejoindre la file d'attente</kanbano-lp-button>
         </div>
     </div>
     <kanbano-lp-mobile-nav
         (linkClicked)="isMenuOpen.set(false)"
         (themeToggle)="userTheme.toggle()"
+        (waitlistClick)="navigateToWaitlist()"
         [isActive]="isMenuOpen()"
         [nav]="nav()"
         [theme]="userTheme.theme()"

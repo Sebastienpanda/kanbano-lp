@@ -37,6 +37,8 @@
             }
 
             & .footer-newsletter {
+                --form-error-text-color: var(--kanbano-newsletter-error-text);
+
                 display: flex;
                 flex-direction: column;
                 gap: 1.25rem;
@@ -50,9 +52,13 @@
                     flex: 1;
                 }
 
+                & p {
+                    color: var(--kanbano-text-newsletter);
+                }
+
                 & .footer-form-heading {
                     font-family: var(--font-baloo), display, serif;
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                     font-weight: 600;
                     color: var(--kanbano-text-newsletter);
                     text-align: center;
@@ -63,6 +69,12 @@
                     flex-direction: column;
                     gap: 1rem;
                     width: 100%;
+
+                    & .form-group {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.375rem;
+                    }
                 }
 
                 & .footer-label {
@@ -70,15 +82,35 @@
                     color: var(--kanbano-text-newsletter);
                 }
 
+                & .footer-rgpd {
+                    font-size: 0.9375rem;
+                    opacity: 0.7;
+                }
+
                 & .footer-form-input {
                     padding: 8px;
-                    margin-bottom: 1rem;
+                    color: var(--kanbano-primary);
+                    outline: none;
                     background-color: var(--kanbano-newsletter-input-bg);
+                    border: 1.5px solid var(--kanbano-newsletter-input-border);
                     border-radius: 4px;
+                    transition:
+                        border-color 0.2s,
+                        box-shadow 0.2s;
 
                     &::placeholder {
                         font-family: var(--font-mulish), sans-serif;
                         color: var(--kanbano-primary);
+                    }
+
+                    &:focus {
+                        border-color: var(--kanbano-green);
+                        box-shadow: 0 0 0 3px var(--kanbano-green-20);
+                    }
+
+                    &[aria-invalid="true"] {
+                        border-color: var(--kanbano-newsletter-error-border);
+                        box-shadow: 0 0 0 3px var(--kanbano-newsletter-error-shadow);
                     }
                 }
             }
@@ -96,13 +128,45 @@
                 justify-content: space-between;
             }
 
-            & .footer-logo {
-                width: 219px;
-                min-width: 219px;
-                max-width: 219px;
-                height: 45px;
-                min-height: 45px;
-                max-height: 45px;
+            & .footer-bottom-left {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: center;
+
+                @media (width >= 64em) {
+                    align-items: flex-start;
+                }
+
+                & .footer-logo {
+                    width: 219px;
+                    min-width: 219px;
+                    max-width: 219px;
+                    height: 45px;
+                    min-height: 45px;
+                    max-height: 45px;
+                }
+
+                & .footer-copyright {
+                    font-size: 0.875rem;
+                    color: var(--kanbano-text-footer);
+                    opacity: 0.6;
+
+                    & .footer-legal {
+                        color: inherit;
+                    }
+                }
+            }
+
+            & .footer-bottom-right {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+
+                @media (width >= 64em) {
+                    align-items: flex-end;
+                }
             }
 
             & .footer-lists {
@@ -110,7 +174,7 @@
                 flex-direction: column;
                 gap: 1.25rem;
                 align-items: center;
-                padding-block: 1rem;
+                padding-block: 0;
 
                 @media (width >= 64em) {
                     flex-direction: row;
@@ -122,6 +186,35 @@
                     font-size: 1.125rem;
                     font-weight: 500;
                     color: var(--kanbano-text-footer);
+                }
+            }
+
+            & .footer-social {
+                display: flex;
+                gap: 0.75rem;
+                align-items: center;
+
+                & .footer-social-label {
+                    font-size: 0.9375rem;
+                    color: var(--kanbano-text-footer);
+                    opacity: 0.7;
+                }
+
+                & .footer-social-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--kanbano-text-footer);
+                    transition: opacity 0.2s ease;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+
+                    & .footer-social-icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
                 }
             }
         }

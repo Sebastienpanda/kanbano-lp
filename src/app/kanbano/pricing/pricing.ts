@@ -1,67 +1,45 @@
-import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from "@angular/core";
+import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
-import { Button } from "@components/utilities/button";
 import { CheckItem } from "@components/utilities/check-item";
-import { createTimeline, onScroll } from "animejs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
     selector: "kanbano-lp-pricing",
-    imports: [Button, CheckItem, SectionHeader],
+    imports: [CheckItem, SectionHeader],
     templateUrl: "./pricing.html",
     styleUrl: "./pricing.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Pricing {
-    private readonly document = inject(DOCUMENT);
-    private readonly platformId = inject(PLATFORM_ID);
-
     constructor() {
         afterNextRender(() => {
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            const prefersReducedMotion = this.document.defaultView?.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
-
-            if (prefersReducedMotion) return;
-
-            this.document
-                .querySelectorAll<HTMLElement>(
-                    '[data-animate="pricing-heading"], [data-animate="pricing-free"],' +
-                        '[data-animate="pricing-pro"], [data-animate="pricing-premium"]',
-                )
-                .forEach((el) => (el.style.opacity = "0"));
-
-            const heading = this.document.querySelector<HTMLElement>('[data-animate="pricing-heading"]');
-            if (heading) {
-                createTimeline({
-                    autoplay: onScroll({ target: heading, enter: "bottom bottom", repeat: false }),
-                }).add(heading, { opacity: [0, 1], scale: [0.85, 1], duration: 600, ease: "out(2)" });
-            }
-
-            createTimeline({
-                autoplay: onScroll({
-                    target: ".pricing",
-                    enter: "top top",
-                    repeat: false,
-                }),
-            })
-                .add(
-                    '[data-animate="pricing-free"]',
-                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
-                    0,
-                )
-                .add(
-                    '[data-animate="pricing-pro"]',
-                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
-                    150,
-                )
-                .add(
-                    '[data-animate="pricing-premium"]',
-                    { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" },
-                    300,
-                );
+            gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".pricing-cards",
+                        start: "top 85%",
+                        toggleActions: "play none none none",
+                    },
+                })
+                    .from(
+                        '[data-animate="pricing-free"]',
+                        { autoAlpha: 0, y: 60, duration: 0.6, ease: "power2.out" },
+                        0,
+                    )
+                    .from(
+                        '[data-animate="pricing-pro"]',
+                        { autoAlpha: 0, y: 60, duration: 0.6, ease: "power2.out" },
+                        0.15,
+                    )
+                    .from(
+                        '[data-animate="pricing-premium"]',
+                        { autoAlpha: 0, y: 60, duration: 0.6, ease: "power2.out" },
+                        0.3,
+                    );
+            });
         });
     }
 }

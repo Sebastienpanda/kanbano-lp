@@ -3,46 +3,90 @@
     <div class="container footer-container">
         <div class="footer-top">
             <h2 class="footer-heading">
-                Gérez vos projet
-                <span class="footer-bold">en tout tranquilité !</span>
+                Prenez le contrôle de vos projets,
+                <span class="footer-bold">en toute sérénité.</span>
             </h2>
-            <div class="footer-newsletter">
-                <p class="footer-form-heading">Suivez Kanbano pour ne rien rater !</p>
-                <form class="footer-form">
-                    <label class="footer-label" for="newsletter-email"> Votre adresse email </label>
-                    <input class="footer-form-input" id="newsletter-email" placeholder="Mon email" type="email" />
-                    <kanbano-lp-button variant="secondary" [full]="true"> Rejoindre la newsletters </kanbano-lp-button>
+            <div class="footer-newsletter" id="waitlist">
+                <h3 class="footer-form-heading">Soyez parmi les premiers à découvrir Kanbano</h3>
+                <p>Inscrivez-vous à la liste d'attente et recevez un accès exclusif dès le lancement de Kanbano.</p>
+                <form class="footer-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+                    <div class="form-group">
+                        <label class="footer-label" for="newsletter-email">Votre adresse email</label>
+                        <input
+                            class="footer-form-input"
+                            id="newsletter-email"
+                            formControlName="email"
+                            placeholder="john@doe.fr"
+                            type="email"
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="newsletter-email-error"
+                            [attr.aria-invalid]="form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched)"
+                        />
+                        <kanbano-lp-form-error [control]="form.controls.email" errorId="newsletter-email-error" />
+                    </div>
+                    <kanbano-lp-button variant="secondary" type="submit" [disabled]="form.invalid"
+                        >Rejoindre la liste d'attente</kanbano-lp-button
+                    >
                 </form>
+                <p class="footer-rgpd">
+                    Conformément au RGPD, votre email est utilisé uniquement pour vous notifier du lancement.
+                    Suppression possible à tout moment.
+                </p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <picture class="footer-logo">
-                @if (isDark()) {
-                <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.avif 220w" type="image/avif" />
-                <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.webp 220w" type="image/webp" />
-                } @else {
-                <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.avif 220w" type="image/avif" />
-                <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.webp 220w" type="image/webp" />
-                }
-                <img
-                    [src]="isDark() ? '/assets/logo/logo-light/logo-light.png' : '/assets/logo/logo-dark/logo-dark.png'"
-                    alt="Kanbano"
-                    height="45"
-                    loading="lazy"
-                    width="219"
-                />
-            </picture>
-
-            <nav aria-label="Navigation du pied de page">
-                <ul class="footer-lists">
-                    @for (item of nav(); track item.fragment) {
-                    <li class="footer-item">
-                        <a [fragment]="item.fragment" [routerLink]="['/']" class="link"> {{ item.name }} </a>
-                    </li>
+            <div class="footer-bottom-left">
+                <picture class="footer-logo">
+                    @if (isDark()) {
+                    <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.avif 220w" type="image/avif" />
+                    <source sizes="220px" srcset="/assets/logo/logo-light/logo-light.webp 220w" type="image/webp" />
+                    } @else {
+                    <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.avif 220w" type="image/avif" />
+                    <source sizes="220px" srcset="/assets/logo/logo-dark/logo-dark.webp 220w" type="image/webp" />
                     }
-                </ul>
-            </nav>
+                    <img
+                        [src]="isDark() ? '/assets/logo/logo-light/logo-light.png' : '/assets/logo/logo-dark/logo-dark.png'"
+                        alt="Kanbano"
+                        height="45"
+                        loading="lazy"
+                        width="219"
+                    />
+                </picture>
+                <p class="footer-copyright">
+                    © {{ year }} Kanbano —
+                    <a class="link footer-legal" routerLink="/mentions-legales">Mentions légales</a>
+                </p>
+            </div>
+
+            <div class="footer-bottom-right">
+                <nav aria-label="Navigation du pied de page">
+                    <ul class="footer-lists">
+                        @for (item of nav(); track item.fragment) {
+                        <li class="footer-item">
+                            <a [fragment]="item.fragment" [routerLink]="['/']" class="link"> {{ item.name }} </a>
+                        </li>
+                        }
+                    </ul>
+                </nav>
+                <div class="footer-social">
+                    <p class="footer-social-label">Suivez-nous</p>
+                    <a
+                        aria-label="Kanbano sur LinkedIn"
+                        class="footer-social-link"
+                        href="https://www.linkedin.com/company/kanbano-app"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

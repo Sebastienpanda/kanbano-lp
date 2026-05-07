@@ -1,9 +1,9 @@
-import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from "@angular/core";
+import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
 import { VectorBlueBottom } from "@kanbano/functionality/svg/vector-blue/vector-blue-bottom";
 import { VectorGreenTop } from "@kanbano/functionality/svg/vector-green/vector-green-top";
 import { VectorPurpleTop2 } from "@kanbano/functionality/svg/vector-purple/vector-purple-top-2";
-import { animate, createTimeline, onScroll } from "animejs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { HeadingItem } from "../heading-item";
 import { WorkspaceCreate } from "./components/create/workspace-create";
@@ -12,6 +12,8 @@ import { Laptop } from "./components/icons/laptop/laptop";
 import { Loupe } from "./components/icons/loupe/loupe";
 import { Paper } from "./components/icons/paper/paper";
 import { WorkspaceView } from "./components/view/workspace-view";
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
     selector: "kanbano-lp-functionality-workspace",
@@ -32,74 +34,28 @@ import { WorkspaceView } from "./components/view/workspace-view";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FunctionalityWorkspace {
-    private readonly document = inject(DOCUMENT);
-    private readonly platformId = inject(PLATFORM_ID);
-
     constructor() {
         afterNextRender(() => {
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            const prefersReducedMotion = this.document.defaultView?.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
-
-            if (prefersReducedMotion) return;
-
-            const isDesktop = this.document.defaultView!.matchMedia("(min-width: 64em)").matches;
-
-            if (isDesktop) {
-                this.document
-                    .querySelectorAll<HTMLElement>(
-                        '[data-animate="1"], [data-animate="2"], [data-animate="3"],' +
-                            '[data-animate="empty-arrow-1"], [data-animate="empty-arrow-2"],' +
-                            '[data-animate="create-rose-2"]',
-                    )
-                    .forEach((el) => (el.style.opacity = "0"));
-
+            gsap.matchMedia().add("(prefers-reduced-motion: no-preference) and (min-width: 64em)", () => {
                 this.buildTimeline(
-                    createTimeline({
-                        autoplay: onScroll({ target: ".heading-workspace", enter: "bottom bottom", repeat: false }),
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".heading-workspace",
+                            start: "bottom bottom",
+                            toggleActions: "play none none none",
+                        },
                     }),
                 );
-            } else {
-                const cards = this.document.querySelectorAll<HTMLElement>(
-                    '[data-animate="1"], [data-animate="2"], [data-animate="3"]',
-                );
-                cards.forEach((el) => (el.style.opacity = "0"));
-
-                const heading = this.document.querySelector(".heading-workspace");
-                if (!heading) return;
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (!entry.isIntersecting) return;
-                        observer.disconnect();
-                        animate(cards, { opacity: [0, 1], translateY: [20, 0], duration: 500, ease: "out(2)" });
-                    },
-                    { rootMargin: "0px 0px -10% 0px", threshold: 0 },
-                );
-                observer.observe(heading);
-            }
+            });
         });
     }
 
-    private buildTimeline(tl: ReturnType<typeof createTimeline>): void {
-        tl.add('[data-animate="1"]', { opacity: [0, 1], translateX: [-60, 0], duration: 600, ease: "out(2)" }, 0)
-            .add(
-                '[data-animate="empty-arrow-1"]',
-                { opacity: [0, 1], translateY: [-30, 0], duration: 450, ease: "out(2)" },
-                450,
-            )
-            .add(
-                '[data-animate="empty-arrow-2"]',
-                { opacity: [0, 1], translateY: [-30, 0], duration: 500, ease: "out(2)" },
-                500,
-            )
-            .add('[data-animate="2"]', { opacity: [0, 1], translateY: [60, 0], duration: 600, ease: "out(2)" }, 800)
-            .add(
-                '[data-animate="create-rose-2"]',
-                { opacity: [0, 1], translateX: [-30, 0], duration: 450, ease: "out(2)" },
-                1200,
-            )
-            .add('[data-animate="3"]', { opacity: [0, 1], translateX: [60, 0], duration: 600, ease: "out(2)" }, 1600);
+    private buildTimeline(tl: gsap.core.Timeline): void {
+        tl.from('[data-animate="1"]', { autoAlpha: 0, x: -60, duration: 0.6, ease: "power2.out" }, 0)
+            .from('[data-animate="empty-arrow-1"]', { autoAlpha: 0, y: -30, duration: 0.45, ease: "power2.out" }, 0.45)
+            .from('[data-animate="empty-arrow-2"]', { autoAlpha: 0, y: -30, duration: 0.5, ease: "power2.out" }, 0.5)
+            .from('[data-animate="2"]', { autoAlpha: 0, y: 60, duration: 0.6, ease: "power2.out" }, 0.8)
+            .from('[data-animate="create-rose-2"]', { autoAlpha: 0, x: -30, duration: 0.45, ease: "power2.out" }, 1.2)
+            .from('[data-animate="3"]', { autoAlpha: 0, x: 60, duration: 0.6, ease: "power2.out" }, 1.6);
     }
 }

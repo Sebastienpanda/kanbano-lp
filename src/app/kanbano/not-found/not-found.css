@@ -1,0 +1,94 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 3rem 1.25rem;
+    background-color: var(--kanbano-bg);
+
+    & .not-found-logo {
+        display: block;
+
+        & img {
+            width: 209px;
+            height: 43px;
+        }
+    }
+
+    & .not-found-oups {
+        padding: 1.0625rem 3.0625rem;
+        font-family: var(--font-mulish), sans-serif;
+        font-size: 2.1875rem;
+        font-weight: 700;
+        color: var(--kanbano-text-heading);
+        border-radius: 0.625rem;
+    }
+
+    & .not-found-illustration {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .not-found-k {
+            width: 280px;
+
+            @media (width >= 48em) {
+                width: 400px;
+            }
+
+            & img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        & .not-found-ground {
+            width: 270px;
+            margin-top: -1rem;
+
+            @media (width >= 48em) {
+                width: 384px;
+            }
+
+            & img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    & .not-found-text {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--kanbano-text-footer);
+        text-align: center;
+    }
+
+    & .not-found-btn {
+        display: flex;
+        gap: 0.3125rem;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        padding-inline: 1.0625rem;
+        font-family: var(--font-baloo), display, serif;
+        font-size: 1.0625rem;
+        font-weight: 500;
+        color: var(--kanbano-primary);
+        white-space: nowrap;
+        text-decoration: none;
+        background-image: linear-gradient(105deg, rgba(0, 208, 255, 0.99) 0.5%, rgb(43, 229, 207) 106%);
+        border: 2px solid var(--kanbano-stroke-green);
+        border-radius: 2.5rem;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
