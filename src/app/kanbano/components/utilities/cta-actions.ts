@@ -1,5 +1,5 @@
+import { DOCUMENT } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { Router } from "@angular/router";
 
 import { Button } from "./button";
 
@@ -11,9 +11,9 @@ import { Button } from "./button";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CtaActions {
-    private readonly router = inject(Router);
+    private readonly document = inject(DOCUMENT);
 
     navigateToWaitlist(): void {
-        this.router.navigate([], { fragment: "waitlist" });
+        this.document.querySelector("#waitlist")?.scrollIntoView({ behavior: "smooth" });
     }
 }
