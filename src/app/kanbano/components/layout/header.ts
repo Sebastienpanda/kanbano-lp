@@ -1,6 +1,6 @@
 import { DOCUMENT } from "@angular/common";
 import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, inject, signal } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
@@ -23,8 +23,6 @@ export interface NavItem {
 export class Header {
     protected readonly userTheme = inject(UserThemeService);
     protected readonly isDark = computed(() => this.userTheme.theme() === "dark");
-    private readonly router = inject(Router);
-
     protected readonly nav = signal<NavItem[]>([
         {
             fragment: "fonctionnalités",
@@ -69,6 +67,6 @@ export class Header {
 
     navigateToWaitlist(): void {
         this.isMenuOpen.set(false);
-        this.router.navigate([], { fragment: "waitlist" });
+        this.document.querySelector("#waitlist")?.scrollIntoView({ behavior: "smooth" });
     }
 }
