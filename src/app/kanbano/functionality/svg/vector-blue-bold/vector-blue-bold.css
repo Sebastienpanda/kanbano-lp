@@ -6,11 +6,15 @@
         top: 126px;
         left: 0;
         display: block;
-        filter: blur(79px);
     }
 }
 
 svg {
     width: 100%;
     height: 100%;
+    overflow: visible;
+}
+
+path {
+    filter: blur(79px);
 }
