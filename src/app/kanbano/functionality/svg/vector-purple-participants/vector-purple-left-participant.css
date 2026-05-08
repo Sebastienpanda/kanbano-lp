@@ -4,7 +4,6 @@
     right: 57px;
     width: 470px;
     height: 306px;
-    filter: blur(79px);
 
     @media (width >= 768px) {
         top: 93px;
@@ -16,4 +15,9 @@
 svg {
     width: 100%;
     height: 100%;
+    overflow: visible;
+}
+
+path {
+    filter: blur(79px);
 }
