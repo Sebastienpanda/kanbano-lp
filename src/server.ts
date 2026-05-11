@@ -1,6 +1,7 @@
 import { join } from "node:path";
 
 import { APP_BASE_HREF } from "@angular/common";
+import { RESPONSE_INIT } from "@angular/core";
 import { CommonEngine } from "@angular/ssr/node";
 import compress from "@fastify/compress";
 import fastifyStatic from "@fastify/static";
@@ -34,15 +35,19 @@ export async function createServer(): Promise<FastifyInstance> {
     });
 
     app.get("*", async (req, reply) => {
+        const responseInit: ResponseInit = {};
         const html = await engine.render({
             bootstrap,
             documentFilePath: join(browserDistFolder, "index.html"),
             url: req.url,
             publicPath: browserDistFolder,
-            providers: [{ provide: APP_BASE_HREF, useValue: req.url }],
+            providers: [
+                { provide: APP_BASE_HREF, useValue: req.url },
+                { provide: RESPONSE_INIT, useValue: responseInit },
+            ],
         });
 
-        reply.type("text/html").send(html);
+        reply.status(responseInit.status ?? 200).type("text/html").send(html);
     });
 
     return app;
