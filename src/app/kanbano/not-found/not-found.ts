@@ -1,6 +1,9 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject } from "@angular/core";
+import { isPlatformServer } from "@angular/common";
+import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID } from "@angular/core";
 import { RouterLink } from "@angular/router";
+import { FASTIFY_RESPONSE } from "@kanbano/not-found/server.token";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
+import { FastifyReply } from "fastify";
 import gsap from "gsap";
 
 @Component({
@@ -13,8 +16,14 @@ import gsap from "gsap";
 export class NotFound {
     private readonly themeService = inject(UserThemeService);
     protected readonly isDark = computed(() => this.themeService.theme() === "dark");
+    protected readonly platformId = inject(PLATFORM_ID);
+    private readonly reply = inject<FastifyReply>(FASTIFY_RESPONSE, { optional: true });
 
     constructor() {
+        if (isPlatformServer(this.platformId)) {
+            this.reply?.status(404);
+        }
+
         afterNextRender(() => {
             gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
                 gsap.set(".not-found-ground", { autoAlpha: 0, scaleX: 0 });

@@ -1,10 +1,9 @@
 import { join } from "node:path";
 
-import { APP_BASE_HREF } from "@angular/common";
-import { REQUEST, RESPONSE_INIT } from "@angular/core";
 import { CommonEngine } from "@angular/ssr/node";
 import compress from "@fastify/compress";
 import fastifyStatic from "@fastify/static";
+import { FASTIFY_RESPONSE } from "@kanbano/not-found/server.token";
 import Fastify, { FastifyInstance } from "fastify";
 
 import bootstrap from "./main.server";
@@ -13,9 +12,7 @@ const browserDistFolder = join(import.meta.dirname, "../browser");
 
 export async function createServer(): Promise<FastifyInstance> {
     const app = Fastify({ logger: true });
-    const engine = new CommonEngine({
-        allowedHosts: ["kanbano.fr", "localhost", "127.0.0.1"],
-    });
+    const engine = new CommonEngine();
 
     app.addHook("onSend", async (req, reply) => {
         const url = req.url;
@@ -37,34 +34,17 @@ export async function createServer(): Promise<FastifyInstance> {
     });
 
     app.get("*", async (req, reply) => {
-        const responseInit: ResponseInit = {};
         const html = await engine.render({
             bootstrap,
             documentFilePath: join(browserDistFolder, "index.html"),
             url: `https://${req.headers.host}${req.url}`,
             publicPath: browserDistFolder,
-            providers: [
-                { provide: APP_BASE_HREF, useValue: "/" },
-                { provide: RESPONSE_INIT, useValue: responseInit },
-                {
-                    provide: REQUEST,
-                    useValue: new Request(`https://${req.headers.host}${req.url}`),
-                },
-            ],
+            providers: [{ provide: FASTIFY_RESPONSE, useValue: reply }],
         });
 
-        const headers = responseInit.headers
-            ? Object.fromEntries(new Headers(responseInit.headers as HeadersInit).entries())
-            : {};
-
-        console.log("status:", responseInit.status, "url:", req.url);
-
-        reply
-            .status(responseInit.status ?? 200)
-            .headers(headers)
-            .header("content-encoding", "identity")
-            .type("text/html")
-            .send(html);
+        if (!reply.sent) {
+            reply.type("text/html").send(html);
+        }
     });
 
     return app;
