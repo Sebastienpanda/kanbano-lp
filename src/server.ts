@@ -42,12 +42,15 @@ export async function createServer(): Promise<FastifyInstance> {
             url: req.url,
             publicPath: browserDistFolder,
             providers: [
-                { provide: APP_BASE_HREF, useValue: req.url },
+                { provide: APP_BASE_HREF, useValue: "/" },
                 { provide: RESPONSE_INIT, useValue: responseInit },
             ],
         });
 
-        reply.status(responseInit.status ?? 200).type("text/html").send(html);
+        reply
+            .status(responseInit.status ?? 200)
+            .type("text/html")
+            .send(html);
     });
 
     return app;
