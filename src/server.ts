@@ -51,6 +51,8 @@ export async function createServer(): Promise<FastifyInstance> {
             ? Object.fromEntries(new Headers(responseInit.headers as HeadersInit).entries())
             : {};
 
+        console.log("status:", responseInit.status, "url:", req.url);
+
         reply
             .status(responseInit.status ?? 200)
             .headers(headers)
