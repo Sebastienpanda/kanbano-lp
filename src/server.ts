@@ -47,8 +47,14 @@ export async function createServer(): Promise<FastifyInstance> {
             ],
         });
 
+        const headers = responseInit.headers
+            ? Object.fromEntries(new Headers(responseInit.headers as HeadersInit).entries())
+            : {};
+
         reply
             .status(responseInit.status ?? 200)
+            .headers(headers)
+            .header("content-encoding", "identity")
             .type("text/html")
             .send(html);
     });
