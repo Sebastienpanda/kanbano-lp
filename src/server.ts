@@ -35,7 +35,7 @@ export async function createServer(): Promise<FastifyInstance> {
         wildcard: false,
     });
 
-    app.get("/*", async (req, reply) => {
+    app.get("/*", { config: { compress: false } }, async (req, reply) => {
         const html = await engine.render({
             bootstrap,
             documentFilePath: join(browserDistFolder, "index.html"),
