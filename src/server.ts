@@ -13,7 +13,7 @@ const browserDistFolder = join(import.meta.dirname, "../browser");
 export async function createServer(): Promise<FastifyInstance> {
     const app = Fastify({ logger: true });
     const engine = new CommonEngine({
-        allowedHosts: ["kanbano.fr", "www.kanbano.fr"],
+        allowedHosts: ["kanbano.fr", "www.kanbano.fr", "localhost"],
     });
 
     app.addHook("onSend", async (req, reply) => {
