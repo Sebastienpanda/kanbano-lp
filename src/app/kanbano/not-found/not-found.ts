@@ -12,6 +12,7 @@ import gsap from "gsap";
     templateUrl: "./not-found.html",
     styleUrl: "./not-found.css",
     changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { ngSkipHydration: "" },
 })
 export class NotFound {
     private readonly themeService = inject(UserThemeService);
