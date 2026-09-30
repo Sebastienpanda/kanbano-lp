@@ -1,7 +1,7 @@
-import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
+import { afterNextRender, Component } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { CheckItem } from "@components/utilities/check-item";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
     imports: [CheckItem, SectionHeader],
     templateUrl: "./pricing.html",
     styleUrl: "./pricing.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Pricing {
     constructor() {

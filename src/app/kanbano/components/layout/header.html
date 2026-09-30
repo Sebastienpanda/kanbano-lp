@@ -1,13 +1,14 @@
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 <header class="header">
     <div class="container header-container" #headerContainer>
         <a aria-label="Kanbano — Retour à l'accueil" class="header-logo" routerLink="/">
             <picture class="header-logo-picture">
                 @if (isDark() || isMenuOpen()) {
-                <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
-                <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+                    <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
+                    <source sizes="219px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
                 } @else {
-                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
-                <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
+                    <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
+                    <source sizes="219px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
                 }
                 <img
                     alt=""
@@ -23,10 +24,12 @@
         </a>
 
         <button
+            #menuButton
             type="button"
             class="header-menu"
             [class.active]="isMenuOpen()"
             [attr.aria-expanded]="isMenuOpen()"
+            aria-controls="mobile-nav"
             aria-label="Menu de navigation"
             (click)="toggleMenu()"
         >
@@ -42,18 +45,14 @@
                 [attr.aria-label]="userTheme.theme() === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
                 (click)="userTheme.toggle()"
             >
-                <svg
-                    lucideSun
-                    class="header-theme-icon"
-                    [class.header-theme-icon-visible]="userTheme.theme() === 'light'"
-                ></svg>
-                <svg
-                    lucideMoon
-                    class="header-theme-icon"
-                    [class.header-theme-icon-visible]="userTheme.theme() === 'dark'"
-                ></svg>
+                <span class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'light'">
+                    <svg lucideSun></svg>
+                </span>
+                <span class="header-theme-icon" [class.header-theme-icon-visible]="userTheme.theme() === 'dark'">
+                    <svg lucideMoon></svg>
+                </span>
             </button>
-            <kanbano-lp-button (click)="navigateToWaitlist()">Rejoindre la file d'attente</kanbano-lp-button>
+            <kanbano-lp-button (click)="navigateToWaitlist()">Rejoindre la liste d'attente</kanbano-lp-button>
         </div>
     </div>
     <kanbano-lp-mobile-nav

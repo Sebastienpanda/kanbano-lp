@@ -1,7 +1,7 @@
-import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
+import { afterNextRender, Component } from "@angular/core";
 import { CtaActions } from "@components/utilities/cta-actions";
 import { SectionThemeDirective } from "@kanbano/directives/section-theme.directive";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Checked } from "./components/checked";
@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
     imports: [CtaActions, Checked, SectionThemeDirective],
     templateUrl: "./hero-banner.html",
     styleUrl: "./hero-banner.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroBanner {
     constructor() {

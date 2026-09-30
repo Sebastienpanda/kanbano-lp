@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Component } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { CtaActions } from "@components/utilities/cta-actions";
 
@@ -11,6 +11,5 @@ import { FunctionalityWorkspace } from "./components/workspace/functionality-wor
     imports: [CtaActions, FunctionalityWorkspace, FunctionalityTask, FunctionalityParticipants, SectionHeader],
     templateUrl: "./functionality.html",
     styleUrl: "./functionality.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Functionality {}

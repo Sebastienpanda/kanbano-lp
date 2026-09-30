@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, output } from "@angular/core";
+import { Component, input, output } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { NavItem } from "@components/layout/header";
 import { Button } from "@components/utilities/button";
@@ -9,7 +9,6 @@ import { UserTheme } from "@kanbano/services/user-theme.service";
     imports: [RouterLink, Button],
     templateUrl: "./mobile-nav.html",
     styleUrl: "./mobile-nav.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         class: "host",
     },

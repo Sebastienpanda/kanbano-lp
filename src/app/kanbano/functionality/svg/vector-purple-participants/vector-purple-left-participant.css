@@ -5,7 +5,7 @@
     width: 470px;
     height: 306px;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
         top: 93px;
         right: 0;
         left: 49px;
@@ -20,4 +20,18 @@ svg {
 
 path {
     filter: blur(79px);
+}
+
+.vector-desktop {
+    display: none;
+
+    @media (width >= 64em) {
+        display: block;
+    }
+}
+
+.vector-mobile {
+    @media (width >= 64em) {
+        display: none;
+    }
 }

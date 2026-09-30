@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Component } from "@angular/core";
 import { SectionThemeDirective } from "@kanbano/directives/section-theme.directive";
 
 import { Dashboard } from "./component/dashboard/dashboard";
@@ -10,6 +10,5 @@ import { TaskView } from "./component/task/view/task-view";
     imports: [Dashboard, TaskView, TaskDetail, SectionThemeDirective],
     templateUrl: "./preview.html",
     styleUrl: "./preview.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Preview {}

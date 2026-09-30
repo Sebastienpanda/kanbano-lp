@@ -1,5 +1,5 @@
 import { DOCUMENT, NgOptimizedImage } from "@angular/common";
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID, signal } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID, signal } from "@angular/core";
 import { SectionHeader } from "@components/layout/section-header";
 import { BottomSvg } from "@kanbano/testimonials/components/bottom/bottom-svg";
 import { TopSvg } from "@kanbano/testimonials/components/top/top-svg";
@@ -24,7 +24,6 @@ interface Testimonial {
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: "./testimonials.html",
     styleUrl: "./testimonials.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Testimonials {
     private readonly document = inject(DOCUMENT);

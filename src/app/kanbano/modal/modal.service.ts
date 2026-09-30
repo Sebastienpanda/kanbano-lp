@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
-import { environment } from "@environnement//environment.development";
+import { inject, Service } from "@angular/core";
+import { environment } from "@environnement/environment";
 import { Observable } from "rxjs";
 
-@Injectable({ providedIn: "root" })
+@Service()
 export class VerifyToken {
     private readonly http = inject(HttpClient);
     private readonly base_url = environment.base_url;

@@ -1,17 +1,16 @@
 import { isPlatformServer } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID } from "@angular/core";
+import { afterNextRender, Component, computed, inject, PLATFORM_ID } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { FASTIFY_RESPONSE } from "@kanbano/not-found/server.token";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
 import { FastifyReply } from "fastify";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 @Component({
     selector: "kanbano-lp-not-found",
     imports: [RouterLink],
     templateUrl: "./not-found.html",
     styleUrl: "./not-found.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
     host: { ngSkipHydration: "" },
 })
 export class NotFound {

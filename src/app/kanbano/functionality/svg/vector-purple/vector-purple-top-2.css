@@ -6,11 +6,11 @@
     width: 266px;
     height: 581px;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
         right: 116px;
     }
 
-    @media (width >= 1024px) {
+    @media (width >= 64em) {
         right: 160px;
         width: 558px;
         height: 750px;
@@ -28,7 +28,21 @@ path {
 }
 
 :host(.hide-desktop) {
-    @media (width >= 1024px) {
+    @media (width >= 64em) {
+        display: none;
+    }
+}
+
+.vector-desktop {
+    display: none;
+
+    @media (width >= 64em) {
+        display: block;
+    }
+}
+
+.vector-mobile {
+    @media (width >= 64em) {
         display: none;
     }
 }

@@ -1,0 +1,21 @@
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: calc(var(--kanbano-z-header) + 1);
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    color: var(--kanbano-white);
+    background: var(--kanbano-primary);
+    border-radius: 0.5rem;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+    outline: 2px solid var(--kanbano-green);
+    transform: none;
+}
+
+main:focus {
+    outline: none;
+}

@@ -10,7 +10,7 @@
 }
 
 .section-header-title {
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 1rem + 5vw, 2.75rem);
     font-weight: 700;
     color: var(--kanbano-text-heading);
 }

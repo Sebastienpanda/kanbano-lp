@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from "@angular/core";
+import { Component, computed, inject, input } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { NavItem } from "@components/layout/header";
 import { ThemeObserverService } from "@kanbano/services/theme-observer.service";
@@ -9,7 +9,6 @@ import { UserThemeService } from "@kanbano/services/user-theme.service";
     imports: [RouterLink],
     templateUrl: "./nav-desktop.html",
     styleUrl: "./nav-desktop.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavDesktop {
     readonly nav = input.required<NavItem[]>();

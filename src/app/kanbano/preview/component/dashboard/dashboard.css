@@ -3,6 +3,7 @@
     z-index: 4;
     display: block;
     width: 343px;
+    max-width: 100%;
     margin-inline: auto;
 
     @media (width >= 48em) {

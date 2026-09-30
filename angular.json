@@ -38,6 +38,7 @@
                     },
                     "configurations": {
                         "production": {
+                            "outputHashing": "all",
                             "budgets": [
                                 {
                                     "type": "initial",

@@ -13,6 +13,10 @@ dialog {
     overflow-y: auto;
     background: oklch(0 0 0 / 75%);
     border: none;
+
+    &::backdrop {
+        background: transparent;
+    }
 }
 
 .modal-card {
@@ -157,7 +161,7 @@ dialog {
 .modal-input {
     width: 100%;
     padding: 0.625rem 0.875rem;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--kanbano-waitlist-input-text);
     caret-color: var(--kanbano-waitlist-input-text);
     outline: none;
@@ -173,8 +177,9 @@ dialog {
     }
 
     &:focus-visible {
+        outline: 2px solid var(--kanbano-waitlist-text);
+        outline-offset: 2px;
         border-color: var(--kanbano-green);
-        box-shadow: 0 0 0 3px var(--kanbano-green-20);
     }
 
     &[aria-invalid="true"] {
@@ -204,6 +209,11 @@ dialog {
 
     &:hover:not(:disabled) {
         opacity: 0.8;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--kanbano-waitlist-text);
+        outline-offset: 2px;
     }
 
     &:disabled {

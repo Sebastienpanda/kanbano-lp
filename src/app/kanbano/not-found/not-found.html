@@ -2,11 +2,11 @@
     <a class="not-found-logo" routerLink="/" aria-label="Kanbano — Retour à l'accueil">
         <picture>
             @if (isDark()) {
-            <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
-            <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
+                <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.avif 219w" type="image/avif" />
+                <source sizes="209px" srcset="/assets/logo/logo-light/logo-light.webp 219w" type="image/webp" />
             } @else {
-            <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
-            <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
+                <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.avif 219w" type="image/avif" />
+                <source sizes="209px" srcset="/assets/logo/logo-dark/logo-dark.webp 219w" type="image/webp" />
             }
             <img
                 [src]="isDark() ? '/assets/logo/logo-light/logo-light.png' : '/assets/logo/logo-dark/logo-dark.png'"
