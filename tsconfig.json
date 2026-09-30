@@ -3,12 +3,11 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "baseUrl": ".",
         "paths": {
-            "@shared/*": ["src/app/kanbano/shared/*"],
-            "@components/*": ["src/app/kanbano/components/*"],
-            "@kanbano/*": ["src/app/kanbano/*"],
-            "@environnement/*": ["src/environments*"]
+            "@shared/*": ["./src/app/kanbano/shared/*"],
+            "@components/*": ["./src/app/kanbano/components/*"],
+            "@kanbano/*": ["./src/app/kanbano/*"],
+            "@environnement/*": ["./src/environments/*"]
         },
         "strict": true,
         "noImplicitOverride": true,
@@ -25,8 +24,7 @@
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
         "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true
+        "strictInputAccessModifiers": true
     },
     "files": [],
     "references": [

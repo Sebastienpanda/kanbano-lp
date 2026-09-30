@@ -1,32 +1,15 @@
-import { Component, input } from "@angular/core";
-import { AbstractControl } from "@angular/forms";
+import { Component, computed, input } from "@angular/core";
+import { FieldTree } from "@angular/forms/signals";
 
 @Component({
     selector: "kanbano-lp-form-error",
-    imports: [],
     templateUrl: "./form-error.html",
     styleUrl: "./form-error.css",
 })
 export class FormError {
-    control = input.required<AbstractControl>();
-    errorId = input<string>();
+    readonly field = input.required<FieldTree<string>>();
+    readonly errorId = input.required<string>();
 
-    getErrorMessages(): string[] {
-        const control = this.control();
-
-        if (!control?.errors) return [];
-
-        const errors = control.errors;
-        const messages: string[] = [];
-
-        if (errors["required"]) {
-            messages.push("Ce champ est obligatoire");
-        }
-
-        if (errors["email"]) {
-            messages.push(`L'adresse email n'est pas valide`);
-        }
-
-        return messages;
-    }
+    protected readonly state = computed(() => this.field()());
+    protected readonly visible = computed(() => this.state().invalid() && this.state().touched());
 }

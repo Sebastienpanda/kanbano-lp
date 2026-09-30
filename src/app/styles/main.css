@@ -5,3 +5,4 @@
 @import "base/colors.css" layer(base);
 @import "base/spacing.css" layer(base);
 @import "layout/container.css" layer(layout);
+@import "utilities/a11y.css" layer(utilities);

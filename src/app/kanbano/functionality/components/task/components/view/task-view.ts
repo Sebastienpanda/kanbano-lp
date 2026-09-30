@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from "@angular/core";
+import { Component, computed, inject } from "@angular/core";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
 
 @Component({
@@ -6,7 +6,6 @@ import { UserThemeService } from "@kanbano/services/user-theme.service";
     imports: [],
     templateUrl: "./task-view.html",
     styleUrl: "./task-view.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskView {
     private readonly themeService = inject(UserThemeService);

@@ -1,9 +1,9 @@
-import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
+import { afterNextRender, Component } from "@angular/core";
 import { VectorBlueBold } from "@kanbano/functionality/svg/vector-blue-bold/vector-blue-bold";
 import { VectorBlueBottom } from "@kanbano/functionality/svg/vector-blue/vector-blue-bottom";
 import { VectorGreenTop } from "@kanbano/functionality/svg/vector-green/vector-green-top";
 import { VectorPurpleTop2 } from "@kanbano/functionality/svg/vector-purple/vector-purple-top-2";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { HeadingItem } from "../heading-item";
@@ -29,7 +29,6 @@ gsap.registerPlugin(ScrollTrigger);
     ],
     templateUrl: "./functionality-task.html",
     styleUrl: "./functionality-task.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FunctionalityTask {
     constructor() {

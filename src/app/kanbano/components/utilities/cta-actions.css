@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
         flex-direction: row;
         justify-content: center;
     }

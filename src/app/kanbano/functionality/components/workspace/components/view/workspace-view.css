@@ -8,6 +8,7 @@ figure {
     left: 32px;
     z-index: 4;
     width: 285px;
+    max-width: 100%;
 
     @media (width >= 48em) {
         left: 200px;

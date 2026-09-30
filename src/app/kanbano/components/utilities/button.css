@@ -15,6 +15,11 @@
         opacity: 0.8;
     }
 
+    &:focus-visible {
+        outline: 2px solid var(--kanbano-focus-ring);
+        outline-offset: 3px;
+    }
+
     &.primary {
         color: var(--kanbano-white);
         background: var(--kanbano-primary);

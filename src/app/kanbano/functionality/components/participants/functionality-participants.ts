@@ -1,7 +1,7 @@
-import { afterNextRender, ChangeDetectionStrategy, Component } from "@angular/core";
+import { afterNextRender, Component } from "@angular/core";
 import { VectorGreenRightParticipant } from "@kanbano/functionality/svg/vector-green-participants/vector-green-right-participant";
 import { VectorPurpleLeftParticipant } from "@kanbano/functionality/svg/vector-purple-participants/vector-purple-left-participant";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { HeadingItem } from "../heading-item";
@@ -27,7 +27,6 @@ gsap.registerPlugin(ScrollTrigger);
     ],
     templateUrl: "./functionality-participants.html",
     styleUrl: "./functionality-participants.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FunctionalityParticipants {
     constructor() {

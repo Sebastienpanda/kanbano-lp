@@ -1,88 +1,59 @@
-# CLAUDE.md
+You are an expert in TypeScript, Angular, and scalable web application development. You write functional, maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## TypeScript Best Practices
 
-## Commands
-
-```bash
-pnpm dev              # Dev server (ng serve)
-pnpm build            # Production build → dist/
-pnpm start            # Run SSR server (node dist/.../server.mjs)
-pnpm lint             # oxlint (JS/TS)
-pnpm lint:fix         # oxlint with auto-fix
-pnpm fmt              # oxfmt formatting
-pnpm stylelint:fix    # CSS linting with auto-fix
-```
-
-Pre-commit hooks run `lint:fix`, `fmt`, and `stylelint:fix` automatically. Commits follow Angular conventional commits (enforced by commitlint).
-
-## Architecture
-
-Single-page Angular 21 landing page with SSR via Fastify (port 4000). No lazy loading — one route (`""`) renders the `Home` component which composes all sections in order.
-
-```
-src/app/
-├── app.ts / app.routes.ts / app.config.ts   Root setup, SSR hydration, scroll restoration
-├── kanbano/
-│   ├── home.ts                              Composes all sections
-│   ├── services/
-│   │   ├── user-theme.service.ts            Light/dark theme, localStorage + prefers-color-scheme
-│   │   └── theme-observer.service.ts        IntersectionObserver → updates theme per section on scroll
-│   ├── directives/section-theme.directive.ts
-│   ├── components/layout/                   header, footer, nav (desktop + mobile)
-│   ├── components/utilities/               button, check-item, cta-actions
-│   ├── hero-banner/                        anime.js timeline
-│   ├── functionality/                      Most complex section — nested workspace/task/participants subsections, each with picture cards, SVG icons, and decorative arrows
-│   ├── preview/
-│   ├── pricing/
-│   ├── testimonials/                       Swiper carousel
-│   └── data-protection/
-└── styles/
-    ├── main.css                            @layer imports: reset, base, layout, components, modules, utilities
-    ├── base/                               reset.css, colors.css (OKLch vars), typography.css, spacing.css
-    └── layout/container.css
-```
-
-## Key Patterns
-
-**Theming** — `UserThemeService` exposes a `theme()` signal. Components call `inject(UserThemeService)` and use `computed(() => themeService.theme() === 'dark')` to switch assets/classes. The `ThemeObserverService` updates the active theme as the user scrolls past sections.
-
-**Functionality section** — Icon/arrow components use `display: contents` on `:host` and apply all positioning directly to the inner `svg`. Picture card components (`workspace-view`, `workspace-create`, `workspace-empty`, etc.) use `display: contents` on `:host` with a `<figure>` wrapper that carries positioning, `box-shadow`, and `position: relative` (serving as the containing block for absolutely-positioned sibling arrows).
-
-**CSS component budget** — 4 kB warning / 8 kB error per component stylesheet. Keep styles lean.
-
-**Component selector prefix** — `kanbano-lp-` for components, `kanbanoDirective` for directives.
-
-## CSS Conventions
-
-- CSS nesting with `& .child` — no BEM, no redundant resets (global reset already handles margins, box-sizing, etc.)
-- Media queries: `@media (width >= Xem)` nested inside rules
-- Colors: OKLch via `--kanbano-*` custom properties defined in `styles/base/colors.css`
-- Z-index scale: `--kanbano-z-*` variables from `spacing.css` (overlay=10, header=1000, modal=9000)
-- Theming via `[data-theme="light"]` / `[data-theme="dark"]` attribute on `<html>`
-
-## TypeScript & Angular Standards
-
-**TypeScript**
-
-- Strict type checking — avoid `any`, use `unknown` when type is uncertain
+- Use strict type checking
 - Prefer type inference when the type is obvious
+- Avoid the `any` type; use `unknown` when type is uncertain
 
-**Angular**
+## Angular Best Practices
 
-- Standalone components only — do NOT set `standalone: true` (default in Angular v20+)
-- Do NOT use `@HostBinding` / `@HostListener` — use the `host` object in `@Component` / `@Directive` instead
-- Use `NgOptimizedImage` for all static images (does not work for inline base64)
-- `ChangeDetectionStrategy.OnPush` on every component
-- `input()` / `output()` functions instead of decorators
-- `inject()` instead of constructor injection
-- `computed()` for derived state — never `mutate()` on signals, use `update()` or `set()`
-- Native control flow (`@if`, `@for`, `@switch`) — never `*ngIf` / `*ngFor` / `*ngSwitch`
-- No `ngClass` → use `class` bindings; no `ngStyle` → use `style` bindings
-- No arrow functions in templates
-- Reactive forms over template-driven forms
-- External templates/styles use paths relative to the `.ts` file
+- Always use standalone components over NgModules
+- Must NOT set `standalone: true` inside Angular decorators. It's the default in Angular v20+.
+- Do NOT set `changeDetection: ChangeDetectionStrategy.OnPush` explicitly. `OnPush` is the default in Angular v22+.
+- Use signals for state management
+- Implement lazy loading for feature routes
+- Do NOT use the `@HostBinding` and `@HostListener` decorators. Put host bindings inside the `host` object of the `@Component` or `@Directive` decorator instead
+- Use `NgOptimizedImage` for all static images.
+    - `NgOptimizedImage` does not work for inline base64 images.
 
-**Accessibility**
+## Accessibility Requirements
 
-- Must pass all AXE checks and meet WCAG AA minimums (focus management, color contrast, ARIA attributes)
+- It MUST pass all AXE checks.
+- It MUST follow all WCAG AA minimums, including focus management, color contrast, and ARIA attributes.
+
+### Components
+
+- Keep components small and focused on a single responsibility
+- Use `input()` and `output()` functions instead of decorators
+- Use `model()` for two-way bound properties with `[(prop)]` syntax instead of pairing `input()` with `output()`
+- Use `computed()` for derived state
+- Use `linkedSignal()` for state derived from multiple reactive sources that must stay synchronized
+- Prefer inline templates for small components
+- Prefer Signal Forms (`@angular/forms/signals`) for new forms. They are stable in Angular v22+ and provide signal-based state, type-safe field access, and schema-based validation
+- When not using Signal Forms, prefer Reactive forms instead of Template-driven ones
+- Do NOT use `ngClass`, use `class` bindings instead
+- Do NOT use `ngStyle`, use `style` bindings instead
+- Do NOT import `CommonModule`, import only the directives and pipes the template uses, such as `AsyncPipe` or `DatePipe`
+- When using external templates/styles, use paths relative to the component TS file.
+
+## State Management
+
+- Use signals for local component state
+- Use `computed()` for derived state
+- Keep state transformations pure and predictable
+- Do NOT use `mutate` on signals, use `update` or `set` instead
+
+## Templates
+
+- Keep templates simple and avoid complex logic
+- Use native control flow (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`, `*ngSwitch`
+- Use the async pipe to handle observables
+- Do not assume globals like (`new Date()`) are available.
+
+## Services
+
+- Design services around a single responsibility
+- Use the `providedIn: 'root'` option for singleton services
+- Prefer the `@Service` decorator over `@Injectable({providedIn: 'root'})` for new singleton services (Angular v22+)
+- Use the `inject()` function instead of constructor injection

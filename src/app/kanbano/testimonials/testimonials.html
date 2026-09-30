@@ -23,35 +23,35 @@
     <section aria-label="Témoignages clients" aria-roledescription="carousel">
         <swiper-container kanbanoDirectiveSwiper [config]="swiperConfig" init="false">
             @for (testimonial of testimonials(); track testimonial.id) {
-            <swiper-slide>
-                <article class="testimonials-card" aria-roledescription="diapositive">
-                    <div class="testimonials-quote-block">
-                        <img
-                            ngSrc="/quotation_1005100%201.svg"
-                            width="40"
-                            height="40"
-                            alt=""
-                            aria-hidden="true"
-                            class="testimonials-quote-icon"
-                        />
-                        <p class="testimonials-text">{{ testimonial.text }}</p>
-                    </div>
-                    <div class="testimonials-author">
-                        <div class="testimonials-author-info">
-                            <p class="testimonials-author-name">{{ testimonial.authorName }}</p>
-                            <p class="testimonials-author-role">{{ testimonial.authorRole }}</p>
+                <swiper-slide>
+                    <article class="testimonials-card" aria-roledescription="diapositive">
+                        <div class="testimonials-quote-block">
+                            <img
+                                ngSrc="/quotation_1005100%201.svg"
+                                width="40"
+                                height="40"
+                                alt=""
+                                aria-hidden="true"
+                                class="testimonials-quote-icon"
+                            />
+                            <p class="testimonials-text">{{ testimonial.text }}</p>
                         </div>
-                        <img
-                            [ngSrc]="testimonial.avatarSrc"
-                            width="65"
-                            height="65"
-                            [alt]="testimonial.authorName"
-                            class="testimonials-avatar"
-                        />
-                    </div>
-                    <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials-stars" />
-                </article>
-            </swiper-slide>
+                        <div class="testimonials-author">
+                            <div class="testimonials-author-info">
+                                <p class="testimonials-author-name">{{ testimonial.authorName }}</p>
+                                <p class="testimonials-author-role">{{ testimonial.authorRole }}</p>
+                            </div>
+                            <img
+                                [ngSrc]="testimonial.avatarSrc"
+                                width="65"
+                                height="65"
+                                [alt]="testimonial.authorName"
+                                class="testimonials-avatar"
+                            />
+                        </div>
+                        <img ngSrc="/etoiles.svg" width="145" height="25" alt="5 étoiles" class="testimonials-stars" />
+                    </article>
+                </swiper-slide>
             }
         </swiper-container>
     </section>

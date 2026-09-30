@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from "@angular/core";
+import { Component, computed, inject } from "@angular/core";
 import { ArrowThreeTask } from "@kanbano/functionality/components/task/components/icon/arrow/three/arrow-three-task";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
 
@@ -7,7 +7,6 @@ import { UserThemeService } from "@kanbano/services/user-theme.service";
     imports: [ArrowThreeTask],
     templateUrl: "./task-create.html",
     styleUrl: "./task-create.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskCreate {
     private readonly themeService = inject(UserThemeService);

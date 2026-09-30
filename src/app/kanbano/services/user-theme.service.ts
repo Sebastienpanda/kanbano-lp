@@ -1,11 +1,11 @@
 import { DOCUMENT, isPlatformBrowser } from "@angular/common";
-import { Injectable, PLATFORM_ID, effect, inject, signal } from "@angular/core";
+import { Service, PLATFORM_ID, effect, inject, signal } from "@angular/core";
 
 export type UserTheme = "light" | "dark";
 
 const STORAGE_KEY = "kanbano-theme";
 
-@Injectable({ providedIn: "root" })
+@Service()
 export class UserThemeService {
     private readonly document = inject(DOCUMENT);
     private readonly platformId = inject(PLATFORM_ID);

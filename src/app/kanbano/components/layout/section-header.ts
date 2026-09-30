@@ -1,5 +1,5 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, ElementRef, inject, input } from "@angular/core";
-import gsap from "gsap";
+import { afterNextRender, Component, ElementRef, inject, input } from "@angular/core";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
     imports: [],
     templateUrl: "./section-header.html",
     styleUrl: "./section-header.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionHeader {
     readonly title = input.required<string>();

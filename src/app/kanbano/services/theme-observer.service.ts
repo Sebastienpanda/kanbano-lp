@@ -1,9 +1,9 @@
 import { isPlatformBrowser } from "@angular/common";
-import { Injectable, signal, inject, PLATFORM_ID } from "@angular/core";
+import { Service, signal, inject, PLATFORM_ID } from "@angular/core";
 
 export type SectionTheme = "light" | "dark";
 
-@Injectable({ providedIn: "root" })
+@Service()
 export class ThemeObserverService {
     private readonly platformId = inject(PLATFORM_ID);
     private readonly intersecting = new Map<Element, SectionTheme>();

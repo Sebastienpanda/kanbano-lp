@@ -17,6 +17,7 @@
 
 [data-theme="light"] {
     --kanbano-bg: var(--kanbano-white);
+    --kanbano-focus-ring: var(--kanbano-gradient-purple); /* 831892 → ~8:1 sur blanc */
     --kanbano-bg-card-price: oklch(0.3442 0.1086 293.34); /* 3D2A6B */
     --kanbano-bg-card-pro: var(--kanbano-purple-text); /* 2D1E53 */
     --kanbano-bg-newsletter: var(--kanbano-purple-text); /* 2D1E53 */
@@ -59,6 +60,7 @@
 
 [data-theme="dark"] {
     --kanbano-bg: var(--kanbano-primary);
+    --kanbano-focus-ring: var(--kanbano-green); /* 2BE5CF → ~11:1 sur 130043 */
     --kanbano-bg-card-price: oklch(0.2722 0.1233 288.05); /* 28135E */
     --kanbano-bg-card-pro: oklch(0.3 0.141 289); /* 30186D */
     --kanbano-bg-newsletter: oklch(0.994 0 0); /* FDFDFD */

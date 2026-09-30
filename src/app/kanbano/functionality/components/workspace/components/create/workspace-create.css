@@ -7,6 +7,7 @@ figure {
     bottom: 50px;
     z-index: 5;
     width: 264px;
+    max-width: 100%;
     margin-inline: auto;
 
     @media (width >= 48em) {

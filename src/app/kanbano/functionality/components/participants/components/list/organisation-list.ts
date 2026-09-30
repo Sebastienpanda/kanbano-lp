@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from "@angular/core";
+import { Component, computed, inject } from "@angular/core";
 import { ArrowOneDesktop } from "@kanbano/functionality/components/participants/components/icons/arrow/desktop/one/arrow-one-desktop";
 import { ArrowThreeDesktop } from "@kanbano/functionality/components/participants/components/icons/arrow/desktop/three/arrow-three-desktop";
 import { ArrowTwoDesktop } from "@kanbano/functionality/components/participants/components/icons/arrow/desktop/two/arrow-two-desktop";
@@ -11,7 +11,6 @@ import { UserThemeService } from "@kanbano/services/user-theme.service";
     imports: [ArrowOneMobile, ArrowTwoMobile, ArrowOneDesktop, ArrowTwoDesktop, ArrowThreeDesktop],
     templateUrl: "./organisation-list.html",
     styleUrl: "./organisation-list.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrganisationList {
     private readonly themeService = inject(UserThemeService);

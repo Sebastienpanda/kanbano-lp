@@ -1,16 +1,18 @@
 <kanbano-lp-header />
-<kanbano-lp-hero-banner />
-<kanbano-lp-preview />
-<main>
+<main id="contenu" tabindex="-1">
+    <kanbano-lp-hero-banner />
+    <kanbano-lp-preview />
     <kanbano-lp-functionality />
     <kanbano-lp-pricing />
     <!--    <kanbano-lp-testimonials />-->
     <kanbano-lp-data-protection />
 </main>
 @defer (on viewport; hydrate on viewport) {
-<kanbano-lp-footer />
+    <kanbano-lp-footer />
 } @placeholder {
-<div></div>
+    <div></div>
 }
 <ngx-sonner-toaster position="top-right" richColors closeButton />
-<kanbano-lp-modal />
+@defer (when hasToken()) {
+    <kanbano-lp-modal />
+}

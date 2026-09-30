@@ -4,7 +4,6 @@ import { SectionTheme, ThemeObserverService } from "@kanbano/services/theme-obse
 
 @Directive({
     selector: "[kanbanoDirectiveSectionTheme]",
-    standalone: true,
 })
 export class SectionThemeDirective implements OnInit {
     readonly kanbanoDirectiveSectionTheme = input.required<SectionTheme>();

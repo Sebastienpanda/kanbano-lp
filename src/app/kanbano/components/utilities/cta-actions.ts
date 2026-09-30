@@ -1,5 +1,5 @@
-import { DOCUMENT } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { WaitlistNavigator } from "@kanbano/services/waitlist-navigator.service";
 
 import { Button } from "./button";
 
@@ -8,12 +8,7 @@ import { Button } from "./button";
     imports: [Button],
     templateUrl: "./cta-actions.html",
     styleUrl: "./cta-actions.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CtaActions {
-    private readonly document = inject(DOCUMENT);
-
-    navigateToWaitlist(): void {
-        this.document.querySelector("#waitlist")?.scrollIntoView({ behavior: "smooth" });
-    }
+    protected readonly waitlist = inject(WaitlistNavigator);
 }

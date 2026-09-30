@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, computed, inject } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { ActivatedRoute } from "@angular/router";
 import { Footer } from "@components/layout/footer/footer";
 import { Header } from "@components/layout/header";
 import { DataProtection } from "@kanbano/data-protection/data-protection";
@@ -15,4 +17,7 @@ import { Preview } from "./preview/preview";
     imports: [Header, HeroBanner, Preview, Functionality, Pricing, DataProtection, Footer, NgxSonnerToaster, Modal],
     templateUrl: "./home.html",
 })
-export class Home {}
+export class Home {
+    private readonly queryParams = toSignal(inject(ActivatedRoute).queryParamMap);
+    protected readonly hasToken = computed(() => !!this.queryParams()?.get("token"));
+}

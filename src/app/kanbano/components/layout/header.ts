@@ -1,12 +1,13 @@
 import { DOCUMENT } from "@angular/common";
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, inject, signal } from "@angular/core";
+import { afterNextRender, Component, computed, effect, ElementRef, inject, signal, viewChild } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { NavDesktop } from "@components/layout/desktop-nav/nav-desktop";
 import { MobileNav } from "@components/layout/mobile-nav/mobile-nav";
 import { Button } from "@components/utilities/button";
 import { UserThemeService } from "@kanbano/services/user-theme.service";
+import { WaitlistNavigator } from "@kanbano/services/waitlist-navigator.service";
 import { LucideMoon, LucideSun } from "@lucide/angular";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 export interface NavItem {
     fragment: string;
@@ -18,7 +19,9 @@ export interface NavItem {
     imports: [RouterLink, MobileNav, NavDesktop, Button, LucideSun, LucideMoon],
     templateUrl: "./header.html",
     styleUrl: "./header.css",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        "(document:keydown.escape)": "closeMenu()",
+    },
 })
 export class Header {
     protected readonly userTheme = inject(UserThemeService);
@@ -40,7 +43,9 @@ export class Header {
 
     protected readonly isMenuOpen = signal<boolean>(false);
 
+    private readonly menuButton = viewChild.required<ElementRef<HTMLButtonElement>>("menuButton");
     private readonly document = inject(DOCUMENT);
+    private readonly waitlist = inject(WaitlistNavigator);
 
     constructor() {
         effect(() => {
@@ -65,8 +70,15 @@ export class Header {
         this.isMenuOpen.update((v) => !v);
     }
 
+    closeMenu(): void {
+        if (!this.isMenuOpen()) return;
+
+        this.isMenuOpen.set(false);
+        this.menuButton().nativeElement.focus();
+    }
+
     navigateToWaitlist(): void {
         this.isMenuOpen.set(false);
-        this.document.querySelector("#waitlist")?.scrollIntoView({ behavior: "smooth" });
+        this.waitlist.goToWaitlist();
     }
 }

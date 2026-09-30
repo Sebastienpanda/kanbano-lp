@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
-import { environment } from "@environnement//environment";
+import { inject, Service } from "@angular/core";
+import { environment } from "@environnement/environment";
 import { Observable } from "rxjs";
 
-@Injectable({ providedIn: "root" })
+@Service()
 export class SendEmailService {
     private readonly http = inject(HttpClient);
     private readonly baseUrl = environment.base_url;
